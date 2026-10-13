@@ -1,0 +1,14 @@
+RM520N-GL carrier Rev A — component cost and sourcing scope
+
+Frozen fitted BOM: 423 components / 156 SKUs, comprising 419 SMT components / 152 SMT SKUs and four through-hole components. Include H1 SMT spacer; exclude unpurchased J800 service pads. Exact MPNs and each reference placement govern substitutions.
+
+Modeled component-only cost, excluding the Quectel:
+25-board lot: $101.59704 per board; $2539.926 component total.
+100-board lot: $85.30531 per board; $8530.531 component total.
+With the workbook modeled procurement/spares handling: $105.3929952 per board at25, or $87.1642412 at100.
+
+These are the dated BOM pricing model, not an assembled-board quote. They exclude bare PCB, filled/capped via process, assembly/setup/manual soldering, stencils, testing, shipping, taxes, enclosure, antenna/coax, retention hardware outside the fitted BOM and eUICC provisioning. Supplier availability and allocation must be checked at order time. Component costs do not include a guarantee that a builder can accept the specified fabrication contract.
+
+The E22-900MM22S allocation used by this model is specific to JLCPCB Standard PCBA; do not assume a standalone purchase offer for another assembler. MPS100 pricing requires102 devices with modeled spares and an unreserved dated supply estimate. Lifecycle coverage is partial:23 fitted parts retain explicitly unknown formal lifecycle status and133 have mixed reviewed status evidence. Do not infer all156 SKUs are formally Active. Confirm exact job quantities, pack handling, delivery and substitutions before order.
+
+Use RM520N-Carrier-RevA-BOM.xlsx for price tiers, purchasing quantities, supplier identifiers, dated evidence and exclusions. Fitted-bom.csv and native placements carry individual circuit values, footprint identities and board face. Grouped BOM circuit descriptions are representative labels for identical purchased MPNs.

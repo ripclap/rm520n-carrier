@@ -1,0 +1,164 @@
+(footprint "Vishay_VO618A_Option7"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Vishay VO618A datasheet83432 Rev2.1 Jan2025 option7 wide lead SMD recommended pad layout. Pin1 LEDanode upperleft,2 cathode lowerleft,3 emitter lowerright,4 collector upperright. 8mm inner pad clearance; maintain isolation across all board layers.")
+	(property "Reference" "REF**"
+		(at 0 -4 0)
+		(layer "F.SilkS")
+		(uuid "b6699d0b-87ba-496c-a351-3b7ae463250a")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Value" "Vishay_VO618A_Option7"
+		(at 0 4 0)
+		(layer "F.Fab")
+		(uuid "16c89c1c-9684-4722-ad5e-b1fd9fccbea8")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d27c65c0-a84b-4bcc-8910-542a963f2f85")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "919178df-1284-4827-a430-16ba7e38ca37")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -5.8 -3)
+		(end 5.8 -3)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "a773cb68-6147-4a4d-8fae-4ad3153c29b0")
+	)
+	(fp_line
+		(start -5.8 3)
+		(end -5.8 -3)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "67392e1c-7b68-45d3-ab8a-dd31185f5640")
+	)
+	(fp_line
+		(start 5.8 -3)
+		(end 5.8 3)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "ec46bc15-584c-4c0c-9b23-ca32fe1b40cc")
+	)
+	(fp_line
+		(start 5.8 3)
+		(end -5.8 3)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "89ffbde7-e194-42a2-96e4-3cbeefbc95e1")
+	)
+	(fp_line
+		(start -3.81 -2.29)
+		(end 3.81 -2.29)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "b386218b-6ab8-4a4b-8b9f-25b83e9c03f6")
+	)
+	(fp_line
+		(start -3.81 2.29)
+		(end -3.81 -2.29)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "1aac7612-ce0a-4ad6-842a-b62cb885685f")
+	)
+	(fp_line
+		(start 3.81 -2.29)
+		(end 3.81 2.29)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "adfcbe80-3e42-4c3b-9771-726e2bbbd789")
+	)
+	(fp_line
+		(start 3.81 2.29)
+		(end -3.81 2.29)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "478c18bd-a074-43b6-ae84-26597024e69a")
+	)
+	(pad "1" smd roundrect
+		(at -4.7625 -1.27)
+		(size 1.525 1.78)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.03278688525)
+		(thermal_bridge_angle 45)
+		(uuid "9ac766b8-fc7d-4430-a4b9-8c00f0099845")
+	)
+	(pad "2" smd roundrect
+		(at -4.7625 1.27)
+		(size 1.525 1.78)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.03278688525)
+		(thermal_bridge_angle 45)
+		(uuid "7205b5c2-ec9b-4275-8b07-c3f189e9d23c")
+	)
+	(pad "3" smd roundrect
+		(at 4.7625 1.27)
+		(size 1.525 1.78)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.03278688525)
+		(thermal_bridge_angle 45)
+		(uuid "df35416e-64c4-4dc4-b992-53d4a7746d20")
+	)
+	(pad "4" smd roundrect
+		(at 4.7625 -1.27)
+		(size 1.525 1.78)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.03278688525)
+		(thermal_bridge_angle 45)
+		(uuid "ea37d6ff-d92e-40ff-ad0c-b3db1b6ad784")
+	)
+	(embedded_fonts no)
+)

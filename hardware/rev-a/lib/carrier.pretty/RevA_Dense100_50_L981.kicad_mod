@@ -1,0 +1,199 @@
+(footprint "RevA_Dense100_50_L981"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(locked yes)
+	(layer "F.Cu")
+	(descr "Manufacturer recommended copper land pattern. Mask/paste/courtyard are declared construction conventions in packet ledger.")
+	(property "Reference" "L981"
+		(at 0 0 180)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "a75378c9-fade-4cf4-9298-27f658f84a73")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Value" "2.2uH 20%"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b36f56f2-a558-4b5c-9471-1b7a25fba04a")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/SRP6030CA.pdf"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bdc4383d-3494-4965-b9a5-5068c63151e7")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4671ba55-0725-4bb8-a4d4-70175f98ae3c")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "MPN" "SRP6030CA-2R2M"
+		(at 0 0 -90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "18b55a0c-26ab-40ca-89f7-8e16df651f1d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "Bourns"
+		(at 0 0 -90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "b5e6880a-f2c4-44c8-ae13-be82f990f530")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Note" "CAD pin1 upper SW and pin2 lower output are a declared nonpolar alias; vendor does not number terminals. 2.2uH20%, DCR12.2mOhm max; RMS7A20C/10A40C rise and Isat15.9A30%drop are typical25C. Hot differential-L/saturation/core loss and fault pulse are unverified. Private418 exact native denseassembly courtyard encloses conservative maximum body(6.8, 6.6)mm plus100umXY placement, and all actual pads plus50um edge margin. Physical same-net solder pads remain separately screened at>=100um gap; no electrical clearance rule is waived."
+		(at 0 0 -90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "e616402e-e5a3-4271-83f4-7f8f704d1cb7")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC" ""
+		(at 0 0 -90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "18372a6e-f267-4152-8643-dd4413c9a0b3")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -3.5 -3.4)
+		(end -3.5 3.4)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "bc839116-092c-5a56-aa3b-fa6c605eba6a")
+	)
+	(fp_line
+		(start -3.5 3.4)
+		(end 3.5 3.4)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "4636154c-714f-5d4a-8d18-86b7ffbb4978")
+	)
+	(fp_line
+		(start 3.5 -3.4)
+		(end -3.5 -3.4)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "1b4a2cf2-2b43-56fb-9d7a-b4ce01329ef7")
+	)
+	(fp_line
+		(start 3.5 3.4)
+		(end 3.5 -3.4)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "760be54c-ed90-5552-9e56-815590dc1c42")
+	)
+	(fp_line
+		(start -3.3 -3.2)
+		(end 3.3 -3.2)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "84d2a0c2-7b1d-49cb-b8af-6c552e472fa3")
+	)
+	(fp_line
+		(start -3.3 3.2)
+		(end -3.3 -3.2)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "58f1867e-88a2-403c-97fb-1bd5815d3dd0")
+	)
+	(fp_line
+		(start 3.3 -3.2)
+		(end 3.3 3.2)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "a51c834f-3586-47dc-a672-d67e7d6a66bb")
+	)
+	(fp_line
+		(start 3.3 3.2)
+		(end -3.3 3.2)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "ce9d3faf-df7d-44e4-9421-b4887e7c9f4c")
+	)
+	(pad "1" smd rect
+		(at 0 -2.025)
+		(size 5.6 1.55)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.04)
+		(thermal_bridge_angle 45)
+		(uuid "d1b491f4-1d0f-4173-871a-bcda6d8b4c4e")
+	)
+	(pad "2" smd rect
+		(at 0 2.025)
+		(size 5.6 1.55)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.04)
+		(thermal_bridge_angle 45)
+		(uuid "24a43e0b-b283-4e61-bf85-e6712a522fa0")
+	)
+	(embedded_fonts no)
+)

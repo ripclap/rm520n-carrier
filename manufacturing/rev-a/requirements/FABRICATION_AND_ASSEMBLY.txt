@@ -1,0 +1,110 @@
+RM520N-GL carrier Rev A — fabrication and assembly order requirements
+
+Use the complete release Gerber, drill, IPC-D-356, via/hole schedule, fitted BOM,
+placement and assembly drawing set together. Revision and SHA-256 are recorded
+in the release manifest. Requirements below are an engineering order contract;
+they are not a claim that a particular supplier has accepted or manufactured it.
+Request a job-specific CAM/assembly disposition for any capability mismatch.
+
+Board: 110 x 96 mm routed Edge.Cuts centerline, six copper layers, nominal 1.6 mm,
+ENIG, lead-free assembly. Maximum full plated barrel span 1.76 mm. The selected
+native construction is JLC06161H-3313; layer sequence from front to back:
+
+Layer / nominal thickness / material
+F.Mask     0.01524 mm
+F.Cu       0.03500 mm
+Dielectric 0.09940 mm /3313 prepreg/Er4.10
+In1.Cu     0.01520 mm
+Dielectric 0.55000 mm /FR4 core/Er4.60
+In2.Cu     0.01520 mm
+Dielectric 0.10880 mm /2116 prepreg/Er4.16
+In3.Cu     0.01520 mm
+Dielectric 0.55000 mm /FR4 core/Er4.60
+In4.Cu     0.01520 mm
+Dielectric 0.09940 mm /3313 prepreg/Er4.10
+B.Cu       0.03500 mm
+B.Mask     0.01524 mm
+
+Power review requires finished outer copper at least 30 um, In2 and In3 each
+at least 15.2 um, and In1 ground copper at least 12 um for the declared profile.
+Reduced In2 or In3 copper of 12 um/local via wall18 um was a separately calculated sensitivity case, not the
+default job. Require minimum local finished via barrel copper20 um. Do not
+substitute a plating average for this local minimum. Record measured finished
+wall, annulus and actual bore ranges on coupons/microsections.
+
+Preserve the reference plane geometry, copper clearances and copper keepouts.
+Front high-speed traces reference In1; back traces reference In4. Controlled
+impedance groups include USB 90 ohm differential, PCIe/REFCLK 85 ohm differential,
+MDI/cable 100 ohm differential and LoRa 50 ohm. Main drawn outer geometries are
+USB width 0.136/gap 0.150 mm, PCIe/REFCLK 0.154/0.150 and MDI 0.104/0.150. Cable inner
+and package launches use their exact reviewed geometry. Use impedance coupons
+and a job-specific stack/etch calculation, with nominal target tolerance 10%.
+Any proposed stack, material or artwork compensation affecting spacing, power
+electrodes, reference continuity or launch geometry requires engineering review.
+
+The per-site schedule is authoritative for drill/land/cover requirements. There
+are 1124 through vias: 158 filled/capped Type VII and 966 ordinary; all physical
+holes, including mechanical holes and four U10 exposed-pad thermal PTHs, are
+listed separately, for 1161 physical holes. There are 81 nominal 150 um via drills.
+Nominal 150 um drill sites have differentiated finished-bore
+upper bounds depending on actual land geometry; do not apply 230 um to every
+site. Require no breakout and measured finished copper annulus at least 50 um
+on all six copper layers. Drill-position, etch and plating processes must jointly meet
+the site/source/body/clearance requirements, not only the nominal drill list.
+
+Filled/capped sites require void-controlled nonconductive fill and planar copper
+caps on both faces. Maximum cap protrusion 10 um. Preserve each named terminal
+mask/paste aperture; allow no extra via paste opening. Ordinary sites require
+continuous, qualified bilateral solder-mask cover with the actual finished bore
+and mask registration. A partial same-net PAD-mask overlap is not a claim that
+the whole via land is masked. Maximum local ordinary cover peak 25 um. Under
+parts, measure actual underside clearance above cover/caps; the individual
+35/45 um clearance gates and tighter terminal conditions remain in the schedule.
+Seven retained special doubled-growth diagnostic rows require explicit CAM
+review. The 155 current possible large-bore Type VI fallback overrides are inactive. Any
+needed alternative requires a specific per-site engineering disposition; do not
+silently change cover type or enlarge drills.
+
+The two U4 VIN vias have a coupled drill-position/raw-web recipe in
+U4_VIN_FACTORY_COUPLED_REQUIREMENTS1190.txt. Both remain filled/capped Type VII.
+The 450 um land at60.20,72.85 mm uses nominal 200 um drill and requested finished
+120–220 um; the400 um land at60.70,72.75 mm uses nominal 150 um drill and
+requested finished 70–170 um. The engineering witness requires maximum raw
+diameters 250/200 um respectively, local wall at least 20 um, and each drill
+position within 30 um in both axes. That combined witness leaves 216.815 um
+raw web against the 206 um requirement. Verify all actual six-layer annuli,
+source contacts and cap/mask/paste interfaces. Supplier process acceptance is
+required; this witness is not a claim that a generic drill tolerance passes.
+
+Assemble all purchased fitted BOM items with exact MPNs. No substitutions without
+electrical, footprint, height and lifecycle review. The four fitted through-hole
+items C725, J1, R727, J2 need the separate manual/selective-solder operation; they
+are not missing SMT placements. Board test/service pads and mechanical-only
+features are not purchased components. H1 IS a fitted SMT Würth 9774025243R spacer
+and must be included. J800 IS an unpurchased service-pad pattern.
+
+H1 requires the primary local stencil OD 5.2/ID 3.1 mm segmented annulus with 0.6 mm
+gaps and at least 150 um paste deposit; use a qualified local step/paste operation
+without applying 150 um deposit to unrelated fine-pitch ICs. Inspect final spacer
+height/card seating and use the separately specified M2x3 retention screw with
+head/washer/protrusion checked; primary maximum torque 0.2 Nm, lower if actual
+PCB/module hardware requires it. Keep parts beneath the module within the
+released body/height limits and verify the actual production card/enclosure fit.
+
+E22-900MM22S sourcing in the cost model requires the exact JLCPCB Standard PCBA
+allocation; there is no assumed standalone offer for another builder. Confirm
+all quoted order quantities, pack handling and supply dates before procurement.
+The RM520N-GL, antennas, cables, retention hardware outside the fitted BOM,
+enclosure and eUICC provisioning are separate supplied items.
+
+Installation contract: regulated 48 V +/-5% passive nonisolated SELV PoE, or
+regulated 12 V +/-5% at J2, dry ventilated 0–40 C ambient at at most 2000 m altitude.
+J2 pin 1 positive/pin 2 GND; a correctly wired rated barrel-to-JST adapter may be
+used. This passive-input revision does not negotiate IEEE PoE/PoE+/PoE++ power.
+Use the designated injector/adapter and verify polarity/voltage before connection.
+The separately saved PoE++ design is not the fabrication input for this package.
+
+Complete receiving inspection and dummy-load normal/fault/thermal/backfeed gates
+in FIRST_ARTICLE_TEST.txt before fitting the modem. After those pass, fit the
+modem and complete USB/Ethernet/SIM/LoRa and enclosure tests before repeating a
+larger lot. Preserve test records with the exact hardware/firmware revision.

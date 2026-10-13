@@ -1,0 +1,82 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-12T18:54:37",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/9f463650-1ded-435e-96c4-5fb413d72b62",
+            "violations": []
+        },
+        {
+            "path": "/Passive cable-power connections and protected auxiliary DC/",
+            "uuid_path": "/9f463650-1ded-435e-96c4-5fb413d72b62/a1fef339-6394-5d41-9f3f-b44b85cc006e",
+            "violations": []
+        },
+        {
+            "path": "/Protected 12 V bus and regulated low-voltage rails/",
+            "uuid_path": "/9f463650-1ded-435e-96c4-5fb413d72b62/b78b40e8-3925-5223-8570-e55b94f093e5",
+            "violations": []
+        },
+        {
+            "path": "/RM520N-GL primary / RM551E-GL compatible M.2 socket, SIM 1, eUICC (SIM 2), USB-C/",
+            "uuid_path": "/9f463650-1ded-435e-96c4-5fb413d72b62/f887535a-a945-5cc0-9489-1072ba674005",
+            "violations": []
+        },
+        {
+            "path": "/RTL8125BG 2.5 GbE/",
+            "uuid_path": "/9f463650-1ded-435e-96c4-5fb413d72b62/0d93238e-e90f-5b03-83b6-b033137defc8",
+            "violations": []
+        },
+        {
+            "path": "/48 V passive input protection and 12 V synchronous buck/",
+            "uuid_path": "/9f463650-1ded-435e-96c4-5fb413d72b62/04ff4594-72fe-5fd5-8e2b-eda1d8a7648b",
+            "violations": []
+        },
+        {
+            "path": "/Modem current ceiling and always-on supply/",
+            "uuid_path": "/9f463650-1ded-435e-96c4-5fb413d72b62/30fcecd2-9788-57fb-9cbc-6ada3d5363dd",
+            "violations": []
+        },
+        {
+            "path": "/OOB controller, US915 radio and recovery interface/",
+            "uuid_path": "/9f463650-1ded-435e-96c4-5fb413d72b62/f042a552-6584-5720-99fd-b114398e5849",
+            "violations": []
+        },
+        {
+            "path": "/OOB monitoring, power control and modem recovery/",
+            "uuid_path": "/9f463650-1ded-435e-96c4-5fb413d72b62/229935cf-90b2-58d3-a14f-c3f095b25ed6",
+            "violations": []
+        },
+        {
+            "path": "/OOB USB ownership and reset fallback/",
+            "uuid_path": "/9f463650-1ded-435e-96c4-5fb413d72b62/f57065b5-d208-54d6-bac2-42c6899ccaaf",
+            "violations": []
+        }
+    ],
+    "source": "carrier.kicad_sch"
+}

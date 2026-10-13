@@ -1,0 +1,51 @@
+{
+  "revision": "rev-a",
+  "kicad_version": "10.0.6",
+  "public_PCB_sha256": "1e1c08f8d13c7cdec4f65c9a95c2adc67a2a7758db29563f2e71c7588dd6bd23",
+  "engineering_PCB_sha256": "e15e2a0979d38aae0a3d75c003a6ce9969219f9603f77fcd78a2efac678b3d93",
+  "publication_changes": [
+    "One illustrative package model reference changed; electrical and manufacturing PCB data unchanged.",
+    "Two root schematic annotation strings point to public documentation; circuit unchanged.",
+    "Unused imported library assets excluded; all used footprints and models resolve.",
+    "BOM theme labels neutralized; all worksheet, formula and cached data unchanged.",
+    "Machine schedule provenance pointers replaced with descriptive labels; numeric requirements unchanged.",
+    "Preview filenames made portable across operating systems."
+  ],
+  "fabrication_files_byte_identical_to_engineering_export": true,
+  "fresh_export_matches_artwork_drills_and_IPC_after_timestamp_normalization": true,
+  "native_DRC_errors": 0,
+  "native_ERC_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity_issues": 0,
+  "reviewed_DRC_warnings": 2,
+  "physical_hardware_tested": false,
+  "supplier_CAM_accepted": false,
+  "model_dependencies": {
+    "manufacturing_unique": 33,
+    "preview_unique": 106,
+    "missing": 0
+  },
+  "fabrication_files": {
+    "IPC356-net-name-map.csv": "9689ce39ee80479de9ed7bbc5e85d259107b2f29270e657af2852d9bbf8d85f6",
+    "carrier-B_Cu.gbl": "459f36e0657e17f558c5e20d614b8b87e9a99f56757bfda17155b9e6db66ae26",
+    "carrier-B_Mask.gbs": "556391114a53d4ecf337d8ba8161a0b27630b5c2923debe785d151e86c92a425",
+    "carrier-B_Paste.gbp": "70d0df56d642314049e5d26a9a0a45fe8c3d60f3d4d6fa1593cd39eb60a6fc9a",
+    "carrier-B_Silkscreen.gbo": "594aa90a803e69d2eecc4be0501feb58ff63e8c08449ae44034a8fe0a8816a87",
+    "carrier-Edge_Cuts.gm1": "bd54e099e821afe4c2b860dc39dc99d346f27ebfd07515d0713945d4365b4c5e",
+    "carrier-F_Cu.gtl": "d6e4d14a5389cae279d56f22bad6ecc7dca945d6ff45c7cdb095755676afa0a2",
+    "carrier-F_Mask.gts": "1f1cc9a0657bac0169b0bf0baa4b1395b6d47b0f83e489d92ea538d144c66576",
+    "carrier-F_Paste.gtp": "ced197f1a61f89680b10078c474eb4c9a3ad5d3f34622f23b74156837eedf2e5",
+    "carrier-F_Silkscreen.gto": "db27c5865d99a77d5e71162f5bad06c4d58da5139d0b517bfdd19aa9cde20ad0",
+    "carrier-In1_Cu.g1": "b2ba200451e916db15f53418dbde821d4f94ac10912a0c19f82590a4f4d001a9",
+    "carrier-In2_Cu.g2": "ee1b0097b44f3c257a71b3226d70d93d6270f2089a1c832269b2a1aabbd1744b",
+    "carrier-In3_Cu.g3": "48723b7e650981b0ab575d389f20057daa674acab73c58729d94c449f4f7fd24",
+    "carrier-In4_Cu.g4": "1abb37c4766e2936b574bdffed065387126b95944f237857c7626f1717095e13",
+    "carrier-NPTH-drl_map.pdf": "14c1cfb02815233b1412e46440686818158bc56b9a72f392b10ee2d564d2af29",
+    "carrier-NPTH.drl": "48a2fbb6bc9255a4953a26c004a7d6c085d23bbaf9400f19760552b0a6902405",
+    "carrier-PTH-drl_map.pdf": "e9c8d9d3269903a32fcdfaebf4b6df3fc1e1e4fa11aff99abceb14d3a5bc28c8",
+    "carrier-PTH.drl": "35d829d3a8b445316001d95c0cd6b216b861f32892fa928f8bb48f79408495fa",
+    "carrier-drill.rpt": "78db4c097d882ee2a5567fc4a90b5055a84f42a8ad3c2fb0dfa2332b8852387b",
+    "carrier-job.gbrjob": "eb61203f268a037505dcbb4a1318273005910c82f49a17176fae8d89928833dc",
+    "carrier.ipc": "429ef4a4a55850f7c8c05019cd96400188ad1422844e822dea6a488d4f7a2cad"
+  }
+}

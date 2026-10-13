@@ -1,0 +1,10 @@
+#VRML V2.0 utf8
+# Illustrative assembly preview; not a vendor-qualified mechanical model.
+Shape { appearance Appearance { material Material { diffuseColor 0.055 0.065 0.078 specularColor .35 .35 .35 shininess 0.45 } } geometry IndexedFaceSet { solid FALSE coord Coordinate { point [-1.03346 0.915354 0.019685,
+1.03346 0.915354 0.019685,
+1.03346 -0.915354 0.019685,
+-1.03346 -0.915354 0.019685,
+-1.03346 0.915354 0.551181,
+1.03346 0.915354 0.551181,
+1.03346 -0.915354 0.551181,
+-1.03346 -0.915354 0.551181] } coordIndex [1,2,3,0,-1,7,6,5,4,-1,4,5,1,0,-1,5,6,2,1,-1,6,7,3,2,-1,7,4,0,3,-1] } }

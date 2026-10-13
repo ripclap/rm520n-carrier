@@ -1,0 +1,135 @@
+RM520N-GL carrier Rev A — first article commissioning
+
+Purpose: qualify the first manufactured assembly before installing an expensive
+modem or repeating assembly of a larger lot. These are acceptance measurements
+to perform on hardware; the CAD and numerical reviews do not claim they were run.
+
+1. Receiving inspection
+Compare the fabrication/assembly revision and supplied MPNs with the release
+manifest and fitted BOM. Review drill/annulus/wall/cap/cover inspection records
+against the per-site fabrication schedule. Inspect both faces and X-ray the
+exposed-pad and filled/capped terminal interfaces. Inspect the specified H1 SMT
+spacer solder deposit and final seated card support height. Confirm the SIM card
+can be inserted through the intended enclosure opening without removing the PCB.
+Leave the RM520N-GL and antennas unfitted for initial power/fault testing.
+
+2. Safe initial power and normal operation
+Use a current-limited, regulated 12 V +/-5% source at J2 (pin 1 positive, pin 2
+GND), or the specified regulated 48 V +/-5% passive injector for J1; first test
+each input separately, with USB and the modem disconnected. Verify TP1/V12,
+TP2/V3V7, TP3/V3V3 and TP4/V0V95 against the released rail limits. Check always-on
+3.3 V and the independently switched radio rail. Record startup, source transfer,
+input current and converter temperatures. Prove reverse blocking and check that
+the external USB VBUS cannot power the modem or management rails unexpectedly.
+For passive input, verify actual loaded FILTER at least 41.562266501 V and
+unloaded startup at least 41.977840535 V. For auxiliary input, verify at least
+11.4 V at the actual J2 pins and use rated 3 A wiring. Lower-voltage energy or
+impedance diagnostics do not reduce these installation limits.
+
+Connect an instrumented dummy load in place of the modem. Exercise the declared
+modem load, including load steps and cold/hot startup at both input limits.
+Qualify any 4 A load step after actual protected PG/output validity. Healthy
+input-bank qualification around 407 ms, the 20.9096 ms minimum fault timer, and
+the hardware PG/FCPO qualification of at least 180 ms are separate events.
+The U3 startup-current screen of 5.23055 A is not an input-energy guarantee.
+The forced 4 A/all-selected-capacitors energy quotient of 31.657406 ms exceeds
+the minimum fault timer and is held; it is not an admitted startup rating or
+a guaranteed startup deadline.
+The continuous operating target is 3 A at 0–40 C ambient. Begin any sustained 4 A
+static test at or below 20 C, subject to the final released numerical contract.
+The current complete actual-board calculation supports this initial limit only
+with the specified efficiency, finished metal and cooling conditions. Higher
+ambient or longer peak operation requires measured efficiency, the actual
+thermal path and junction temperature at most 125 C, as well as the normal input
+RMS limit. A 4 A electrical voltage screen alone is not a continuous thermal
+rating, and no peak duty cycle is assumed.
+For the selected operating target, require a measured main-stage thermal path
+of at most 32 C/W and junction temperature at most 125 C. Keep component and
+winding case temperatures within the released 70 C engineering ceiling.
+The RM520N-GL normal VCC window is 3.135–4.4 V;
+require the measured waveform, including measurement uncertainty, to remain
+inside that window and ripple to stay below 100 mV peak-to-peak. Numerical
+review includes rail loss and separate engineering reserves; it does not admit
+a 4.4 A continuous load. Record calibrated voltage and temperature at the modem
+connector, using a short-ground or differential measurement arrangement.
+Require measured hot eFuse resistance at most 50 mOhm and junction at most 125 C,
+actual modem-buck efficiency at least 88%, main-converter efficiency at least 90%,
+always-on efficiency at least 82%, and each of the two cascaded Ethernet
+regulators at least 82% in their declared load cases. These are engineering
+commissioning requirements, not guaranteed manufacturer efficiencies.
+Verify the separate always-on 850 mA
+allocation plus the 3.75 mA observer/bus allowance. For passive PoE, require
+normal input RMS at most 0.80 A for the aggregate input AND conservative each
+injection leg, including PWM/ripple and real load bursts. Do not infer equal current
+sharing. Measure powered Ethernet behavior, winding DC imbalance and temperature
+at the actual cable/CT conditions; keep magnetics case at most 70 C. A mean
+input-current calculation alone does not pass this RMS gate. Record component and enclosure
+temperatures and the cooling arrangement used for every load result.
+
+3. Protection, recovery and independent management
+With the modem still absent, use a qualified current-limited fault fixture to
+test overvoltage cutoff, short circuit/overload, latch/rearm and input removal.
+Test protected OUT shorts and direct REG shorts as separate cases, recording
+regulator current, inductor current and hiccup/latched response rather than
+assuming the protected OUT switch also limits a short ahead of that switch.
+Capture the modem-rail peak, response time, and time above 4.4 V. Require peak
+plus measurement uncertainty to remain below the 4.7 V absolute maximum and
+post-threshold rise to remain at or below the 100 mV engineering allowance.
+The absolute maximum does not permit continued normal operation above 4.4 V;
+OVLO is recoverable, and its published response time is typical rather than a
+guaranteed maximum. If either bound fails, revise the hardware before fitting
+the modem. A firmware delay is not fast overvoltage protection.
+
+Prove that modem OFF/reset preserves management MCU and LoRa power. Confirm
+that BOTH permanent REG bleeds, R221 and R779, are fitted as 1 kOhm from
+V3V7_REG to GND. Observe REG decay with joint EN low and verify protected OUT
+discharge and the released backfeed/injection limits. The 5 s joint-EN dwell
+is an operational firmware/host recovery procedure; blank/reset MCU hardware
+autostart does not implement that dwell. Modem power recovery must hold BOTH
+joint buck/eFuse EN low for at least 5 s AND verify actual
+V3V7 below 100 mV before restart, restarting the dwell after controller reset.
+Radio recovery must hold RUN low for at least 350 ms AND verify its rail below
+100 mV. A healthy blank/reset MCU must allow POWER_OK-qualified hardware
+modem autostart, while radio remains OFF and USB grant remains disabled.
+An absent physical joint-EN hardware driver must leave joint EN fail-safe LOW;
+that is a different condition from an installed blank/reset MCU. Verify these
+defaults, hardware watchdog recovery, hardware power-good qualification, and
+no backfeed through USB, UART service
+pads, status buses or radio isolation. Total input loss removes management power;
+this design has no battery ride-through.
+
+4. Modem and data interfaces
+After the preceding gates pass, fit the exact production RM520N-GL firmware and
+record its revision. Verify startup, FULL_CARD_POWER_OFF and RESET timing against
+that firmware's Quectel requirements; hold the manual FCPO request for at least
+1 s. Verify the hardware FCPO release qualification delays at least 180 ms after
+actual protected PG/output validity; this is separate from manual FCPO request
+timing and the joint EN recovery dwell. Verify 2.5G Ethernet negotiation and sustained traffic at the selected
+magnetics' temperature/current conditions, all four cable pairs, input limits,
+DC imbalance and transmit bursts. Validate high-speed signal performance on the
+manufactured stack/coupons; CAD impedance geometry is not an eye-diagram test.
+
+Test USB-C service attach, unplug, both mux ownership selections, powered-off
+states and granted power-good states. Verify external VBUS-valid and module PG
+hardware isolation before exercising the internal ESP32-S3 USB full-speed host
+with the intended Quectel AT endpoints. USB enumeration and AT support depend
+on the exact module firmware. This board has no assumed M.2 debug UART; SSH or
+console support over the planned LoRa OOB network must be verified as a software
+service on that firmware, not inferred from the copper layout.
+
+Test physical SIM insertion/removal/detect, modem SIM selection and the sourced
+eUICC profile/provisioning. Verify management telemetry calibration and I2C
+addresses (NCA9536 0x41; temperature sensor 0x48). Treat current telemetry as
+coarse until calibrated over its specified range.
+
+5. LoRa and enclosure
+Configure the E22-900MM22S for the selected US 915 MHz network plan and verify
+SPI/control timing, radio reset, fault recovery and link performance with the
+actual antenna and enclosure. Verify RF operation and deployment compliance for
+the final assembly/network configuration. Authenticate recovery commands, bound
+command duration and retry count, reject replayed commands, and log resets.
+The network architecture remains software work; no arbitrary shell transport or
+production OOB network behavior is claimed by this first PCB revision.
+
+Record a signed first-article result with supply/firmware/fixture revisions,
+waveforms, temperatures, measurements and disposition for every failed gate.

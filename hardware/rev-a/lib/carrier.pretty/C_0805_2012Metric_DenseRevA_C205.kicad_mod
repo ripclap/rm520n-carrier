@@ -1,0 +1,194 @@
+(footprint "C_0805_2012Metric_DenseRevA_C205"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
+	(tags "capacitor")
+	(property "Reference" "REF**"
+		(at 0 -1.68 0)
+		(layer "F.SilkS")
+		(uuid "01047bd2-17c6-4f16-880b-6aef619f91fa")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "C_0805_2012Metric_DenseRevA_C205"
+		(at 0 1.68 0)
+		(layer "F.Fab")
+		(uuid "3d98268a-152a-4832-bf99-087954687186")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://search.kemet.com/component-documentation/download/specsheet/C0805C103K1RACTU"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4294fd8a-a91d-49f3-b8e3-90be7b93a8ba")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6358f6c1-c416-40bb-8566-eadb70c4499d")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "e7675e76-4fb6-41b8-baba-0358361aecb8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MPN" "C0805C103K1RACTU"
+		(at 0 0 270)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "9afa3851-77f8-4392-91c7-be86523c054b")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "KEMET"
+		(at 0 0 270)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "dc994d87-beda-4d61-835d-b6306ea51c7e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC" ""
+		(at 0 0 270)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "f7a44fb1-901d-4443-b2f2-d9eb28acc575")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Note" "U21 downstream controlledcharge cap10n100V through100ohm seriesR731, TI recommendedseriesresistor whenactualcap>10n. EngineeringeffectiveC5..15.18n at17.4V; guaranteeddVdtcurrent.81..3.82u gives minimum16ms12Vramp undermodeledClower. This removeslarge downstreambank fromMPcoldSS; no claim actuallotcombinedC guaranteed."
+		(at 0 0 270)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "17ff8630-c20f-4011-97a0-a0bfa7a82e14")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(sheetname "/Passive cable-power connections and protected auxiliary DC")
+	(sheetfile "power-input.kicad_sch")
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.261252 -0.735)
+		(end 0.261252 -0.735)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d889e20a-1e89-4333-a080-147639e83b0a")
+	)
+	(fp_line
+		(start -0.261252 0.735)
+		(end 0.261252 0.735)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1b4bdf30-a280-471e-99af-035732efd567")
+	)
+	(fp_poly
+		(pts
+			(xy -1.534077 0.528407) (xy -1.519374 0.586754) (xy -1.494288 0.641983) (xy -1.459742 0.691847) (xy -1.416847 0.734742)
+			(xy -1.366983 0.769288) (xy -1.311754 0.794374) (xy -1.253409 0.809076) (xy -1.216253 0.812) (xy -1.207 0.812)
+			(xy -1.207 0.832) (xy 1.207 0.832) (xy 1.207 0.811999) (xy 1.21625 0.811999) (xy 1.253407 0.809077)
+			(xy 1.311754 0.794374) (xy 1.366983 0.769288) (xy 1.416847 0.734742) (xy 1.459742 0.691847) (xy 1.494288 0.641983)
+			(xy 1.519374 0.586754) (xy 1.534076 0.528409) (xy 1.537 0.491253) (xy 1.536999 -0.49125) (xy 1.534077 -0.528407)
+			(xy 1.519374 -0.586754) (xy 1.494288 -0.641983) (xy 1.459742 -0.691847) (xy 1.416847 -0.734742) (xy 1.366983 -0.769288)
+			(xy 1.311754 -0.794374) (xy 1.253409 -0.809076) (xy 1.216253 -0.812) (xy 1.207 -0.812) (xy 1.207 -0.832)
+			(xy -1.207 -0.832) (xy -1.207 -0.811999) (xy -1.21625 -0.811999) (xy -1.253407 -0.809077) (xy -1.311754 -0.794374)
+			(xy -1.366983 -0.769288) (xy -1.416847 -0.734742) (xy -1.459742 -0.691847) (xy -1.494288 -0.641983)
+			(xy -1.519374 -0.586754) (xy -1.534076 -0.528409) (xy -1.537 -0.491253) (xy -1.536999 0.49125)
+		)
+		(stroke
+			(width 0.025)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "0ac553a6-4911-49e4-a10f-f635181c7b6c")
+	)
+	(fp_rect
+		(start -1 -0.625)
+		(end 1 0.625)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "3f8ebcab-0c4b-4d8a-ad31-663a59c3f406")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "ac931840-5b3e-424e-a38b-1b8451978f8a")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.08)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -0.95 0)
+		(size 1 1.45)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "0f2e0044-7762-4c08-b570-160e98be265d")
+	)
+	(pad "2" smd roundrect
+		(at 0.95 0)
+		(size 1 1.45)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "9182ec13-7a71-45fd-99d9-be640e4372de")
+	)
+	(embedded_fonts no)
+)

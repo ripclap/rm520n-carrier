@@ -1,0 +1,217 @@
+(footprint "RevA_Dense100_50_R768"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
+	(tags "resistor")
+	(property "Reference" "R768"
+		(at -3.75 -1 180)
+		(layer "F.SilkS")
+		(uuid "355660c1-0709-441f-8d79-e22b56a3ec98")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "27k 0.1% 25ppm"
+		(at 0 1.43 0)
+		(layer "F.Fab")
+		(uuid "036b7439-058a-4a86-ab5c-2178d97314ad")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://yageogroup.com/component-documentation/download/specsheet/RT0603BRD0727KL"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0bb22f8d-211b-4cf6-9dc0-a5d891febfe6")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0f26df59-1914-4078-8e3f-9c22dd253a3d")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "54c7283e-4673-4c2e-9dd4-72a3e4cd3f31")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MPN" "RT0603BRD0727KL"
+		(at 0 0 -90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "ca58be40-9a0f-437d-b94f-51147e6508a6")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(property "Manufacturer" "YAGEO"
+		(at 0 0 -90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "fb399a84-a250-455f-a8a1-250f38b8ac48")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(property "LCSC" ""
+		(at 0 0 -90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "905ea43a-c5ec-4a77-9be6-dc1ceccbef68")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(property "Note" "Private283 TPS259474 OVLO upper27k0.1%25ppm plusretainedR786100Ohm4%series/common10kR769lower. Primary1.183..1.223V/100nA and0.55%service yields rise4.3507265..4.5771388V. Total100mVpostthresholdfaultreserve gives4.6771388V<4.7absolute with22.861mV margin. Normalfullphysical4.056V+ripplewindow must bindactualCu;typ1.2usnotguaranteed. Private418 exact native denseassembly courtyard encloses conservative maximum body(1.7, 0.95)mm plus100umXY placement, and all actual pads plus50um edge margin. Physical same-net solder pads remain separately screened at>=100um gap; no electrical clearance rule is waived."
+		(at 0 0 -90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "9a5218d7-1340-4d66-a2a4-6e2694303bb5")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(sheetname "/OOB monitoring, power control and modem recovery")
+	(sheetfile "oob-management.kicad_sch")
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.237258 -0.5225)
+		(end 0.237258 -0.5225)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1eee96d4-0675-49bb-8cc6-1110a1ff1288")
+	)
+	(fp_line
+		(start -0.237258 0.5225)
+		(end 0.237258 0.5225)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d7bfdd86-00f2-4791-a1aa-2314b792378c")
+	)
+	(fp_line
+		(start -1.275 -0.575)
+		(end -1.275 0.575)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "24aba580-03a7-51a8-b769-3aaa5eb6d810")
+	)
+	(fp_line
+		(start -1.275 0.575)
+		(end 1.275 0.575)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "d085acab-593f-584b-80d5-a803ad56efbc")
+	)
+	(fp_line
+		(start 1.275 -0.575)
+		(end -1.275 -0.575)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "52533ef5-2244-5d44-836c-a0a82ef5ad32")
+	)
+	(fp_line
+		(start 1.275 0.575)
+		(end 1.275 -0.575)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "86f4ee53-e362-5d58-98a0-a2a9aef487e5")
+	)
+	(fp_rect
+		(start -0.8 -0.4125)
+		(end 0.8 0.4125)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "7d847834-6f79-461c-a367-6039187fef97")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "25d38c82-7ba3-4c20-b702-1db6c067b52c")
+		(effects
+			(font
+				(size 0.4 0.4)
+				(thickness 0.06)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -0.825 0)
+		(size 0.8 0.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "72ae1d06-5a5d-5bca-bcf6-dde9abccec94")
+	)
+	(pad "2" smd roundrect
+		(at 0.825 0)
+		(size 0.8 0.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "ec1467e3-c8ed-550d-9d24-d7e556fda339")
+	)
+	(embedded_fonts no)
+)

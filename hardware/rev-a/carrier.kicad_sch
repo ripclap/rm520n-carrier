@@ -1,0 +1,193 @@
+(kicad_sch (version 20231120) (generator carrier_gen)
+
+  (uuid 9f463650-1ded-435e-96c4-5fb413d72b62)
+
+  (paper "A2")
+
+  (title_block
+    (title "RM520N-GL passive carrier with independent US915 OOB")
+    (date "2026-10-03")
+    (rev "A")
+    (comment 1 "ENGINEERING PROTOTYPE - not a fabrication approval")
+    (comment 2 "Validation: docs/validation.md; BOM and build files: manufacturing/rev-a/")
+  )
+  (lib_symbols)
+
+  (text "RM520N-GL / RTL8125BG / independent US915 OOB prototype"
+    (at 20.32 20.32 0)
+    (effects (font (size 2.54 2.54) bold) (justify left))
+    (uuid 66332da0-e8b8-4a0c-89cc-5c4006bcafde)
+  )
+  (text "48 V passive cable power -> protected buck 12 V -> modem / Ethernet rails"
+    (at 20.32 35.56 0)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 8606d725-e01f-4d87-8558-ba2d43d17784)
+  )
+  (text "Auxiliary DC, USB, modem coax and mounting share system GND; no power galvanic isolation."
+    (at 20.32 40.64 0)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid d662311b-5726-4463-b597-019a7c92817e)
+  )
+  (text "Supplier acceptance and hardware tests: docs/validation.md."
+    (at 20.32 45.72 0)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid ef370f8f-9f8f-4a43-8599-62ea374369d0)
+  )
+
+  (sheet (at 20.32 68.58) (size 114.3 30.48)
+    (stroke (width 0.254) (type default))
+    (fill (color 0 0 0 0))
+    (uuid a1fef339-6394-5d41-9f3f-b44b85cc006e)
+    (property "Sheetname" "Passive cable-power connections and protected auxiliary DC" (at 20.32 66.03999999999999 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (property "Sheetfile" "power-input.kicad_sch" (at 20.32 101.6 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (instances
+      (project "carrier"
+        (path "/9f463650-1ded-435e-96c4-5fb413d72b62" (page "2"))
+      )
+    )
+  )
+
+  (sheet (at 195.57999999999998 68.58) (size 114.3 30.48)
+    (stroke (width 0.254) (type default))
+    (fill (color 0 0 0 0))
+    (uuid b78b40e8-3925-5223-8570-e55b94f093e5)
+    (property "Sheetname" "Protected 12 V bus and regulated low-voltage rails" (at 195.57999999999998 66.03999999999999 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (property "Sheetfile" "power-rails.kicad_sch" (at 195.57999999999998 101.6 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (instances
+      (project "carrier"
+        (path "/9f463650-1ded-435e-96c4-5fb413d72b62" (page "3"))
+      )
+    )
+  )
+
+  (sheet (at 370.84 68.58) (size 114.3 30.48)
+    (stroke (width 0.254) (type default))
+    (fill (color 0 0 0 0))
+    (uuid f887535a-a945-5cc0-9489-1072ba674005)
+    (property "Sheetname" "RM520N-GL primary / RM551E-GL compatible M.2 socket, SIM 1, eUICC (SIM 2), USB-C" (at 370.84 66.03999999999999 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (property "Sheetfile" "modem-interfaces.kicad_sch" (at 370.84 101.6 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (instances
+      (project "carrier"
+        (path "/9f463650-1ded-435e-96c4-5fb413d72b62" (page "4"))
+      )
+    )
+  )
+
+  (sheet (at 20.32 137.16) (size 114.3 30.48)
+    (stroke (width 0.254) (type default))
+    (fill (color 0 0 0 0))
+    (uuid 0d93238e-e90f-5b03-83b6-b033137defc8)
+    (property "Sheetname" "RTL8125BG 2.5 GbE" (at 20.32 134.62 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (property "Sheetfile" "ethernet.kicad_sch" (at 20.32 170.18 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (instances
+      (project "carrier"
+        (path "/9f463650-1ded-435e-96c4-5fb413d72b62" (page "5"))
+      )
+    )
+  )
+
+  (sheet (at 195.57999999999998 137.16) (size 114.3 30.48)
+    (stroke (width 0.254) (type default))
+    (fill (color 0 0 0 0))
+    (uuid 04ff4594-72fe-5fd5-8e2b-eda1d8a7648b)
+    (property "Sheetname" "48 V passive input protection and 12 V synchronous buck" (at 195.57999999999998 134.62 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (property "Sheetfile" "class6-converter.kicad_sch" (at 195.57999999999998 170.18 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (instances
+      (project "carrier"
+        (path "/9f463650-1ded-435e-96c4-5fb413d72b62" (page "6"))
+      )
+    )
+  )
+
+  (sheet (at 370.84 137.16) (size 114.3 30.48)
+    (stroke (width 0.254) (type default))
+    (fill (color 0 0 0 0))
+    (uuid 30fcecd2-9788-57fb-9cbc-6ada3d5363dd)
+    (property "Sheetname" "Modem current ceiling and always-on supply" (at 370.84 134.62 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (property "Sheetfile" "class6-grants.kicad_sch" (at 370.84 170.18 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (instances
+      (project "carrier"
+        (path "/9f463650-1ded-435e-96c4-5fb413d72b62" (page "7"))
+      )
+    )
+  )
+
+  (sheet (at 20.32 205.74) (size 114.3 30.48)
+    (stroke (width 0.254) (type default))
+    (fill (color 0 0 0 0))
+    (uuid f042a552-6584-5720-99fd-b114398e5849)
+    (property "Sheetname" "OOB controller, US915 radio and recovery interface" (at 20.32 203.20000000000002 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (property "Sheetfile" "oob-controller-radio.kicad_sch" (at 20.32 238.76000000000002 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (instances
+      (project "carrier"
+        (path "/9f463650-1ded-435e-96c4-5fb413d72b62" (page "8"))
+      )
+    )
+  )
+
+  (sheet (at 195.57999999999998 205.74) (size 114.3 30.48)
+    (stroke (width 0.254) (type default))
+    (fill (color 0 0 0 0))
+    (uuid 229935cf-90b2-58d3-a14f-c3f095b25ed6)
+    (property "Sheetname" "OOB monitoring, power control and modem recovery" (at 195.57999999999998 203.20000000000002 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (property "Sheetfile" "oob-management.kicad_sch" (at 195.57999999999998 238.76000000000002 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (instances
+      (project "carrier"
+        (path "/9f463650-1ded-435e-96c4-5fb413d72b62" (page "9"))
+      )
+    )
+  )
+
+  (sheet (at 370.84 205.74) (size 114.3 30.48)
+    (stroke (width 0.254) (type default))
+    (fill (color 0 0 0 0))
+    (uuid f57065b5-d208-54d6-bac2-42c6899ccaaf)
+    (property "Sheetname" "OOB USB ownership and reset fallback" (at 370.84 203.20000000000002 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (property "Sheetfile" "oob-usb-ownership.kicad_sch" (at 370.84 238.76000000000002 0)
+      (effects (font (size 1.0 1.0)) (justify left))
+    )
+    (instances
+      (project "carrier"
+        (path "/9f463650-1ded-435e-96c4-5fb413d72b62" (page "10"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)

@@ -1,0 +1,161 @@
+(footprint "TestPoint_Pad_D1.0mm_DenseRevA_TP8"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "SMD pad as test Point, diameter 1.0mm")
+	(tags "test point SMD pad")
+	(property "Reference" "REF**"
+		(at 0 -1.448 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "0c212efb-69de-4b7d-98c6-78f06c433802")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "TestPoint_Pad_D1.0mm_DenseRevA_TP8"
+		(at 0 1.55 0)
+		(layer "F.Fab")
+		(uuid "02656bc5-b26c-4d48-983a-6e49dab9c8b5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7453384d-4dea-4e62-b834-60cb4b4fe2a5")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c4c4bdbd-ac33-42f4-8d23-7efcf0547275")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC" ""
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "2c1b3426-4f6c-43c2-9dd1-d59affc549ef")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Note" ""
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "f212a846-b635-4a39-a4dc-017aa3160c4f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" ""
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "8f29a4cd-232f-4120-abca-fb1be070b20c")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MPN" ""
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "e6033c26-72b9-409d-b00f-92841b9a5815")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(sheetname "/RM520N-GL primary / RM551E-GL compatible M.2 socket, SIM 1, eUICC (SIM 2), USB-C")
+	(sheetfile "modem-interfaces.kicad_sch")
+	(attr exclude_from_pos_files exclude_from_bom)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_circle
+		(center 0 0)
+		(end 0 0.7)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "179b6c1d-40fd-44ef-b792-5e250e185b32")
+	)
+	(fp_poly
+		(pts
+			(xy 0.587 -0.032965) (xy 0.579618 -0.098481) (xy 0.564948 -0.162758) (xy 0.543172 -0.224989) (xy 0.514565 -0.284391)
+			(xy 0.479489 -0.340216) (xy 0.438382 -0.391762) (xy 0.391762 -0.438382) (xy 0.340216 -0.479489) (xy 0.284391 -0.514565)
+			(xy 0.224989 -0.543172) (xy 0.162758 -0.564948) (xy 0.098481 -0.579618) (xy 0.032965 -0.587) (xy -0.032965 -0.587)
+			(xy -0.098481 -0.579618) (xy -0.162758 -0.564948) (xy -0.224989 -0.543172) (xy -0.284391 -0.514565)
+			(xy -0.340216 -0.479489) (xy -0.391762 -0.438382) (xy -0.438382 -0.391762) (xy -0.479489 -0.340216)
+			(xy -0.514565 -0.284391) (xy -0.543172 -0.224989) (xy -0.564948 -0.162758) (xy -0.579618 -0.098481)
+			(xy -0.587 -0.032965) (xy -0.587 0.032965) (xy -0.579618 0.098481) (xy -0.564948 0.162758) (xy -0.543172 0.224989)
+			(xy -0.514565 0.284391) (xy -0.479489 0.340216) (xy -0.438382 0.391762) (xy -0.391762 0.438382) (xy -0.340216 0.479489)
+			(xy -0.284391 0.514565) (xy -0.224989 0.543172) (xy -0.162758 0.564948) (xy -0.098481 0.579618) (xy -0.032965 0.587)
+			(xy 0.032965 0.587) (xy 0.098481 0.579618) (xy 0.162758 0.564948) (xy 0.224989 0.543172) (xy 0.284391 0.514565)
+			(xy 0.340216 0.479489) (xy 0.391762 0.438382) (xy 0.438382 0.391762) (xy 0.479489 0.340216) (xy 0.514565 0.284391)
+			(xy 0.543172 0.224989) (xy 0.564948 0.162758) (xy 0.579618 0.098481) (xy 0.587 0.032965)
+		)
+		(stroke
+			(width 0.025)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "6133450e-b429-4580-9b81-53742766433c")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -1.45 0)
+		(layer "F.Fab")
+		(uuid "87b15497-1950-47c2-8a0b-ff9483f0b171")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd circle
+		(at 0 0)
+		(size 1 1)
+		(layers "F.Cu" "F.Mask")
+		(uuid "a7b4741f-2020-4dfe-9aab-302e7ca9b366")
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,148 @@
+(footprint "Littelfuse_451_6.1x2.69"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Littelfuse451/453 datasheet recommended land:6.86mm outer span,2.95mm inner gap,3.15mm transverse pad height. Fuse6.10x2.69mm,2.69mmheight. Pins1/2 interchangeable.")
+	(property "Reference" "REF**"
+		(at 0 -2.85 0)
+		(layer "F.SilkS")
+		(uuid "df94dfff-0c65-4646-88e4-eb0134e30354")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Value" "Littelfuse_451_6.1x2.69"
+		(at 0 2.85 0)
+		(layer "F.Fab")
+		(uuid "c5c39db1-a833-4fce-81e3-5df7f46ca7bb")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a13c47c8-69c7-48fc-ac30-20a495074b75")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "89ff196a-7cf5-4f1f-8d16-782e815dc818")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -3.75 -1.85)
+		(end 3.75 -1.85)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "ca99c774-fbaa-48d8-bb96-aa15437ce89c")
+	)
+	(fp_line
+		(start -3.75 1.85)
+		(end -3.75 -1.85)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "5e9f0949-9991-44de-9d0e-284793c06f16")
+	)
+	(fp_line
+		(start 3.75 -1.85)
+		(end 3.75 1.85)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "c5134e07-a6c0-46df-9461-d4dfcf336b05")
+	)
+	(fp_line
+		(start 3.75 1.85)
+		(end -3.75 1.85)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "2911daa0-a4b7-48c1-863a-3d9116d93208")
+	)
+	(fp_line
+		(start -3.05 -1.345)
+		(end 3.05 -1.345)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "a4e5a9e9-5f8f-4076-b9bd-bf20d845b71e")
+	)
+	(fp_line
+		(start -3.05 1.345)
+		(end -3.05 -1.345)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "59f91bfd-0524-44f6-8fc1-da1f50a46459")
+	)
+	(fp_line
+		(start 3.05 -1.345)
+		(end 3.05 1.345)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "06b880c0-a9c6-4a2d-a222-e72615688c80")
+	)
+	(fp_line
+		(start 3.05 1.345)
+		(end -3.05 1.345)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "b66f3b40-46dd-420a-99cc-350e174c9dcd")
+	)
+	(pad "1" smd roundrect
+		(at -2.4525 0)
+		(size 1.955 3.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.02557544757)
+		(thermal_bridge_angle 45)
+		(uuid "b660f9ba-3089-4385-b6f8-aa38f9a0808d")
+	)
+	(pad "2" smd roundrect
+		(at 2.4525 0)
+		(size 1.955 3.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.02557544757)
+		(thermal_bridge_angle 45)
+		(uuid "9f6539cf-5dda-4fe0-824a-6e00cf095f43")
+	)
+	(embedded_fonts no)
+)

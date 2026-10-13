@@ -1,0 +1,170 @@
+(footprint "Vishay_WSL2512_10mohm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Vishay WSL2512R0100FEA current30100 p2:0.007..0.5ohm row,a1.65,b3.68,l4.06. Two physical terminals, separate inner Kelvin routes required; no fictitious four-terminal pads.")
+	(property "Reference" "REF**"
+		(at 0 -3.1 0)
+		(layer "F.SilkS")
+		(uuid "41b0b7bc-f608-4ee3-93f9-0292963eae49")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Vishay_WSL2512_10mohm"
+		(at 0 3.1 0)
+		(layer "F.Fab")
+		(uuid "82a80b84-3fc1-4fb9-bd10-bf41817af338")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bf8ecf06-b0d6-48b7-a9c3-2de38828063b")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b9857664-cca6-452c-906b-ec3828f8c7c7")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.7 -2.1)
+		(end 1.7 -2.1)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "c5e5f30b-b428-4c3d-8dab-377cb4e10c74")
+	)
+	(fp_line
+		(start -1.7 2.1)
+		(end 1.7 2.1)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "4c0f8278-c323-48a5-a97b-0a2c9605b6ff")
+	)
+	(fp_line
+		(start -3.93 -2.089999)
+		(end 3.93 -2.089999)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "66b4ad90-5ff8-4b8a-b820-185d99618b40")
+	)
+	(fp_line
+		(start -3.93 2.089999)
+		(end -3.93 -2.089999)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "5a1a6bde-2d1c-499a-9df6-093fadfbbc0b")
+	)
+	(fp_line
+		(start 3.93 -2.089999)
+		(end 3.93 2.089999)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "cf8f8265-6304-49a5-b36f-eaee46ddf168")
+	)
+	(fp_line
+		(start 3.93 2.089999)
+		(end -3.93 2.089999)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "5b0f3ba1-ec8b-40c2-a250-47eb34f60782")
+	)
+	(fp_line
+		(start -3.175 -1.59)
+		(end 3.175 -1.59)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "b72ef5ac-86f7-4de3-8009-1adb1cf9c901")
+	)
+	(fp_line
+		(start -3.175 1.59)
+		(end -3.175 -1.59)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "eae7dd5e-725e-420d-b1dc-ff6a64e17d56")
+	)
+	(fp_line
+		(start 3.175 -1.59)
+		(end 3.175 1.59)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "aebbfdb6-31fe-441a-8229-1f30c1f5a72b")
+	)
+	(fp_line
+		(start 3.175 1.59)
+		(end -3.175 1.59)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "8eef0ff9-5ed5-4859-9197-c2ecc1a94468")
+	)
+	(pad "1" smd rect
+		(at -2.855 0)
+		(size 1.65 3.68)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.05)
+		(thermal_bridge_angle 45)
+		(uuid "b6bd505b-65cb-404a-9183-16ff230c3caa")
+	)
+	(pad "2" smd rect
+		(at 2.855 0)
+		(size 1.65 3.68)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.05)
+		(thermal_bridge_angle 45)
+		(uuid "1910569d-8888-478b-b1d5-77fe7aed88d2")
+	)
+	(embedded_fonts no)
+)

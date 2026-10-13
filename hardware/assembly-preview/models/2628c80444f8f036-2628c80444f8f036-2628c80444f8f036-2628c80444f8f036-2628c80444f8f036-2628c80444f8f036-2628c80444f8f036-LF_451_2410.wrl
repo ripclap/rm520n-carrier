@@ -1,0 +1,26 @@
+#VRML V2.0 utf8
+# Illustrative assembly preview; not a vendor-qualified mechanical model.
+Shape { appearance Appearance { material Material { diffuseColor 0.88 0.9 0.92 specularColor .35 .35 .35 shininess 0.45 } } geometry IndexedFaceSet { solid FALSE coord Coordinate { point [-1.20079 0.529528 0.0472441,
+1.20079 0.529528 0.0472441,
+1.20079 -0.529528 0.0472441,
+-1.20079 -0.529528 0.0472441,
+-1.20079 0.529528 1.05906,
+1.20079 0.529528 1.05906,
+1.20079 -0.529528 1.05906,
+-1.20079 -0.529528 1.05906] } coordIndex [1,2,3,0,-1,7,6,5,4,-1,4,5,1,0,-1,5,6,2,1,-1,6,7,3,2,-1,7,4,0,3,-1] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.68 0.72 0.77 specularColor .35 .35 .35 shininess 0.45 } } geometry IndexedFaceSet { solid FALSE coord Coordinate { point [-1.20079 0.529528 0.019685,
+-0.885827 0.529528 0.019685,
+-0.885827 -0.529528 0.019685,
+-1.20079 -0.529528 0.019685,
+-1.20079 0.529528 1.07087,
+-0.885827 0.529528 1.07087,
+-0.885827 -0.529528 1.07087,
+-1.20079 -0.529528 1.07087] } coordIndex [1,2,3,0,-1,7,6,5,4,-1,4,5,1,0,-1,5,6,2,1,-1,6,7,3,2,-1,7,4,0,3,-1] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.68 0.72 0.77 specularColor .35 .35 .35 shininess 0.45 } } geometry IndexedFaceSet { solid FALSE coord Coordinate { point [0.885827 0.529528 0.019685,
+1.20079 0.529528 0.019685,
+1.20079 -0.529528 0.019685,
+0.885827 -0.529528 0.019685,
+0.885827 0.529528 1.07087,
+1.20079 0.529528 1.07087,
+1.20079 -0.529528 1.07087,
+0.885827 -0.529528 1.07087] } coordIndex [1,2,3,0,-1,7,6,5,4,-1,4,5,1,0,-1,5,6,2,1,-1,6,7,3,2,-1,7,4,0,3,-1] } }

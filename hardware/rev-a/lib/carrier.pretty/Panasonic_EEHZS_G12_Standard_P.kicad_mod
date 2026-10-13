@@ -1,0 +1,192 @@
+(footprint "Panasonic_EEHZS_G12_Standard_P"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Panasonic2026 standard-P G12 official host:4.6 inner gap,4.1x2.0 two lands. CAD1positive left/2negative right after rotating drawing; bodyD10+/-.5,L12.5+/-.3,base10.3+/-.2,terminalspan11+/-.2. Vibration-V footprint is distinct. Operating/assembly qualification HOLD.")
+	(property "Reference" "REF**"
+		(at 0 -6.2 0)
+		(layer "F.SilkS")
+		(uuid "ec0332ac-3b33-4254-86e1-b3c9d30ce4de")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "EEHZS1E471P"
+		(at 0 6.2 0)
+		(layer "F.Fab")
+		(uuid "ba0163ba-8ce8-4fb2-83f1-c5f331112d60")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8b9c46bf-ee5d-4304-903b-6d60b2d4871f")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a353d5a9-7605-44f6-bc8b-7625ef3b0c1d")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -6.1 2.2)
+		(end -5.3 2.2)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "5b81f64a-1964-402b-9275-803e999fe7c9")
+	)
+	(fp_line
+		(start -5.7 1.8)
+		(end -5.7 2.6)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "ece4b0a8-198d-4a41-8c65-51ecd7172046")
+	)
+	(fp_line
+		(start -6.65 -5.5)
+		(end 6.65 -5.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "cf225a4a-f09b-4c82-b100-d34ea3f3e550")
+	)
+	(fp_line
+		(start -6.65 5.5)
+		(end -6.65 -5.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "1c132cbf-dc61-4edf-ae06-4d7e056196a7")
+	)
+	(fp_line
+		(start 6.65 -5.5)
+		(end 6.65 5.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "3941b486-e877-473e-a873-206af0532095")
+	)
+	(fp_line
+		(start 6.65 5.5)
+		(end -6.65 5.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "1ecffb05-27ad-465b-b841-f319c321e519")
+	)
+	(fp_line
+		(start -5.15 -5.15)
+		(end 5.15 -5.15)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "81540f75-d0da-49ae-ac5b-9d39a35518b4")
+	)
+	(fp_line
+		(start -5.15 5.15)
+		(end -5.15 -5.15)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "855f1e17-5559-47b9-ab1d-a6969e2223d4")
+	)
+	(fp_line
+		(start 5.15 -5.15)
+		(end 5.15 5.15)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "318ccedd-e608-42c8-84c6-320202055366")
+	)
+	(fp_line
+		(start 5.15 5.15)
+		(end -5.15 5.15)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "2ce3c539-06b9-41ff-98b7-82cc3f2c9bb5")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 5 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "1f2bdb82-c51f-449f-8374-61a085e35ae1")
+	)
+	(pad "1" smd rect
+		(at -4.35 0)
+		(size 4.1 2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.05)
+		(thermal_bridge_angle 45)
+		(uuid "9075ab6b-7ce2-4aa7-9228-aa90b144a78b")
+	)
+	(pad "2" smd rect
+		(at 4.35 0)
+		(size 4.1 2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.05)
+		(thermal_bridge_angle 45)
+		(uuid "17ab63b9-a2f6-4891-aba1-952e54348b3c")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/models/Panasonic_G12_max_drawing_envelope.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

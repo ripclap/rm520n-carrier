@@ -1,0 +1,8 @@
+(footprint "Nexperia_BZX84_SOT23_PRIMARY" (version 20241229) (generator "primary_transcription") (layer "F.Cu") (descr "BZX84Rev7p2 pins1A2NC3K;SOT23manufacturerbodymax3.0x1.4/1.1h,IPCconventionlands1x.7,bank2mm,.95pitch. Exactpin1OUT/3GATE;pin2NC.") (attr smd)
+(property "Reference" "REF**" (at 0 -2.4) (layer "F.SilkS") (effects (font (size 1 1) (thickness .15))))(property "Value" "Nexperia_BZX84_SOT23_PRIMARY" (at 0 2.4) (layer "F.Fab") (effects (font (size 1 1) (thickness .15))))
+(fp_rect (start -0.7 -1.5) (end 0.7 1.5) (stroke (width 0.1) (type default)) (fill none) (layer "F.Fab"))
+(fp_rect (start -1.8 -1.8) (end 1.8 1.8) (stroke (width 0.05) (type default)) (fill none) (layer "F.CrtYd"))
+(pad "1" smd rect (at -1 -0.95) (size 1 0.7) (layers "F.Cu" "F.Paste" "F.Mask"))
+(pad "2" smd rect (at -1 0.95) (size 1 0.7) (layers "F.Cu" "F.Paste" "F.Mask"))
+(pad "3" smd rect (at 1 0) (size 1 0.7) (layers "F.Cu" "F.Paste" "F.Mask"))
+)

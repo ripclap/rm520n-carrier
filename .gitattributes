@@ -1,0 +1,8 @@
+# Preserve release checksum bytes on all operating systems.
+* -text
+*.kicad_pcb -diff
+*.step -diff
+*.wrl -diff
+*.png binary
+*.pdf binary
+*.xlsx binary

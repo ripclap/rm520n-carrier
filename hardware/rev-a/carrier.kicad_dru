@@ -1,0 +1,717 @@
+(version 1)
+# Generated physical constraints; do not silence release blockers.
+(rule "Rev A reference and critical signal layers"
+  (condition "(A.Type == 'Track' && (((A.Layer == 'In1.Cu' || A.Layer == 'In4.Cu') && A.NetName != 'GND' && A.NetName != 'CABLE_PWR_N') || ((A.Layer == 'In2.Cu' || A.Layer == 'In3.Cu') && (A.NetClass == 'PCIE_85' || A.NetClass == 'CLK_85' || A.NetClass == 'USB_90' || A.NetClass == 'MDI_100' || (A.NetClass == 'CABLE100' && !(((A.NetName == 'CABLE0_P' || A.NetName == 'CABLE0_N') && A.Layer == 'In3.Cu' && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals'))) || ((A.NetName == 'CABLE1_P' || A.NetName == 'CABLE1_N') && A.Layer == 'In2.Cu' && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals'))) || ((A.NetName == 'CABLE2_P' || A.NetName == 'CABLE2_N') && A.Layer == 'In3.Cu' && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals'))) || ((A.NetName == 'CABLE3_P' || A.NetName == 'CABLE3_N') && A.Layer == 'In2.Cu' && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals'))))) || A.NetClass == 'OOB_RF_50' || A.NetName == 'BUCK_SW' || A.NetName == 'BUCK_HO' || A.NetName == 'BUCK_LO' || A.NetName == 'BUCK_BOOT_RC' || A.NetName == 'BUCK_BST' || A.NetName == 'u3_SW' || A.NetName == 'u3_BST' || A.NetName == 'u4_SW' || A.NetName == 'u5_SW' || A.NetName == 'OOB_SW')))) && !(A.Type == 'Track' && A.Layer == 'In2.Cu' && A.NetName == 'u3_BST' && A.memberOfGroup('rev_a_MP2386_B52_BST_inner_v1')) && !(A.Type == 'Track' && A.Layer == 'In4.Cu' && A.NetName == 'RTL_EEDI' && A.memberOfGroup('rev_a_EEDI_CORE_plane227_exact10_In4')) && !(A.Type == 'Track' && A.Layer == 'In4.Cu' && A.NetName == 'UIM2_CLK' && A.memberOfGroup('root_SIM_CLK456')) && !(A.Type == 'Track' && A.Layer == 'In4.Cu' && A.NetName == 'UIM1_DATA' && A.memberOfGroup('root_SIM_DATA424')) && !(A.Type == 'Track' && A.Layer == 'In4.Cu' && A.NetName == 'UIM2_VDD' && A.memberOfGroup('root_SIM_VDDpullup498')) && !(A.Type == 'Track' && A.Layer == 'In4.Cu' && A.NetName == 'UIM2_RST' && A.memberOfGroup('root_SIM_compact480'))")
+  (constraint disallow track)
+)
+(rule "PCIE_85 geometry"
+  (condition "A.NetClass == 'PCIE_85'")
+  (constraint track_width (min 0.149000mm) (opt 0.154000mm) (max 0.159000mm))
+  (constraint diff_pair_gap (min 0.145000mm) (opt 0.150000mm) (max 0.155000mm))
+  (constraint diff_pair_uncoupled (max 2.000000mm))
+)
+(rule "PCIE_85 noncoplanar lateral copper"
+  (condition "A.NetClass == 'PCIE_85' && A.Type == 'Track' && !AB.isCoupledDiffPair() && B.Type != 'Pad'")
+  (constraint clearance (min 0.462000mm))
+)
+(rule "CLK_85 geometry"
+  (condition "A.NetClass == 'CLK_85'")
+  (constraint track_width (min 0.149000mm) (opt 0.154000mm) (max 0.159000mm))
+  (constraint diff_pair_gap (min 0.145000mm) (opt 0.150000mm) (max 0.155000mm))
+  (constraint diff_pair_uncoupled (max 2.000000mm))
+)
+(rule "CLK_85 noncoplanar lateral copper"
+  (condition "A.NetClass == 'CLK_85' && A.Type == 'Track' && !AB.isCoupledDiffPair() && B.Type != 'Pad'")
+  (constraint clearance (min 0.462000mm))
+)
+
+(rule "USB_90 geometry"
+  (condition "A.NetClass == 'USB_90'")
+  (constraint track_width (min 0.131000mm) (opt 0.136000mm) (max 0.141000mm))
+  (constraint diff_pair_gap (min 0.145000mm) (opt 0.150000mm) (max 0.155000mm))
+  (constraint diff_pair_uncoupled (max 2.000000mm))
+)
+(rule "USB_90 noncoplanar lateral copper"
+  (condition "A.NetClass == 'USB_90' && A.Type == 'Track' && !AB.isCoupledDiffPair() && B.Type != 'Pad'")
+  (constraint clearance (min 0.408000mm))
+)
+(rule "MDI_100 geometry"
+  (condition "A.NetClass == 'MDI_100'")
+  (constraint track_width (min 0.099000mm) (opt 0.104000mm) (max 0.109000mm))
+  (constraint diff_pair_gap (min 0.145000mm) (opt 0.150000mm) (max 0.155000mm))
+  (constraint diff_pair_uncoupled (max 3.000000mm))
+)
+(rule "MDI_100 noncoplanar lateral copper"
+  (condition "A.NetClass == 'MDI_100' && A.Type == 'Track' && !AB.isCoupledDiffPair() && B.Type != 'Pad'")
+  (constraint clearance (min 0.312000mm))
+)
+(rule "CABLE100 geometry"
+  (condition "A.NetClass == 'CABLE100'")
+  (constraint track_width (min 0.099000mm) (opt 0.104000mm) (max 0.109000mm))
+  (constraint diff_pair_gap (min 0.145000mm) (opt 0.150000mm) (max 0.155000mm))
+  (constraint diff_pair_uncoupled (max 3.000000mm))
+)
+(rule "CABLE100 noncoplanar lateral copper"
+  (condition "A.NetClass == 'CABLE100' && A.Type == 'Track' && !AB.isCoupledDiffPair() && B.Type != 'Pad'")
+  (constraint clearance (min 0.312000mm))
+)
+(rule "pcie_module_tx pair skew"
+  (condition "A.NetName == 'PCIE_TX_P' || A.NetName == 'PCIE_TX_N'")
+  (constraint skew (max 0.100000mm))
+)
+(rule "pcie_refclk pair skew"
+  (condition "A.NetName == 'PCIE_REFCLK_P' || A.NetName == 'PCIE_REFCLK_N'")
+  (constraint skew (max 0.100000mm))
+)
+(rule "mdi0 pair skew"
+  (condition "A.NetName == 'MDI0_P' || A.NetName == 'MDI0_N'")
+  (constraint skew (max 0.500000mm))
+)
+(rule "mdi1 pair skew"
+  (condition "A.NetName == 'MDI1_P' || A.NetName == 'MDI1_N'")
+  (constraint skew (max 0.500000mm))
+)
+(rule "mdi2 pair skew"
+  (condition "A.NetName == 'MDI2_P' || A.NetName == 'MDI2_N'")
+  (constraint skew (max 0.500000mm))
+)
+(rule "mdi3 pair skew"
+  (condition "A.NetName == 'MDI3_P' || A.NetName == 'MDI3_N'")
+  (constraint skew (max 0.500000mm))
+)
+(rule "cable0 pair skew"
+  (condition "A.NetName == 'CABLE0_P' || A.NetName == 'CABLE0_N'")
+  (constraint skew (max 0.500000mm))
+)
+(rule "cable1 pair skew"
+  (condition "A.NetName == 'CABLE1_P' || A.NetName == 'CABLE1_N'")
+  (constraint skew (max 0.500000mm))
+)
+(rule "cable2 pair skew"
+  (condition "A.NetName == 'CABLE2_P' || A.NetName == 'CABLE2_N'")
+  (constraint skew (max 0.500000mm))
+)
+(rule "cable3 pair skew"
+  (condition "A.NetName == 'CABLE3_P' || A.NetName == 'CABLE3_N'")
+  (constraint skew (max 0.500000mm))
+)
+(rule "Bounded direct package escapes"
+  (condition "A.memberOfGroup('carrier_hs_terminal_escapes_v1') || B.memberOfGroup('carrier_hs_terminal_escapes_v1')")
+  (constraint clearance (min 0.150000mm))
+  (constraint diff_pair_gap (min 0.150000mm) (max 2.500000mm))
+)
+(rule "Explicit bounded via fans"
+  (condition "A.memberOfGroup('carrier_hs_reviewed_via_fans_v1') || B.memberOfGroup('carrier_hs_reviewed_via_fans_v1')")
+  (constraint clearance (min 0.150000mm))
+)
+(rule "Passive HV to host outside reviewed native core"
+  (condition "(((A.NetName == 'BS_BRANCH_1' || A.NetName == 'BS_BRANCH_2' || A.NetName == 'BS_BRANCH_3' || A.NetName == 'BS_BRANCH_4' || A.NetName == 'BS_STAR' || A.NetName == 'BUCK_BOOT_RC' || A.NetName == 'BUCK_BST' || A.NetName == 'BUCK_HO' || A.NetName == 'BUCK_SW' || A.NetName == 'BUCK_VIN' || A.NetName == 'CABLE0_N' || A.NetName == 'CABLE0_P' || A.NetName == 'CABLE1_N' || A.NetName == 'CABLE1_P' || A.NetName == 'CABLE2_N' || A.NetName == 'CABLE2_P' || A.NetName == 'CABLE3_N' || A.NetName == 'CABLE3_P' || A.NetName == 'CABLE_PWR_N' || A.NetName == 'PASSIVE_DAMP_CAP' || (A.NetName == 'PASSIVE_FILTER_P' || A.NetName == 'PASSIVE_UV_DIV_TOP') || A.NetName == 'PASSIVE_FUSED_P' || A.NetName == 'PASSIVE_GATE' || A.NetName == 'PASSIVE_GATE_FET' || A.NetName == 'PASSIVE_HS_OUT' || A.NetName == 'PASSIVE_SENSE' || A.NetName == 'VC1' || A.NetName == 'VC2' || A.NetName == 'VC3' || A.NetName == 'VC4' || A.NetName == 'VPOE_P') && !(B.NetName == 'BS_BRANCH_1' || B.NetName == 'BS_BRANCH_2' || B.NetName == 'BS_BRANCH_3' || B.NetName == 'BS_BRANCH_4' || B.NetName == 'BS_STAR' || B.NetName == 'BUCK_BOOT_RC' || B.NetName == 'BUCK_BST' || B.NetName == 'BUCK_HO' || B.NetName == 'BUCK_SW' || B.NetName == 'BUCK_VIN' || B.NetName == 'CABLE0_N' || B.NetName == 'CABLE0_P' || B.NetName == 'CABLE1_N' || B.NetName == 'CABLE1_P' || B.NetName == 'CABLE2_N' || B.NetName == 'CABLE2_P' || B.NetName == 'CABLE3_N' || B.NetName == 'CABLE3_P' || B.NetName == 'CABLE_PWR_N' || B.NetName == 'PASSIVE_DAMP_CAP' || (B.NetName == 'PASSIVE_FILTER_P' || B.NetName == 'PASSIVE_UV_DIV_TOP') || B.NetName == 'PASSIVE_FUSED_P' || B.NetName == 'PASSIVE_GATE' || B.NetName == 'PASSIVE_GATE_FET' || B.NetName == 'PASSIVE_HS_OUT' || B.NetName == 'PASSIVE_SENSE' || B.NetName == 'VC1' || B.NetName == 'VC2' || B.NetName == 'VC3' || B.NetName == 'VC4' || B.NetName == 'VPOE_P')) || ((B.NetName == 'BS_BRANCH_1' || B.NetName == 'BS_BRANCH_2' || B.NetName == 'BS_BRANCH_3' || B.NetName == 'BS_BRANCH_4' || B.NetName == 'BS_STAR' || B.NetName == 'BUCK_BOOT_RC' || B.NetName == 'BUCK_BST' || B.NetName == 'BUCK_HO' || B.NetName == 'BUCK_SW' || B.NetName == 'BUCK_VIN' || B.NetName == 'CABLE0_N' || B.NetName == 'CABLE0_P' || B.NetName == 'CABLE1_N' || B.NetName == 'CABLE1_P' || B.NetName == 'CABLE2_N' || B.NetName == 'CABLE2_P' || B.NetName == 'CABLE3_N' || B.NetName == 'CABLE3_P' || B.NetName == 'CABLE_PWR_N' || B.NetName == 'PASSIVE_DAMP_CAP' || (B.NetName == 'PASSIVE_FILTER_P' || B.NetName == 'PASSIVE_UV_DIV_TOP') || B.NetName == 'PASSIVE_FUSED_P' || B.NetName == 'PASSIVE_GATE' || B.NetName == 'PASSIVE_GATE_FET' || B.NetName == 'PASSIVE_HS_OUT' || B.NetName == 'PASSIVE_SENSE' || B.NetName == 'VC1' || B.NetName == 'VC2' || B.NetName == 'VC3' || B.NetName == 'VC4' || B.NetName == 'VPOE_P') && !(A.NetName == 'BS_BRANCH_1' || A.NetName == 'BS_BRANCH_2' || A.NetName == 'BS_BRANCH_3' || A.NetName == 'BS_BRANCH_4' || A.NetName == 'BS_STAR' || A.NetName == 'BUCK_BOOT_RC' || A.NetName == 'BUCK_BST' || A.NetName == 'BUCK_HO' || A.NetName == 'BUCK_SW' || A.NetName == 'BUCK_VIN' || A.NetName == 'CABLE0_N' || A.NetName == 'CABLE0_P' || A.NetName == 'CABLE1_N' || A.NetName == 'CABLE1_P' || A.NetName == 'CABLE2_N' || A.NetName == 'CABLE2_P' || A.NetName == 'CABLE3_N' || A.NetName == 'CABLE3_P' || A.NetName == 'CABLE_PWR_N' || A.NetName == 'PASSIVE_DAMP_CAP' || (A.NetName == 'PASSIVE_FILTER_P' || A.NetName == 'PASSIVE_UV_DIV_TOP') || A.NetName == 'PASSIVE_FUSED_P' || A.NetName == 'PASSIVE_GATE' || A.NetName == 'PASSIVE_GATE_FET' || A.NetName == 'PASSIVE_HS_OUT' || A.NetName == 'PASSIVE_SENSE' || A.NetName == 'VC1' || A.NetName == 'VC2' || A.NetName == 'VC3' || A.NetName == 'VC4' || A.NetName == 'VPOE_P'))) && !(A.Type == 'Pad' && A.Pad_Type == 'NPTH, mechanical') && !(B.Type == 'Pad' && B.Pad_Type == 'NPTH, mechanical')")
+  (constraint clearance (min 0.600000mm))
+)
+(rule "Passive functional high-voltage copper"
+  (condition "(A.NetName == 'BS_BRANCH_1' || A.NetName == 'BS_BRANCH_2' || A.NetName == 'BS_BRANCH_3' || A.NetName == 'BS_BRANCH_4' || A.NetName == 'BS_STAR' || A.NetName == 'BUCK_BOOT_RC' || A.NetName == 'BUCK_BST' || A.NetName == 'BUCK_HO' || A.NetName == 'BUCK_SW' || A.NetName == 'BUCK_VIN' || A.NetName == 'CABLE0_N' || A.NetName == 'CABLE0_P' || A.NetName == 'CABLE1_N' || A.NetName == 'CABLE1_P' || A.NetName == 'CABLE2_N' || A.NetName == 'CABLE2_P' || A.NetName == 'CABLE3_N' || A.NetName == 'CABLE3_P' || A.NetName == 'CABLE_PWR_N' || A.NetName == 'PASSIVE_DAMP_CAP' || (A.NetName == 'PASSIVE_FILTER_P' || A.NetName == 'PASSIVE_UV_DIV_TOP') || A.NetName == 'PASSIVE_FUSED_P' || A.NetName == 'PASSIVE_GATE' || A.NetName == 'PASSIVE_GATE_FET' || A.NetName == 'PASSIVE_HS_OUT' || A.NetName == 'PASSIVE_SENSE' || A.NetName == 'VC1' || A.NetName == 'VC2' || A.NetName == 'VC3' || A.NetName == 'VC4' || A.NetName == 'VPOE_P') && (B.NetName == 'BS_BRANCH_1' || B.NetName == 'BS_BRANCH_2' || B.NetName == 'BS_BRANCH_3' || B.NetName == 'BS_BRANCH_4' || B.NetName == 'BS_STAR' || B.NetName == 'BUCK_BOOT_RC' || B.NetName == 'BUCK_BST' || B.NetName == 'BUCK_HO' || B.NetName == 'BUCK_SW' || B.NetName == 'BUCK_VIN' || B.NetName == 'CABLE0_N' || B.NetName == 'CABLE0_P' || B.NetName == 'CABLE1_N' || B.NetName == 'CABLE1_P' || B.NetName == 'CABLE2_N' || B.NetName == 'CABLE2_P' || B.NetName == 'CABLE3_N' || B.NetName == 'CABLE3_P' || B.NetName == 'CABLE_PWR_N' || B.NetName == 'PASSIVE_DAMP_CAP' || (B.NetName == 'PASSIVE_FILTER_P' || B.NetName == 'PASSIVE_UV_DIV_TOP') || B.NetName == 'PASSIVE_FUSED_P' || B.NetName == 'PASSIVE_GATE' || B.NetName == 'PASSIVE_GATE_FET' || B.NetName == 'PASSIVE_HS_OUT' || B.NetName == 'PASSIVE_SENSE' || B.NetName == 'VC1' || B.NetName == 'VC2' || B.NetName == 'VC3' || B.NetName == 'VC4' || B.NetName == 'VPOE_P') && !AB.isCoupledDiffPair() && !(A.Type == 'Track' && (A.NetClass == 'PCIE_85' || A.NetClass == 'CLK_85' || A.NetClass == 'USB_90' || A.NetClass == 'MDI_100' || A.NetClass == 'CABLE100') && !AB.isCoupledDiffPair() && B.Type != 'Pad') && !(B.Type == 'Track' && (B.NetClass == 'PCIE_85' || B.NetClass == 'CLK_85' || B.NetClass == 'USB_90' || B.NetClass == 'MDI_100' || B.NetClass == 'CABLE100') && !AB.isCoupledDiffPair() && A.Type != 'Pad')")
+  (constraint clearance (min 0.250000mm))
+)
+(rule "Passive nonisolated cable to host functional clearance"
+  (condition "(((A.NetName == 'BS_BRANCH_1' || A.NetName == 'BS_BRANCH_2' || A.NetName == 'BS_BRANCH_3' || A.NetName == 'BS_BRANCH_4' || A.NetName == 'BS_STAR' || A.NetName == 'CABLE0_N' || A.NetName == 'CABLE0_P' || A.NetName == 'CABLE1_N' || A.NetName == 'CABLE1_P' || A.NetName == 'CABLE2_N' || A.NetName == 'CABLE2_P' || A.NetName == 'CABLE3_N' || A.NetName == 'CABLE3_P' || A.NetName == 'CABLE_PWR_N' || A.NetName == 'VC1' || A.NetName == 'VC2' || A.NetName == 'VC3' || A.NetName == 'VC4' || A.NetName == 'VPOE_P') && !(B.NetName == 'BS_BRANCH_1' || B.NetName == 'BS_BRANCH_2' || B.NetName == 'BS_BRANCH_3' || B.NetName == 'BS_BRANCH_4' || B.NetName == 'BS_STAR' || B.NetName == 'BUCK_BOOT_RC' || B.NetName == 'BUCK_BST' || B.NetName == 'BUCK_HO' || B.NetName == 'BUCK_SW' || B.NetName == 'BUCK_VIN' || B.NetName == 'CABLE0_N' || B.NetName == 'CABLE0_P' || B.NetName == 'CABLE1_N' || B.NetName == 'CABLE1_P' || B.NetName == 'CABLE2_N' || B.NetName == 'CABLE2_P' || B.NetName == 'CABLE3_N' || B.NetName == 'CABLE3_P' || B.NetName == 'CABLE_PWR_N' || B.NetName == 'PASSIVE_DAMP_CAP' || (B.NetName == 'PASSIVE_FILTER_P' || B.NetName == 'PASSIVE_UV_DIV_TOP') || B.NetName == 'PASSIVE_FUSED_P' || B.NetName == 'PASSIVE_GATE' || B.NetName == 'PASSIVE_GATE_FET' || B.NetName == 'PASSIVE_HS_OUT' || B.NetName == 'PASSIVE_SENSE' || B.NetName == 'VC1' || B.NetName == 'VC2' || B.NetName == 'VC3' || B.NetName == 'VC4' || B.NetName == 'VPOE_P')) || ((B.NetName == 'BS_BRANCH_1' || B.NetName == 'BS_BRANCH_2' || B.NetName == 'BS_BRANCH_3' || B.NetName == 'BS_BRANCH_4' || B.NetName == 'BS_STAR' || B.NetName == 'CABLE0_N' || B.NetName == 'CABLE0_P' || B.NetName == 'CABLE1_N' || B.NetName == 'CABLE1_P' || B.NetName == 'CABLE2_N' || B.NetName == 'CABLE2_P' || B.NetName == 'CABLE3_N' || B.NetName == 'CABLE3_P' || B.NetName == 'CABLE_PWR_N' || B.NetName == 'VC1' || B.NetName == 'VC2' || B.NetName == 'VC3' || B.NetName == 'VC4' || B.NetName == 'VPOE_P') && !(A.NetName == 'BS_BRANCH_1' || A.NetName == 'BS_BRANCH_2' || A.NetName == 'BS_BRANCH_3' || A.NetName == 'BS_BRANCH_4' || A.NetName == 'BS_STAR' || A.NetName == 'BUCK_BOOT_RC' || A.NetName == 'BUCK_BST' || A.NetName == 'BUCK_HO' || A.NetName == 'BUCK_SW' || A.NetName == 'BUCK_VIN' || A.NetName == 'CABLE0_N' || A.NetName == 'CABLE0_P' || A.NetName == 'CABLE1_N' || A.NetName == 'CABLE1_P' || A.NetName == 'CABLE2_N' || A.NetName == 'CABLE2_P' || A.NetName == 'CABLE3_N' || A.NetName == 'CABLE3_P' || A.NetName == 'CABLE_PWR_N' || A.NetName == 'PASSIVE_DAMP_CAP' || (A.NetName == 'PASSIVE_FILTER_P' || A.NetName == 'PASSIVE_UV_DIV_TOP') || A.NetName == 'PASSIVE_FUSED_P' || A.NetName == 'PASSIVE_GATE' || A.NetName == 'PASSIVE_GATE_FET' || A.NetName == 'PASSIVE_HS_OUT' || A.NetName == 'PASSIVE_SENSE' || A.NetName == 'VC1' || A.NetName == 'VC2' || A.NetName == 'VC3' || A.NetName == 'VC4' || A.NetName == 'VPOE_P'))) && !(A.Type == 'Pad' && A.Pad_Type == 'NPTH, mechanical') && !(B.Type == 'Pad' && B.Pad_Type == 'NPTH, mechanical')")
+  (constraint clearance (min 0.600000mm))
+)
+
+(rule "Passive exact L700 same conductive winding terminals"
+  (condition "(((A.Type == 'Pad' && A.memberOfFootprint('L700') && A.Pad_Number == '1' && A.NetName == 'PASSIVE_FUSED_P') && (B.Type == 'Pad' && B.memberOfFootprint('L700') && B.Pad_Number == '2' && B.NetName == 'PASSIVE_FILTER_P')) || ((A.Type == 'Pad' && A.memberOfFootprint('L700') && A.Pad_Number == '2' && A.NetName == 'PASSIVE_FILTER_P') && (B.Type == 'Pad' && B.memberOfFootprint('L700') && B.Pad_Number == '1' && B.NetName == 'PASSIVE_FUSED_P'))) || (((A.Type == 'Pad' && A.memberOfFootprint('L700') && A.Pad_Number == '3' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('L700') && B.Pad_Number == '4' && B.NetName == 'CABLE_PWR_N')) || ((A.Type == 'Pad' && A.memberOfFootprint('L700') && A.Pad_Number == '4' && A.NetName == 'CABLE_PWR_N') && (B.Type == 'Pad' && B.memberOfFootprint('L700') && B.Pad_Number == '3' && B.NetName == 'GND')))")
+  (constraint clearance (min 0.250000mm))
+)
+(rule "Passive exact HF buck conductor cohort"
+  (condition "(((A.NetName == 'BS_BRANCH_1' || A.NetName == 'BS_BRANCH_2' || A.NetName == 'BS_BRANCH_3' || A.NetName == 'BS_BRANCH_4' || A.NetName == 'BS_STAR' || A.NetName == 'BUCK_BOOT_RC' || A.NetName == 'BUCK_BST' || A.NetName == 'BUCK_HO' || A.NetName == 'BUCK_SW' || A.NetName == 'BUCK_VIN' || A.NetName == 'CABLE0_N' || A.NetName == 'CABLE0_P' || A.NetName == 'CABLE1_N' || A.NetName == 'CABLE1_P' || A.NetName == 'CABLE2_N' || A.NetName == 'CABLE2_P' || A.NetName == 'CABLE3_N' || A.NetName == 'CABLE3_P' || A.NetName == 'CABLE_PWR_N' || A.NetName == 'PASSIVE_DAMP_CAP' || A.NetName == 'PASSIVE_FILTER_P' || A.NetName == 'PASSIVE_FUSED_P' || A.NetName == 'PASSIVE_GATE' || A.NetName == 'PASSIVE_GATE_FET' || A.NetName == 'PASSIVE_HS_OUT' || A.NetName == 'PASSIVE_SENSE' || A.NetName == 'VC1' || A.NetName == 'VC2' || A.NetName == 'VC3' || A.NetName == 'VC4' || A.NetName == 'VPOE_P') && !(B.NetName == 'BS_BRANCH_1' || B.NetName == 'BS_BRANCH_2' || B.NetName == 'BS_BRANCH_3' || B.NetName == 'BS_BRANCH_4' || B.NetName == 'BS_STAR' || B.NetName == 'BUCK_BOOT_RC' || B.NetName == 'BUCK_BST' || B.NetName == 'BUCK_HO' || B.NetName == 'BUCK_SW' || B.NetName == 'BUCK_VIN' || B.NetName == 'CABLE0_N' || B.NetName == 'CABLE0_P' || B.NetName == 'CABLE1_N' || B.NetName == 'CABLE1_P' || B.NetName == 'CABLE2_N' || B.NetName == 'CABLE2_P' || B.NetName == 'CABLE3_N' || B.NetName == 'CABLE3_P' || B.NetName == 'CABLE_PWR_N' || B.NetName == 'PASSIVE_DAMP_CAP' || B.NetName == 'PASSIVE_FILTER_P' || B.NetName == 'PASSIVE_FUSED_P' || B.NetName == 'PASSIVE_GATE' || B.NetName == 'PASSIVE_GATE_FET' || B.NetName == 'PASSIVE_HS_OUT' || B.NetName == 'PASSIVE_SENSE' || B.NetName == 'VC1' || B.NetName == 'VC2' || B.NetName == 'VC3' || B.NetName == 'VC4' || B.NetName == 'VPOE_P')) || ((B.NetName == 'BS_BRANCH_1' || B.NetName == 'BS_BRANCH_2' || B.NetName == 'BS_BRANCH_3' || B.NetName == 'BS_BRANCH_4' || B.NetName == 'BS_STAR' || B.NetName == 'BUCK_BOOT_RC' || B.NetName == 'BUCK_BST' || B.NetName == 'BUCK_HO' || B.NetName == 'BUCK_SW' || B.NetName == 'BUCK_VIN' || B.NetName == 'CABLE0_N' || B.NetName == 'CABLE0_P' || B.NetName == 'CABLE1_N' || B.NetName == 'CABLE1_P' || B.NetName == 'CABLE2_N' || B.NetName == 'CABLE2_P' || B.NetName == 'CABLE3_N' || B.NetName == 'CABLE3_P' || B.NetName == 'CABLE_PWR_N' || B.NetName == 'PASSIVE_DAMP_CAP' || B.NetName == 'PASSIVE_FILTER_P' || B.NetName == 'PASSIVE_FUSED_P' || B.NetName == 'PASSIVE_GATE' || B.NetName == 'PASSIVE_GATE_FET' || B.NetName == 'PASSIVE_HS_OUT' || B.NetName == 'PASSIVE_SENSE' || B.NetName == 'VC1' || B.NetName == 'VC2' || B.NetName == 'VC3' || B.NetName == 'VC4' || B.NetName == 'VPOE_P') && !(A.NetName == 'BS_BRANCH_1' || A.NetName == 'BS_BRANCH_2' || A.NetName == 'BS_BRANCH_3' || A.NetName == 'BS_BRANCH_4' || A.NetName == 'BS_STAR' || A.NetName == 'BUCK_BOOT_RC' || A.NetName == 'BUCK_BST' || A.NetName == 'BUCK_HO' || A.NetName == 'BUCK_SW' || A.NetName == 'BUCK_VIN' || A.NetName == 'CABLE0_N' || A.NetName == 'CABLE0_P' || A.NetName == 'CABLE1_N' || A.NetName == 'CABLE1_P' || A.NetName == 'CABLE2_N' || A.NetName == 'CABLE2_P' || A.NetName == 'CABLE3_N' || A.NetName == 'CABLE3_P' || A.NetName == 'CABLE_PWR_N' || A.NetName == 'PASSIVE_DAMP_CAP' || A.NetName == 'PASSIVE_FILTER_P' || A.NetName == 'PASSIVE_FUSED_P' || A.NetName == 'PASSIVE_GATE' || A.NetName == 'PASSIVE_GATE_FET' || A.NetName == 'PASSIVE_HS_OUT' || A.NetName == 'PASSIVE_SENSE' || A.NetName == 'VC1' || A.NetName == 'VC2' || A.NetName == 'VC3' || A.NetName == 'VC4' || A.NetName == 'VPOE_P'))) && !(A.NetName == 'BS_BRANCH_1' || A.NetName == 'BS_BRANCH_2' || A.NetName == 'BS_BRANCH_3' || A.NetName == 'BS_BRANCH_4' || A.NetName == 'BS_STAR' || A.NetName == 'CABLE0_N' || A.NetName == 'CABLE0_P' || A.NetName == 'CABLE1_N' || A.NetName == 'CABLE1_P' || A.NetName == 'CABLE2_N' || A.NetName == 'CABLE2_P' || A.NetName == 'CABLE3_N' || A.NetName == 'CABLE3_P' || A.NetName == 'CABLE_PWR_N' || A.NetName == 'VC1' || A.NetName == 'VC2' || A.NetName == 'VC3' || A.NetName == 'VC4' || A.NetName == 'VPOE_P') && !(B.NetName == 'BS_BRANCH_1' || B.NetName == 'BS_BRANCH_2' || B.NetName == 'BS_BRANCH_3' || B.NetName == 'BS_BRANCH_4' || B.NetName == 'BS_STAR' || B.NetName == 'CABLE0_N' || B.NetName == 'CABLE0_P' || B.NetName == 'CABLE1_N' || B.NetName == 'CABLE1_P' || B.NetName == 'CABLE2_N' || B.NetName == 'CABLE2_P' || B.NetName == 'CABLE3_N' || B.NetName == 'CABLE3_P' || B.NetName == 'CABLE_PWR_N' || B.NetName == 'VC1' || B.NetName == 'VC2' || B.NetName == 'VC3' || B.NetName == 'VC4' || B.NetName == 'VPOE_P') && !AB.isCoupledDiffPair() && ((((A.Type == 'Track' || A.Type == 'Via') && A.memberOfGroup('private_passive_hf_buck_v1')) && ((B.Type == 'Track' || B.Type == 'Via') && B.memberOfGroup('private_passive_hf_buck_v1'))) || (((A.Type == 'Track' || A.Type == 'Via') && A.memberOfGroup('private_passive_hf_buck_v1')) && (B.Type == 'Pad' && ((B.memberOfFootprint('C704') && B.Pad_Number == '1') || (B.memberOfFootprint('R726') && B.Pad_Number == '1') || (B.memberOfFootprint('R726') && B.Pad_Number == '2')))) || ((A.Type == 'Pad' && ((A.memberOfFootprint('C704') && A.Pad_Number == '1') || (A.memberOfFootprint('R726') && A.Pad_Number == '1') || (A.memberOfFootprint('R726') && A.Pad_Number == '2'))) && ((B.Type == 'Track' || B.Type == 'Via') && B.memberOfGroup('private_passive_hf_buck_v1'))))")
+  (constraint clearance (min 0.250000mm))
+)
+
+# Physical OOB construction override: 50ohm nominal F/In1 microstrip.
+# Exact source/netclass arrays and all preceding cable/HV/HS rules preserved.
+(rule "OOB_915_ANT nominal RF microstrip width"
+  (condition "A.Type == 'Track' && A.NetName == 'OOB_915_ANT'")
+  (constraint track_width (min 0.175000mm) (opt 0.175000mm) (max 0.175000mm))
+)
+(rule "OOB_915_ANT no signal transitions"
+  (condition "A.Type == 'Via' && A.NetName == 'OOB_915_ANT'")
+  (constraint disallow via)
+)
+(rule "OOB_915_ANT noncoplanar lateral copper"
+  (condition "((A.Type == 'Track' && A.NetName == 'OOB_915_ANT' && B.Type != 'Pad') || (B.Type == 'Track' && B.NetName == 'OOB_915_ANT' && A.Type != 'Pad')) && !(A.NetName == 'BS_BRANCH_1' || A.NetName == 'BS_BRANCH_2' || A.NetName == 'BS_BRANCH_3' || A.NetName == 'BS_BRANCH_4' || A.NetName == 'BS_STAR' || A.NetName == 'BUCK_BOOT_RC' || A.NetName == 'BUCK_BST' || A.NetName == 'BUCK_HO' || A.NetName == 'BUCK_SW' || A.NetName == 'BUCK_VIN' || A.NetName == 'CABLE0_N' || A.NetName == 'CABLE0_P' || A.NetName == 'CABLE1_N' || A.NetName == 'CABLE1_P' || A.NetName == 'CABLE2_N' || A.NetName == 'CABLE2_P' || A.NetName == 'CABLE3_N' || A.NetName == 'CABLE3_P' || A.NetName == 'CABLE_PWR_N' || A.NetName == 'PASSIVE_DAMP_CAP' || (A.NetName == 'PASSIVE_FILTER_P' || A.NetName == 'PASSIVE_UV_DIV_TOP') || A.NetName == 'PASSIVE_FUSED_P' || A.NetName == 'PASSIVE_GATE' || A.NetName == 'PASSIVE_GATE_FET' || A.NetName == 'PASSIVE_HS_OUT' || A.NetName == 'PASSIVE_SENSE' || A.NetName == 'VC1' || A.NetName == 'VC2' || A.NetName == 'VC3' || A.NetName == 'VC4' || A.NetName == 'VPOE_P' || B.NetName == 'BS_BRANCH_1' || B.NetName == 'BS_BRANCH_2' || B.NetName == 'BS_BRANCH_3' || B.NetName == 'BS_BRANCH_4' || B.NetName == 'BS_STAR' || B.NetName == 'BUCK_BOOT_RC' || B.NetName == 'BUCK_BST' || B.NetName == 'BUCK_HO' || B.NetName == 'BUCK_SW' || B.NetName == 'BUCK_VIN' || B.NetName == 'CABLE0_N' || B.NetName == 'CABLE0_P' || B.NetName == 'CABLE1_N' || B.NetName == 'CABLE1_P' || B.NetName == 'CABLE2_N' || B.NetName == 'CABLE2_P' || B.NetName == 'CABLE3_N' || B.NetName == 'CABLE3_P' || B.NetName == 'CABLE_PWR_N' || B.NetName == 'PASSIVE_DAMP_CAP' || (B.NetName == 'PASSIVE_FILTER_P' || B.NetName == 'PASSIVE_UV_DIV_TOP') || B.NetName == 'PASSIVE_FUSED_P' || B.NetName == 'PASSIVE_GATE' || B.NetName == 'PASSIVE_GATE_FET' || B.NetName == 'PASSIVE_HS_OUT' || B.NetName == 'PASSIVE_SENSE' || B.NetName == 'VC1' || B.NetName == 'VC2' || B.NetName == 'VC3' || B.NetName == 'VC4' || B.NetName == 'VPOE_P')")
+  (constraint clearance (min 0.525000mm))
+)
+
+# Exact TI PWP0020A pad-only package allowance: 0.65 pitch minus 0.45 land.
+# Both objects must be numbered pads1-20 in the exact registered U1 host.
+# EP21, tracks, vias, foreign pads and all general HV/cable floors excluded.
+
+
+
+
+# Atomic hotswap control child: exact groups are guarded externally by full states.
+# Package-local nonisolated functional spacing only; generic cable/HV/host floors unchanged.
+(rule "Exact atomic hotswap and buck control package launches"
+  (condition "((((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('private_control59_exact_hs_ic_f_0_v1')) && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '8' && B.NetName == 'BUCK_UVLO')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('private_control59_exact_hs_ic_f_0_v1')) && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '8' && A.NetName == 'BUCK_UVLO'))) || (((A.Type == 'Via' && A.existsOnLayer('F.Cu') && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('private_control59_exact_hs_ic_via_v1')) && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '8' && B.NetName == 'BUCK_UVLO')) || ((B.Type == 'Via' && B.existsOnLayer('F.Cu') && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('private_control59_exact_hs_ic_via_v1')) && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '8' && A.NetName == 'BUCK_UVLO'))) || (((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_UVLO' && A.memberOfGroup('private_control59_exact_pgd_ic_f_0_v1')) && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '9' && B.NetName == 'PASSIVE_HS_OUT')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_UVLO' && B.memberOfGroup('private_control59_exact_pgd_ic_f_0_v1')) && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '9' && A.NetName == 'PASSIVE_HS_OUT'))) || (((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_UVLO' && A.memberOfGroup('private_control59_exact_uvlo_ic_f_0_v1')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '1' && B.NetName == 'BUCK_VIN')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_UVLO' && B.memberOfGroup('private_control59_exact_uvlo_ic_f_0_v1')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '1' && A.NetName == 'BUCK_VIN'))) || (((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_UVLO' && A.memberOfGroup('private_control59_exact_uvlo_ic_f_1_v1')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '1' && B.NetName == 'BUCK_VIN')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_UVLO' && B.memberOfGroup('private_control59_exact_uvlo_ic_f_1_v1')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '1' && A.NetName == 'BUCK_VIN'))) || (((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_UV' && A.memberOfGroup('private_control59_exact_uv_ic_f_0_v1')) && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '2' && B.NetName == 'PASSIVE_FILTER_P')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_UV' && B.memberOfGroup('private_control59_exact_uv_ic_f_0_v1')) && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '2' && A.NetName == 'PASSIVE_FILTER_P'))) || (((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_UV' && A.memberOfGroup('private_control59_exact_uv_ic_f_1_v1')) && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '2' && B.NetName == 'PASSIVE_FILTER_P')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_UV' && B.memberOfGroup('private_control59_exact_uv_ic_f_1_v1')) && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '2' && A.NetName == 'PASSIVE_FILTER_P'))) || (((A.Type == 'Via' && A.existsOnLayer('F.Cu') && A.NetName == 'PASSIVE_UV' && A.memberOfGroup('private_control59_exact_uv_ic_via_v1')) && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '2' && B.NetName == 'PASSIVE_FILTER_P')) || ((B.Type == 'Via' && B.existsOnLayer('F.Cu') && B.NetName == 'PASSIVE_UV' && B.memberOfGroup('private_control59_exact_uv_ic_via_v1')) && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '2' && A.NetName == 'PASSIVE_FILTER_P'))) || (((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_FILTER_P' && A.memberOfGroup('private_lm5069_moved_U700_VIN_launch_v2')) && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '3' && B.NetName == 'PASSIVE_UV')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_FILTER_P' && B.memberOfGroup('private_lm5069_moved_U700_VIN_launch_v2')) && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '3' && A.NetName == 'PASSIVE_UV'))) || (((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_UV' && A.memberOfGroup('private_control59_exact_uv_ic_f_0_v1')) && (B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_FILTER_P' && B.memberOfGroup('private_lm5069_moved_U700_VIN_launch_v2'))) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_UV' && B.memberOfGroup('private_control59_exact_uv_ic_f_0_v1')) && (A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_FILTER_P' && A.memberOfGroup('private_lm5069_moved_U700_VIN_launch_v2')))) || (((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_UV' && A.memberOfGroup('private_control59_exact_uv_ic_f_0_v1')) && (B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_FILTER_P' && B.memberOfGroup('private_control59_exact_vin_ic_1_v1'))) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_UV' && B.memberOfGroup('private_control59_exact_uv_ic_f_0_v1')) && (A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_FILTER_P' && A.memberOfGroup('private_control59_exact_vin_ic_1_v1')))) || (((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_UVLO' && A.memberOfGroup('private_control59_exact_pgd_ic_f_0_v1')) && (B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('private_control59_exact_hs_ic_f_0_v1'))) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_UVLO' && B.memberOfGroup('private_control59_exact_pgd_ic_f_0_v1')) && (A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('private_control59_exact_hs_ic_f_0_v1'))))) && !(A.memberOfFootprint('U700') || B.memberOfFootprint('U700'))")
+  (constraint clearance (min 0.250000mm)))
+
+(rule "Functional high potential foreign copper fail closed"
+  (condition "A.NetName != B.NetName && ((A.NetName == 'BS_BRANCH_1' || A.NetName == 'BS_BRANCH_2' || A.NetName == 'BS_BRANCH_3' || A.NetName == 'BS_BRANCH_4' || A.NetName == 'BS_STAR' || A.NetName == 'BUCK_BOOT_RC' || A.NetName == 'BUCK_BST' || A.NetName == 'BUCK_HO' || A.NetName == 'BUCK_SW' || A.NetName == 'BUCK_VIN' || A.NetName == 'CABLE0_N' || A.NetName == 'CABLE0_P' || A.NetName == 'CABLE1_N' || A.NetName == 'CABLE1_P' || A.NetName == 'CABLE2_N' || A.NetName == 'CABLE2_P' || A.NetName == 'CABLE3_N' || A.NetName == 'CABLE3_P' || A.NetName == 'CABLE_PWR_N' || A.NetName == 'PASSIVE_DAMP_CAP' || A.NetName == 'PASSIVE_FILTER_P' || A.NetName == 'PASSIVE_FILTER_KELVIN' || A.NetName == 'PASSIVE_SENSE_KELVIN' || A.NetName == 'PASSIVE_FUSED_P' || A.NetName == 'PASSIVE_GATE' || A.NetName == 'PASSIVE_GATE_FET' || A.NetName == 'PASSIVE_HS_OUT' || A.NetName == 'PASSIVE_SENSE' || A.NetName == 'PASSIVE_UV_DIV_TOP' || A.NetName == 'SHIELD' || A.NetName == 'VC1' || A.NetName == 'VC2' || A.NetName == 'VC3' || A.NetName == 'VC4' || A.NetName == 'VPOE_P') || (B.NetName == 'BS_BRANCH_1' || B.NetName == 'BS_BRANCH_2' || B.NetName == 'BS_BRANCH_3' || B.NetName == 'BS_BRANCH_4' || B.NetName == 'BS_STAR' || B.NetName == 'BUCK_BOOT_RC' || B.NetName == 'BUCK_BST' || B.NetName == 'BUCK_HO' || B.NetName == 'BUCK_SW' || B.NetName == 'BUCK_VIN' || B.NetName == 'CABLE0_N' || B.NetName == 'CABLE0_P' || B.NetName == 'CABLE1_N' || B.NetName == 'CABLE1_P' || B.NetName == 'CABLE2_N' || B.NetName == 'CABLE2_P' || B.NetName == 'CABLE3_N' || B.NetName == 'CABLE3_P' || B.NetName == 'CABLE_PWR_N' || B.NetName == 'PASSIVE_DAMP_CAP' || B.NetName == 'PASSIVE_FILTER_P' || B.NetName == 'PASSIVE_FILTER_KELVIN' || B.NetName == 'PASSIVE_SENSE_KELVIN' || B.NetName == 'PASSIVE_FUSED_P' || B.NetName == 'PASSIVE_GATE' || B.NetName == 'PASSIVE_GATE_FET' || B.NetName == 'PASSIVE_HS_OUT' || B.NetName == 'PASSIVE_SENSE' || B.NetName == 'PASSIVE_UV_DIV_TOP' || B.NetName == 'SHIELD' || B.NetName == 'VC1' || B.NetName == 'VC2' || B.NetName == 'VC3' || B.NetName == 'VC4' || B.NetName == 'VPOE_P')) && !(((A.NetName == 'CABLE0_P' || A.NetName == 'CABLE0_N' || A.NetName == 'VC1') && (B.NetName == 'CABLE0_P' || B.NetName == 'CABLE0_N' || B.NetName == 'VC1')) || ((A.NetName == 'CABLE1_P' || A.NetName == 'CABLE1_N' || A.NetName == 'VC2') && (B.NetName == 'CABLE1_P' || B.NetName == 'CABLE1_N' || B.NetName == 'VC2')) || ((A.NetName == 'CABLE2_P' || A.NetName == 'CABLE2_N' || A.NetName == 'VC3') && (B.NetName == 'CABLE2_P' || B.NetName == 'CABLE2_N' || B.NetName == 'VC3')) || ((A.NetName == 'CABLE3_P' || A.NetName == 'CABLE3_N' || A.NetName == 'VC4') && (B.NetName == 'CABLE3_P' || B.NetName == 'CABLE3_N' || B.NetName == 'VC4'))) && !(A.Type == 'Pad' && A.Pad_Type == 'NPTH, mechanical') && !(B.Type == 'Pad' && B.Pad_Type == 'NPTH, mechanical')")
+  (constraint clearance (min 0.600000mm))
+)
+
+
+(rule "Functional exact rated IC intrinsic terminals"
+  (condition "((((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '2' && A.NetName == 'BUCK_UVLO') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '1' && B.NetName == 'BUCK_VIN')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '2' && B.NetName == 'BUCK_UVLO') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '1' && A.NetName == 'BUCK_VIN'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '3' && A.NetName == 'BUCK_RT') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '2' && B.NetName == 'BUCK_UVLO')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '3' && B.NetName == 'BUCK_RT') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '2' && A.NetName == 'BUCK_UVLO'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '4' && A.NetName == 'BUCK_VIN') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '3' && B.NetName == 'BUCK_RT')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '4' && B.NetName == 'BUCK_VIN') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '3' && A.NetName == 'BUCK_RT'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '5' && A.NetName == 'BUCK_RAMP') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '4' && B.NetName == 'BUCK_VIN')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '5' && B.NetName == 'BUCK_RAMP') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '4' && A.NetName == 'BUCK_VIN'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '6' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '5' && B.NetName == 'BUCK_RAMP')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '6' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '5' && A.NetName == 'BUCK_RAMP'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '7' && A.NetName == 'BUCK_SS') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '6' && B.NetName == 'GND')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '7' && B.NetName == 'BUCK_SS') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '6' && A.NetName == 'GND'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '8' && A.NetName == 'BUCK_FB') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '7' && B.NetName == 'BUCK_SS')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '8' && B.NetName == 'BUCK_FB') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '7' && A.NetName == 'BUCK_SS'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '9' && A.NetName == 'BUCK_COMP') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '8' && B.NetName == 'BUCK_FB')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '9' && B.NetName == 'BUCK_COMP') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '8' && A.NetName == 'BUCK_FB'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '10' && A.NetName == 'V12_PD') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '9' && B.NetName == 'BUCK_COMP')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '10' && B.NetName == 'V12_PD') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '9' && A.NetName == 'BUCK_COMP'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '12' && A.NetName == 'BUCK_CS_LOW') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '11' && B.NetName == 'GND')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '12' && B.NetName == 'BUCK_CS_LOW') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '11' && A.NetName == 'GND'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '13' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '12' && B.NetName == 'BUCK_CS_LOW')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '13' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '12' && A.NetName == 'BUCK_CS_LOW'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '15' && A.NetName == 'BUCK_LO') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '14' && B.NetName == 'GND')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '15' && B.NetName == 'BUCK_LO') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '14' && A.NetName == 'GND'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '16' && A.NetName == 'BUCK_VCC') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '15' && B.NetName == 'BUCK_LO')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '16' && B.NetName == 'BUCK_VCC') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '15' && A.NetName == 'BUCK_LO'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '17' && A.NetName == 'BUCK_VCCX') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '16' && B.NetName == 'BUCK_VCC')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '17' && B.NetName == 'BUCK_VCCX') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '16' && A.NetName == 'BUCK_VCC'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '18' && A.NetName == 'BUCK_BOOT_RC') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '17' && B.NetName == 'BUCK_VCCX')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '18' && B.NetName == 'BUCK_BOOT_RC') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '17' && A.NetName == 'BUCK_VCCX'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '19' && A.NetName == 'BUCK_HO') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '18' && B.NetName == 'BUCK_BOOT_RC')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '19' && B.NetName == 'BUCK_HO') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '18' && A.NetName == 'BUCK_BOOT_RC'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '20' && A.NetName == 'BUCK_SW') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '19' && B.NetName == 'BUCK_HO')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '20' && B.NetName == 'BUCK_SW') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '19' && A.NetName == 'BUCK_HO'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '1' && B.NetName == 'BUCK_VIN')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '1' && A.NetName == 'BUCK_VIN'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '2' && B.NetName == 'BUCK_UVLO')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '2' && A.NetName == 'BUCK_UVLO'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '3' && B.NetName == 'BUCK_RT')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '3' && A.NetName == 'BUCK_RT'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '4' && B.NetName == 'BUCK_VIN')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '4' && A.NetName == 'BUCK_VIN'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '5' && B.NetName == 'BUCK_RAMP')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '5' && A.NetName == 'BUCK_RAMP'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '7' && B.NetName == 'BUCK_SS')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '7' && A.NetName == 'BUCK_SS'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '8' && B.NetName == 'BUCK_FB')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '8' && A.NetName == 'BUCK_FB'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '9' && B.NetName == 'BUCK_COMP')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '9' && A.NetName == 'BUCK_COMP'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '10' && B.NetName == 'V12_PD')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '10' && A.NetName == 'V12_PD'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '12' && B.NetName == 'BUCK_CS_LOW')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '12' && A.NetName == 'BUCK_CS_LOW'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '15' && B.NetName == 'BUCK_LO')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '15' && A.NetName == 'BUCK_LO'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '16' && B.NetName == 'BUCK_VCC')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '16' && A.NetName == 'BUCK_VCC'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '17' && B.NetName == 'BUCK_VCCX')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '17' && A.NetName == 'BUCK_VCCX'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '18' && B.NetName == 'BUCK_BOOT_RC')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '18' && A.NetName == 'BUCK_BOOT_RC'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '19' && B.NetName == 'BUCK_HO')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '19' && A.NetName == 'BUCK_HO'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '21' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '20' && B.NetName == 'BUCK_SW')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '21' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '20' && A.NetName == 'BUCK_SW'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '2' && A.NetName == 'PASSIVE_FILTER_P') && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '1' && B.NetName == 'PASSIVE_SENSE')) || ((B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '2' && B.NetName == 'PASSIVE_FILTER_P') && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '1' && A.NetName == 'PASSIVE_SENSE'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '3' && A.NetName == 'PASSIVE_UV') && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '2' && B.NetName == 'PASSIVE_FILTER_P')) || ((B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '3' && B.NetName == 'PASSIVE_UV') && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '2' && A.NetName == 'PASSIVE_FILTER_P'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '4' && A.NetName == 'PASSIVE_OV') && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '3' && B.NetName == 'PASSIVE_UV')) || ((B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '4' && B.NetName == 'PASSIVE_OV') && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '3' && A.NetName == 'PASSIVE_UV'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '5' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '4' && B.NetName == 'PASSIVE_OV')) || ((B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '5' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '4' && A.NetName == 'PASSIVE_OV'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '7' && A.NetName == 'PASSIVE_PWR') && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '6' && B.NetName == 'PASSIVE_TIMER')) || ((B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '7' && B.NetName == 'PASSIVE_PWR') && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '6' && A.NetName == 'PASSIVE_TIMER'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '8' && A.NetName == 'BUCK_UVLO') && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '7' && B.NetName == 'PASSIVE_PWR')) || ((B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '8' && B.NetName == 'BUCK_UVLO') && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '7' && A.NetName == 'PASSIVE_PWR'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '9' && A.NetName == 'PASSIVE_HS_OUT') && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '8' && B.NetName == 'BUCK_UVLO')) || ((B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '9' && B.NetName == 'PASSIVE_HS_OUT') && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '8' && A.NetName == 'BUCK_UVLO'))) || (((A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '10' && A.NetName == 'PASSIVE_GATE') && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '9' && B.NetName == 'PASSIVE_HS_OUT')) || ((B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '10' && B.NetName == 'PASSIVE_GATE') && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '9' && A.NetName == 'PASSIVE_HS_OUT')))) && !(A.memberOfFootprint('U700') || B.memberOfFootprint('U700'))")
+  (constraint clearance (min 0.200000mm))
+)
+
+(rule "Functional exact rated MOS intrinsic terminals"
+  (condition "(((A.Type == 'Pad' && A.memberOfFootprint('Q700') && A.Pad_Number == '4' && A.NetName == 'BUCK_HO') && (B.Type == 'Pad' && B.memberOfFootprint('Q700') && B.Pad_Number == '3' && B.NetName == 'BUCK_SW')) || ((B.Type == 'Pad' && B.memberOfFootprint('Q700') && B.Pad_Number == '4' && B.NetName == 'BUCK_HO') && (A.Type == 'Pad' && A.memberOfFootprint('Q700') && A.Pad_Number == '3' && A.NetName == 'BUCK_SW'))) || (((A.Type == 'Pad' && A.memberOfFootprint('Q701') && A.Pad_Number == '4' && A.NetName == 'BUCK_LO') && (B.Type == 'Pad' && B.memberOfFootprint('Q701') && B.Pad_Number == '3' && B.NetName == 'BUCK_CS_LOW')) || ((B.Type == 'Pad' && B.memberOfFootprint('Q701') && B.Pad_Number == '4' && B.NetName == 'BUCK_LO') && (A.Type == 'Pad' && A.memberOfFootprint('Q701') && A.Pad_Number == '3' && A.NetName == 'BUCK_CS_LOW'))) || (((A.Type == 'Pad' && A.memberOfFootprint('Q702') && A.Pad_Number == '4' && A.NetName == 'PASSIVE_GATE_FET') && (B.Type == 'Pad' && B.memberOfFootprint('Q702') && B.Pad_Number == '3' && B.NetName == 'PASSIVE_HS_OUT')) || ((B.Type == 'Pad' && B.memberOfFootprint('Q702') && B.Pad_Number == '4' && B.NetName == 'PASSIVE_GATE_FET') && (A.Type == 'Pad' && A.memberOfFootprint('Q702') && A.Pad_Number == '3' && A.NetName == 'PASSIVE_HS_OUT'))) || (((A.Type == 'Pad' && A.memberOfFootprint('Q702') && A.Pad_Number == '5' && A.NetName == 'PASSIVE_SENSE') && (B.Type == 'Pad' && B.memberOfFootprint('Q702') && B.Pad_Number == '1' && B.NetName == 'PASSIVE_HS_OUT')) || ((B.Type == 'Pad' && B.memberOfFootprint('Q702') && B.Pad_Number == '5' && B.NetName == 'PASSIVE_SENSE') && (A.Type == 'Pad' && A.memberOfFootprint('Q702') && A.Pad_Number == '1' && A.NetName == 'PASSIVE_HS_OUT'))) || (((A.Type == 'Pad' && A.memberOfFootprint('Q702') && A.Pad_Number == '5' && A.NetName == 'PASSIVE_SENSE') && (B.Type == 'Pad' && B.memberOfFootprint('Q702') && B.Pad_Number == '2' && B.NetName == 'PASSIVE_HS_OUT')) || ((B.Type == 'Pad' && B.memberOfFootprint('Q702') && B.Pad_Number == '5' && B.NetName == 'PASSIVE_SENSE') && (A.Type == 'Pad' && A.memberOfFootprint('Q702') && A.Pad_Number == '2' && A.NetName == 'PASSIVE_HS_OUT'))) || (((A.Type == 'Pad' && A.memberOfFootprint('Q702') && A.Pad_Number == '5' && A.NetName == 'PASSIVE_SENSE') && (B.Type == 'Pad' && B.memberOfFootprint('Q702') && B.Pad_Number == '3' && B.NetName == 'PASSIVE_HS_OUT')) || ((B.Type == 'Pad' && B.memberOfFootprint('Q702') && B.Pad_Number == '5' && B.NetName == 'PASSIVE_SENSE') && (A.Type == 'Pad' && A.memberOfFootprint('Q702') && A.Pad_Number == '3' && A.NetName == 'PASSIVE_HS_OUT'))) || (((A.Type == 'Pad' && A.memberOfFootprint('Q702') && A.Pad_Number == '5' && A.NetName == 'PASSIVE_SENSE') && (B.Type == 'Pad' && B.memberOfFootprint('Q702') && B.Pad_Number == '4' && B.NetName == 'PASSIVE_GATE_FET')) || ((B.Type == 'Pad' && B.memberOfFootprint('Q702') && B.Pad_Number == '5' && B.NetName == 'PASSIVE_SENSE') && (A.Type == 'Pad' && A.memberOfFootprint('Q702') && A.Pad_Number == '4' && A.NetName == 'PASSIVE_GATE_FET')))")
+  (constraint clearance (min 0.250000mm))
+)
+
+# Exact reviewed five-track manufacturer neighbourhood; external host/source/full-state guards mandatory.
+
+
+
+
+
+
+
+
+
+
+# MP4583 primary Rev1.0 exact own terminals and literal local launches only.
+(rule "MP31 authentic own terminals 0"
+  (condition "((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '2' && A.NetName == 'BUCK_UVLO') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '3' && B.NetName == 'PASSIVE_HS_OUT')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '2' && B.NetName == 'BUCK_UVLO') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '3' && A.NetName == 'PASSIVE_HS_OUT'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 authentic own terminals 1"
+  (condition "((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '9' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '10' && B.NetName == 'BUCK_SW')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '9' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '10' && A.NetName == 'BUCK_SW'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 authentic own terminals 2"
+  (condition "((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '9' && A.NetName == 'GND') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '11' && B.NetName == 'BUCK_SW')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '9' && B.NetName == 'GND') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '11' && A.NetName == 'BUCK_SW'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 authentic own terminals 3"
+  (condition "((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '11' && A.NetName == 'BUCK_SW') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '12' && B.NetName == 'BUCK_BOOT_RC')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '11' && B.NetName == 'BUCK_SW') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '12' && A.NetName == 'BUCK_BOOT_RC'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 authentic own terminals 4"
+  (condition "((A.Type == 'Pad' && A.memberOfFootprint('C712') && A.Pad_Number == '1' && A.NetName == 'BUCK_BOOT_RC') && (B.Type == 'Pad' && B.memberOfFootprint('C712') && B.Pad_Number == '2' && B.NetName == 'BUCK_SW')) || ((B.Type == 'Pad' && B.memberOfFootprint('C712') && B.Pad_Number == '1' && B.NetName == 'BUCK_BOOT_RC') && (A.Type == 'Pad' && A.memberOfFootprint('C712') && A.Pad_Number == '2' && A.NetName == 'BUCK_SW'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 exact own launch 0"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('build_rev_a_mp4583_launch31_dcd352ee')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '2' && B.NetName == 'BUCK_UVLO')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('build_rev_a_mp4583_launch31_dcd352ee')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '2' && A.NetName == 'BUCK_UVLO'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 exact own launch 1"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('build_rev_a_mp4583_launch31_388e03e6')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '2' && B.NetName == 'BUCK_UVLO')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('build_rev_a_mp4583_launch31_388e03e6')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '2' && A.NetName == 'BUCK_UVLO'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 exact own launch 2"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'GND' && A.memberOfGroup('build_rev_a_mp4583_launch31_d5d71dc9')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '5' && B.NetName == 'unconnected-(U1-TM-Pad5)')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'GND' && B.memberOfGroup('build_rev_a_mp4583_launch31_d5d71dc9')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '5' && A.NetName == 'unconnected-(U1-TM-Pad5)'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 exact own launch 3"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'GND' && A.memberOfGroup('build_rev_a_mp4583_launch31_7f5561e5')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '5' && B.NetName == 'unconnected-(U1-TM-Pad5)')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'GND' && B.memberOfGroup('build_rev_a_mp4583_launch31_7f5561e5')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '5' && A.NetName == 'unconnected-(U1-TM-Pad5)'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 exact own launch 4"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'GND' && A.memberOfGroup('build_rev_a_mp4583_launch31_cadbde75')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '5' && B.NetName == 'unconnected-(U1-TM-Pad5)')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'GND' && B.memberOfGroup('build_rev_a_mp4583_launch31_cadbde75')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '5' && A.NetName == 'unconnected-(U1-TM-Pad5)'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 exact own launch 5"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_SW' && A.memberOfGroup('build_rev_a_mp4583_launch31_e5057806')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '12' && B.NetName == 'BUCK_BOOT_RC')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_SW' && B.memberOfGroup('build_rev_a_mp4583_launch31_e5057806')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '12' && A.NetName == 'BUCK_BOOT_RC'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 exact own launch 6"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_SW' && A.memberOfGroup('build_rev_a_mp4583_launch31_32ea79da')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '9' && B.NetName == 'GND')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_SW' && B.memberOfGroup('build_rev_a_mp4583_launch31_32ea79da')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '9' && A.NetName == 'GND'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 exact own launch 7"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_BOOT_RC' && A.memberOfGroup('build_rev_a_mp4583_launch31_85e70fa3')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '11' && B.NetName == 'BUCK_SW')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_BOOT_RC' && B.memberOfGroup('build_rev_a_mp4583_launch31_85e70fa3')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '11' && A.NetName == 'BUCK_SW'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 exact own launch 8"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_BOOT_RC' && A.memberOfGroup('build_rev_a_mp4583_launch31_85e70fa3')) && (B.Type == 'Pad' && B.memberOfFootprint('C712') && B.Pad_Number == '2' && B.NetName == 'BUCK_SW')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_BOOT_RC' && B.memberOfGroup('build_rev_a_mp4583_launch31_85e70fa3')) && (A.Type == 'Pad' && A.memberOfFootprint('C712') && A.Pad_Number == '2' && A.NetName == 'BUCK_SW'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 exact own launch 9"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_BOOT_RC' && A.memberOfGroup('build_rev_a_mp4583_launch31_e5c36ebb')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '11' && B.NetName == 'BUCK_SW')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_BOOT_RC' && B.memberOfGroup('build_rev_a_mp4583_launch31_e5c36ebb')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '11' && A.NetName == 'BUCK_SW'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP31 exact own launch 10"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_BOOT_RC' && A.memberOfGroup('build_rev_a_mp4583_launch31_e5c36ebb')) && (B.Type == 'Pad' && B.memberOfFootprint('C712') && B.Pad_Number == '2' && B.NetName == 'BUCK_SW')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_BOOT_RC' && B.memberOfGroup('build_rev_a_mp4583_launch31_e5c36ebb')) && (A.Type == 'Pad' && A.memberOfFootprint('C712') && A.Pad_Number == '2' && A.NetName == 'BUCK_SW'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+# Exact short source-post metal within genuine LFPAK33 body neighborhood only.
+(rule "Q702 exact source body launch35"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('build_rev_a_Q702_source_body_launch35')) && (B.Type == 'Pad' && B.memberOfFootprint('Q702') && B.Pad_Number == '4' && B.NetName == 'PASSIVE_GATE_FET')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('build_rev_a_Q702_source_body_launch35')) && (A.Type == 'Pad' && A.memberOfFootprint('Q702') && A.Pad_Number == '4' && A.NetName == 'PASSIVE_GATE_FET'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+# Exact saved coupling cohort only; independent contiguous 2mm and full-state gates mandatory.
+(rule "Exact reviewed coupling36 aggregate 0"
+  (condition "(A.NetName == 'PCIE_REFCLK_P' || A.NetName == 'PCIE_REFCLK_N') && (A.memberOfGroup('build_rev_a_exact_coupling36_0') || A.memberOfGroup('carrier_hs_reviewed_via_fans_v1') || A.memberOfGroup('carrier_hs_terminal_escapes_v1'))")
+  (constraint diff_pair_uncoupled (max 8.500000mm))
+)
+(rule "Exact reviewed coupling36 aggregate 1"
+  (condition "(A.NetName == 'USB_DP' || A.NetName == 'USB_DN') && (A.memberOfGroup('build_rev_a_exact_coupling36_1') || A.memberOfGroup('carrier_hs_reviewed_via_fans_v1') || A.memberOfGroup('carrier_hs_terminal_escapes_v1'))")
+  (constraint diff_pair_uncoupled (max 4.550000mm))
+)
+(rule "Exact reviewed coupling36 aggregate 2"
+  (condition "(A.NetName == 'USB_PORT_DP' || A.NetName == 'USB_PORT_DN') && (A.memberOfGroup('build_rev_a_exact_coupling36_2') || A.memberOfGroup('carrier_hs_reviewed_via_fans_v1') || A.memberOfGroup('carrier_hs_terminal_escapes_v1'))")
+  (constraint diff_pair_uncoupled (max 4.350000mm))
+)
+(rule "Exact reviewed coupling36 aggregate 3"
+  (condition "(A.NetName == 'USB_PROTECT_DP' || A.NetName == 'USB_PROTECT_DN') && (A.memberOfGroup('build_rev_a_exact_coupling36_3') || A.memberOfGroup('carrier_hs_reviewed_via_fans_v1') || A.memberOfGroup('carrier_hs_terminal_escapes_v1'))")
+  (constraint diff_pair_uncoupled (max 2.250000mm))
+)
+(rule "Exact reviewed coupling36 aggregate 4"
+  (condition "(A.NetName == 'MODEM_USB_ISOLATED_DP' || A.NetName == 'MODEM_USB_ISOLATED_DN') && (A.memberOfGroup('build_rev_a_exact_coupling36_4') || A.memberOfGroup('carrier_hs_reviewed_via_fans_v1') || A.memberOfGroup('carrier_hs_terminal_escapes_v1'))")
+  (constraint diff_pair_uncoupled (max 4.900000mm))
+)
+(rule "Exact reviewed coupling36 aggregate 5"
+  (condition "(A.NetName == 'OOB_USB_DP' || A.NetName == 'OOB_USB_DN') && (A.memberOfGroup('build_rev_a_exact_coupling36_5') || A.memberOfGroup('carrier_hs_reviewed_via_fans_v1') || A.memberOfGroup('carrier_hs_terminal_escapes_v1') || A.memberOfGroup('carrier_oob_s3_usb_pair_v1'))")
+  (constraint diff_pair_uncoupled (max 3.100000mm))
+)
+
+(rule "MP46 exact local relationship 0"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_BOOT_RC' && A.memberOfGroup('build_rev_a_mp46_exact_273e26b0')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '11' && B.NetName == 'BUCK_SW')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_BOOT_RC' && B.memberOfGroup('build_rev_a_mp46_exact_273e26b0')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '11' && A.NetName == 'BUCK_SW'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 1"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_BOOT_RC' && A.memberOfGroup('build_rev_a_mp46_exact_13326d0c')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '11' && B.NetName == 'BUCK_SW')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_BOOT_RC' && B.memberOfGroup('build_rev_a_mp46_exact_13326d0c')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '11' && A.NetName == 'BUCK_SW'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 2"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_BOOT_RC' && A.memberOfGroup('build_rev_a_mp46_exact_f6bf7bbc')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '11' && B.NetName == 'BUCK_SW')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_BOOT_RC' && B.memberOfGroup('build_rev_a_mp46_exact_f6bf7bbc')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '11' && A.NetName == 'BUCK_SW'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 3"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_SW' && A.memberOfGroup('build_rev_a_mp46_exact_782d0e4d')) && (B.Type == 'Pad' && B.memberOfFootprint('C712') && B.Pad_Number == '1' && B.NetName == 'BUCK_BOOT_RC')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_SW' && B.memberOfGroup('build_rev_a_mp46_exact_782d0e4d')) && (A.Type == 'Pad' && A.memberOfFootprint('C712') && A.Pad_Number == '1' && A.NetName == 'BUCK_BOOT_RC'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 4"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_UVLO' && A.memberOfGroup('build_rev_a_mp46_exact_24d398dc')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '3' && B.NetName == 'PASSIVE_HS_OUT')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_UVLO' && B.memberOfGroup('build_rev_a_mp46_exact_24d398dc')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '3' && A.NetName == 'PASSIVE_HS_OUT'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 5"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_UVLO' && A.memberOfGroup('build_rev_a_mp46_exact_730f96c0')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '3' && B.NetName == 'PASSIVE_HS_OUT')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_UVLO' && B.memberOfGroup('build_rev_a_mp46_exact_730f96c0')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '3' && A.NetName == 'PASSIVE_HS_OUT'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+
+
+(rule "MP46 exact local relationship 7"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_SW' && A.memberOfGroup('build_rev_a_mp46_exact_7ccffdf9')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '7' && B.NetName == 'GND')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_SW' && B.memberOfGroup('build_rev_a_mp46_exact_7ccffdf9')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '7' && A.NetName == 'GND'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 8"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_SW' && A.memberOfGroup('build_rev_a_mp46_exact_7ccffdf9')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '8' && B.NetName == 'GND')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_SW' && B.memberOfGroup('build_rev_a_mp46_exact_7ccffdf9')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '8' && A.NetName == 'GND'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 9"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_SW' && A.memberOfGroup('build_rev_a_mp46_exact_f4649c10')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '7' && B.NetName == 'GND')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_SW' && B.memberOfGroup('build_rev_a_mp46_exact_f4649c10')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '7' && A.NetName == 'GND'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 10"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_SW' && A.memberOfGroup('build_rev_a_mp46_exact_f4649c10')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '8' && B.NetName == 'GND')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_SW' && B.memberOfGroup('build_rev_a_mp46_exact_f4649c10')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '8' && A.NetName == 'GND'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 11"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_SW' && A.memberOfGroup('build_rev_a_mp46_exact_f4649c10')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '9' && B.NetName == 'GND')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_SW' && B.memberOfGroup('build_rev_a_mp46_exact_f4649c10')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '9' && A.NetName == 'GND'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 12"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_SW' && A.memberOfGroup('build_rev_a_mp46_exact_a2c6ec9f')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '9' && B.NetName == 'GND')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_SW' && B.memberOfGroup('build_rev_a_mp46_exact_a2c6ec9f')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '9' && A.NetName == 'GND'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 13"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_SW' && A.memberOfGroup('build_rev_a_mp46_exact_a2c6ec9f')) && (B.Type == 'Pad' && B.memberOfFootprint('C712') && B.Pad_Number == '1' && B.NetName == 'BUCK_BOOT_RC')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_SW' && B.memberOfGroup('build_rev_a_mp46_exact_a2c6ec9f')) && (A.Type == 'Pad' && A.memberOfFootprint('C712') && A.Pad_Number == '1' && A.NetName == 'BUCK_BOOT_RC'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 14"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_UVLO' && A.memberOfGroup('build_rev_a_mp46_exact_24d398dc')) && (B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('build_rev_a_mp46_exact_388e03e6'))) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_UVLO' && B.memberOfGroup('build_rev_a_mp46_exact_24d398dc')) && (A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('build_rev_a_mp46_exact_388e03e6')))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 15"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_UVLO' && A.memberOfGroup('build_rev_a_mp46_exact_24d398dc')) && (B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('build_rev_a_mp46_exact_dcd352ee'))) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_UVLO' && B.memberOfGroup('build_rev_a_mp46_exact_24d398dc')) && (A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('build_rev_a_mp46_exact_dcd352ee')))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 16"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_UVLO' && A.memberOfGroup('build_rev_a_mp46_exact_730f96c0')) && (B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('build_rev_a_mp46_exact_388e03e6'))) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_UVLO' && B.memberOfGroup('build_rev_a_mp46_exact_730f96c0')) && (A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('build_rev_a_mp46_exact_388e03e6')))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 17"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_UVLO' && A.memberOfGroup('build_rev_a_mp46_exact_730f96c0')) && (B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('build_rev_a_mp46_exact_dcd352ee'))) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_UVLO' && B.memberOfGroup('build_rev_a_mp46_exact_730f96c0')) && (A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('build_rev_a_mp46_exact_dcd352ee')))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "MP46 exact local relationship 18"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_UVLO' && A.memberOfGroup('build_rev_a_mp46_exact_6c7d6a22')) && (B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('build_rev_a_mp46_exact_99183c05'))) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_UVLO' && B.memberOfGroup('build_rev_a_mp46_exact_6c7d6a22')) && (A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('build_rev_a_mp46_exact_99183c05')))")
+  (constraint clearance (min 0.250000mm))
+)
+# Manufacturer-rated H2414QR literal own terminal pairs; full host/source/native guards required.
+(rule "H2414QR exact own rated terminal pairs46"
+  (condition "((A.Type == 'Pad' && A.memberOfFootprint('U40') && A.Pad_Number == '15' && A.NetName == 'VC1') && (B.Type == 'Pad' && B.memberOfFootprint('U40') && B.Pad_Number == '16' && B.NetName == 'CABLE1_P')) || ((B.Type == 'Pad' && B.memberOfFootprint('U40') && B.Pad_Number == '15' && B.NetName == 'VC1') && (A.Type == 'Pad' && A.memberOfFootprint('U40') && A.Pad_Number == '16' && A.NetName == 'CABLE1_P')) || ((A.Type == 'Pad' && A.memberOfFootprint('U40') && A.Pad_Number == '18' && A.NetName == 'VC2') && (B.Type == 'Pad' && B.memberOfFootprint('U40') && B.Pad_Number == '19' && B.NetName == 'CABLE2_P')) || ((B.Type == 'Pad' && B.memberOfFootprint('U40') && B.Pad_Number == '18' && B.NetName == 'VC2') && (A.Type == 'Pad' && A.memberOfFootprint('U40') && A.Pad_Number == '19' && A.NetName == 'CABLE2_P')) || ((A.Type == 'Pad' && A.memberOfFootprint('U40') && A.Pad_Number == '21' && A.NetName == 'VC3') && (B.Type == 'Pad' && B.memberOfFootprint('U40') && B.Pad_Number == '22' && B.NetName == 'CABLE3_P')) || ((B.Type == 'Pad' && B.memberOfFootprint('U40') && B.Pad_Number == '21' && B.NetName == 'VC3') && (A.Type == 'Pad' && A.memberOfFootprint('U40') && A.Pad_Number == '22' && A.NetName == 'CABLE3_P'))")
+  (constraint clearance (min 0.500000mm))
+)
+
+(rule "CABLE48 exact width build_rev_a_CABLE48_F_source"
+ (condition "A.Type == 'Track' && A.memberOfGroup('build_rev_a_CABLE48_F_source') && ((A.NetName == 'CABLE0_P' || A.NetName == 'CABLE0_N') || (A.NetName == 'CABLE1_P' || A.NetName == 'CABLE1_N') || (A.NetName == 'CABLE2_P' || A.NetName == 'CABLE2_N') || (A.NetName == 'CABLE3_P' || A.NetName == 'CABLE3_N')) && A.Layer == 'F.Cu'")
+ (constraint track_width (min 0.285600mm) (opt 0.290600mm) (max 0.295600mm)))
+
+(rule "CABLE48 exact width build_rev_a_CABLE48_inner"
+ (condition "A.Type == 'Track' && A.memberOfGroup('build_rev_a_CABLE48_inner') && ((A.NetName == 'CABLE0_P' || A.NetName == 'CABLE0_N') || (A.NetName == 'CABLE1_P' || A.NetName == 'CABLE1_N') || (A.NetName == 'CABLE2_P' || A.NetName == 'CABLE2_N') || (A.NetName == 'CABLE3_P' || A.NetName == 'CABLE3_N')) && (((A.NetName == 'CABLE0_P' || A.NetName == 'CABLE0_N') && A.Layer == 'In3.Cu' && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals'))) || ((A.NetName == 'CABLE1_P' || A.NetName == 'CABLE1_N') && A.Layer == 'In2.Cu' && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals'))) || ((A.NetName == 'CABLE2_P' || A.NetName == 'CABLE2_N') && A.Layer == 'In3.Cu' && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals'))) || ((A.NetName == 'CABLE3_P' || A.NetName == 'CABLE3_N') && A.Layer == 'In2.Cu' && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals'))))")
+ (constraint track_width (min 0.443300mm) (opt 0.448300mm) (max 0.453300mm)))
+
+(rule "CABLE48 exact width build_rev_a_CABLE48_J1_terminals"
+ (condition "A.Type == 'Track' && A.memberOfGroup('build_rev_a_CABLE48_J1_terminals') && ((A.NetName == 'CABLE0_P' || A.NetName == 'CABLE0_N') || (A.NetName == 'CABLE1_P' || A.NetName == 'CABLE1_N') || (A.NetName == 'CABLE2_P' || A.NetName == 'CABLE2_N') || (A.NetName == 'CABLE3_P' || A.NetName == 'CABLE3_N')) && (((A.NetName == 'CABLE0_P' || A.NetName == 'CABLE0_N') && A.Layer == 'In3.Cu' && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals'))) || ((A.NetName == 'CABLE1_P' || A.NetName == 'CABLE1_N') && A.Layer == 'In2.Cu' && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals'))) || ((A.NetName == 'CABLE2_P' || A.NetName == 'CABLE2_N') && A.Layer == 'In3.Cu' && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals'))) || ((A.NetName == 'CABLE3_P' || A.NetName == 'CABLE3_N') && A.Layer == 'In2.Cu' && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals'))))")
+ (constraint track_width (min 0.443300mm) (opt 0.448300mm) (max 0.453300mm)))
+
+(rule "CABLE48 exact whole-cohort gap ownership"
+ (condition "((A.NetName == 'CABLE0_P' || A.NetName == 'CABLE0_N') || (A.NetName == 'CABLE1_P' || A.NetName == 'CABLE1_N') || (A.NetName == 'CABLE2_P' || A.NetName == 'CABLE2_N') || (A.NetName == 'CABLE3_P' || A.NetName == 'CABLE3_N')) && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals') || A.memberOfGroup('build_rev_a_CABLE48_F_source') || A.memberOfGroup('build_rev_a_CABLE48_transition'))")
+ (constraint diff_pair_gap (min 0.5949mm) (opt 0.5999mm) (max 0.6049mm)))
+
+(rule "CABLE48 exact buried source-reference to J1 PTH lands"
+ (condition "(A.Type == 'Zone' && A.NetName == 'CABLE_PWR_N' && (A.Layer == 'In1.Cu' || A.Layer == 'In4.Cu') && A.memberOfGroup('build_rev_a_CABLE48_sourced_reference') && B.Type == 'Pad' && B.memberOfFootprint('J1') && ((B.Pad_Number == '1' && B.NetName == 'CABLE0_P') || (B.Pad_Number == '2' && B.NetName == 'CABLE0_N') || (B.Pad_Number == '3' && B.NetName == 'CABLE1_P') || (B.Pad_Number == '4' && B.NetName == 'CABLE2_P') || (B.Pad_Number == '5' && B.NetName == 'CABLE2_N') || (B.Pad_Number == '6' && B.NetName == 'CABLE1_N') || (B.Pad_Number == '7' && B.NetName == 'CABLE3_P') || (B.Pad_Number == '8' && B.NetName == 'CABLE3_N'))) || (B.Type == 'Zone' && B.NetName == 'CABLE_PWR_N' && (B.Layer == 'In1.Cu' || B.Layer == 'In4.Cu') && B.memberOfGroup('build_rev_a_CABLE48_sourced_reference') && A.Type == 'Pad' && A.memberOfFootprint('J1') && ((A.Pad_Number == '1' && A.NetName == 'CABLE0_P') || (A.Pad_Number == '2' && A.NetName == 'CABLE0_N') || (A.Pad_Number == '3' && A.NetName == 'CABLE1_P') || (A.Pad_Number == '4' && A.NetName == 'CABLE2_P') || (A.Pad_Number == '5' && A.NetName == 'CABLE2_N') || (A.Pad_Number == '6' && A.NetName == 'CABLE1_N') || (A.Pad_Number == '7' && A.NetName == 'CABLE3_P') || (A.Pad_Number == '8' && A.NetName == 'CABLE3_N')))")
+ (constraint clearance (min 0.250mm)))
+
+(rule "CABLE48 six exact buried J1 terminal adjacency tuples"
+ (condition "(A.Type == 'Track' && A.Layer == 'In2.Cu' && A.memberOfGroup('build_rev_a_CABLE48_J1_terminals') && A.NetName == 'CABLE1_P' && B.Type == 'Pad' && B.memberOfFootprint('J1') && B.Pad_Number == '2' && B.NetName == 'CABLE0_N') || (A.Type == 'Track' && A.Layer == 'In2.Cu' && A.memberOfGroup('build_rev_a_CABLE48_J1_terminals') && A.NetName == 'CABLE1_P' && B.Type == 'Pad' && B.memberOfFootprint('J1') && B.Pad_Number == '4' && B.NetName == 'CABLE2_P') || (A.Type == 'Track' && A.Layer == 'In3.Cu' && A.memberOfGroup('build_rev_a_CABLE48_J1_terminals') && A.NetName == 'CABLE2_N' && B.Type == 'Pad' && B.memberOfFootprint('J1') && B.Pad_Number == '4' && B.NetName == 'CABLE2_P') || (A.Type == 'Track' && A.Layer == 'In3.Cu' && A.memberOfGroup('build_rev_a_CABLE48_J1_terminals') && A.NetName == 'CABLE2_N' && B.Type == 'Pad' && B.memberOfFootprint('J1') && B.Pad_Number == '6' && B.NetName == 'CABLE1_N') || (A.Type == 'Track' && A.Layer == 'In2.Cu' && A.memberOfGroup('build_rev_a_CABLE48_J1_terminals') && A.NetName == 'CABLE3_P' && B.Type == 'Pad' && B.memberOfFootprint('J1') && B.Pad_Number == '6' && B.NetName == 'CABLE1_N') || (A.Type == 'Track' && A.Layer == 'In2.Cu' && A.memberOfGroup('build_rev_a_CABLE48_J1_terminals') && A.NetName == 'CABLE3_P' && B.Type == 'Pad' && B.memberOfFootprint('J1') && B.Pad_Number == '8' && B.NetName == 'CABLE3_N') || (B.Type == 'Track' && B.Layer == 'In2.Cu' && B.memberOfGroup('build_rev_a_CABLE48_J1_terminals') && B.NetName == 'CABLE1_P' && A.Type == 'Pad' && A.memberOfFootprint('J1') && A.Pad_Number == '2' && A.NetName == 'CABLE0_N') || (B.Type == 'Track' && B.Layer == 'In2.Cu' && B.memberOfGroup('build_rev_a_CABLE48_J1_terminals') && B.NetName == 'CABLE1_P' && A.Type == 'Pad' && A.memberOfFootprint('J1') && A.Pad_Number == '4' && A.NetName == 'CABLE2_P') || (B.Type == 'Track' && B.Layer == 'In3.Cu' && B.memberOfGroup('build_rev_a_CABLE48_J1_terminals') && B.NetName == 'CABLE2_N' && A.Type == 'Pad' && A.memberOfFootprint('J1') && A.Pad_Number == '4' && A.NetName == 'CABLE2_P') || (B.Type == 'Track' && B.Layer == 'In3.Cu' && B.memberOfGroup('build_rev_a_CABLE48_J1_terminals') && B.NetName == 'CABLE2_N' && A.Type == 'Pad' && A.memberOfFootprint('J1') && A.Pad_Number == '6' && A.NetName == 'CABLE1_N') || (B.Type == 'Track' && B.Layer == 'In2.Cu' && B.memberOfGroup('build_rev_a_CABLE48_J1_terminals') && B.NetName == 'CABLE3_P' && A.Type == 'Pad' && A.memberOfFootprint('J1') && A.Pad_Number == '6' && A.NetName == 'CABLE1_N') || (B.Type == 'Track' && B.Layer == 'In2.Cu' && B.memberOfGroup('build_rev_a_CABLE48_J1_terminals') && B.NetName == 'CABLE3_P' && A.Type == 'Pad' && A.memberOfFootprint('J1') && A.Pad_Number == '8' && A.NetName == 'CABLE3_N')")
+ (constraint clearance (min 0.200mm)))
+
+(rule "CABLE48 preserve literal external raw foreign 0p60"
+ (condition "(((A.Type == 'Via' && A.memberOfGroup('build_rev_a_CABLE48_transition')) || (A.Type == 'Track' && A.Layer == 'F.Cu' && A.memberOfGroup('build_rev_a_CABLE48_F_source'))) && ((A.NetName == 'CABLE0_P' || A.NetName == 'CABLE0_N') || (A.NetName == 'CABLE1_P' || A.NetName == 'CABLE1_N') || (A.NetName == 'CABLE2_P' || A.NetName == 'CABLE2_N') || (A.NetName == 'CABLE3_P' || A.NetName == 'CABLE3_N')) && A.NetName != B.NetName && !AB.isCoupledDiffPair()) || (((B.Type == 'Via' && B.memberOfGroup('build_rev_a_CABLE48_transition')) || (B.Type == 'Track' && B.Layer == 'F.Cu' && B.memberOfGroup('build_rev_a_CABLE48_F_source'))) && ((B.NetName == 'CABLE0_P' || B.NetName == 'CABLE0_N') || (B.NetName == 'CABLE1_P' || B.NetName == 'CABLE1_N') || (B.NetName == 'CABLE2_P' || B.NetName == 'CABLE2_N') || (B.NetName == 'CABLE3_P' || B.NetName == 'CABLE3_N')) && B.NetName != A.NetName && !AB.isCoupledDiffPair())")
+ (constraint clearance (min 0.600mm)))
+
+(rule "CABLE48 measured aggregate diagnostic cohort 0"
+ (condition "(A.NetName == 'CABLE0_P' || A.NetName == 'CABLE0_N') && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals') || A.memberOfGroup('build_rev_a_CABLE48_F_source') || A.memberOfGroup('build_rev_a_CABLE48_transition'))")
+ (constraint diff_pair_uncoupled (max 12.180mm)))
+
+(rule "CABLE48 measured aggregate diagnostic cohort 1"
+ (condition "(A.NetName == 'CABLE1_P' || A.NetName == 'CABLE1_N') && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals') || A.memberOfGroup('build_rev_a_CABLE48_F_source') || A.memberOfGroup('build_rev_a_CABLE48_transition'))")
+ (constraint diff_pair_uncoupled (max 12.040mm)))
+
+(rule "CABLE48 measured aggregate diagnostic cohort 2"
+ (condition "(A.NetName == 'CABLE2_P' || A.NetName == 'CABLE2_N') && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals') || A.memberOfGroup('build_rev_a_CABLE48_F_source') || A.memberOfGroup('build_rev_a_CABLE48_transition'))")
+ (constraint diff_pair_uncoupled (max 12.910mm)))
+
+(rule "CABLE48 measured aggregate diagnostic cohort 3"
+ (condition "(A.NetName == 'CABLE3_P' || A.NetName == 'CABLE3_N') && (A.memberOfGroup('build_rev_a_CABLE48_inner') || A.memberOfGroup('build_rev_a_CABLE48_J1_terminals') || A.memberOfGroup('build_rev_a_CABLE48_F_source') || A.memberOfGroup('build_rev_a_CABLE48_transition'))")
+ (constraint diff_pair_uncoupled (max 13.080mm)))
+
+# Exact source59 reviewed PCIe package and full F/B transition cohort.
+# Numerical aggregate detector only; all84 full-state and physical path guard required.
+(rule "PCIe59 exact PCIE_TX distributed launch aggregate"
+  (condition "(A.NetName == 'PCIE_TX_P' || A.NetName == 'PCIE_TX_N') && (A.memberOfGroup('build_rev_a_PCIe59_exact_TX_aggregate') || A.memberOfGroup('carrier_hs_reviewed_via_fans_v1') || A.memberOfGroup('carrier_hs_terminal_escapes_v1'))")
+  (constraint diff_pair_uncoupled (max 7.660000mm))
+)
+(rule "PCIe59 exact PCIE_RX distributed launch aggregate"
+  (condition "(A.NetName == 'PCIE_RX_P' || A.NetName == 'PCIE_RX_N') && (A.memberOfGroup('build_rev_a_PCIe59_exact_RX_aggregate') || A.memberOfGroup('carrier_hs_reviewed_via_fans_v1') || A.memberOfGroup('carrier_hs_terminal_escapes_v1'))")
+  (constraint diff_pair_uncoupled (max 5.220000mm))
+)
+(rule "PCIe59 exact RTL_TX distributed launch aggregate"
+  (condition "(A.NetName == 'RTL_TX_P' || A.NetName == 'RTL_TX_N') && (A.memberOfGroup('build_rev_a_PCIe59_exact_RTL_aggregate') || A.memberOfGroup('carrier_hs_reviewed_via_fans_v1') || A.memberOfGroup('carrier_hs_terminal_escapes_v1'))")
+  (constraint diff_pair_uncoupled (max 2.130000mm))
+)
+
+(rule "TPS70 genuine own PAD U700 6 7"
+ (condition "((A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '6' && A.NetName == 'BUCK_UVLO') && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '7' && B.NetName == 'PASSIVE_HS_OUT')) || ((B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '6' && B.NetName == 'BUCK_UVLO') && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '7' && A.NetName == 'PASSIVE_HS_OUT'))")
+ (constraint clearance (min 0.200000mm))
+)
+
+(rule "TPS70 genuine own PAD U700 7 8"
+ (condition "((A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '7' && A.NetName == 'PASSIVE_HS_OUT') && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '8' && B.NetName == 'PASSIVE_GATE')) || ((B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '7' && B.NetName == 'PASSIVE_HS_OUT') && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '8' && A.NetName == 'PASSIVE_GATE'))")
+ (constraint clearance (min 0.200000mm))
+)
+
+(rule "TPS70 genuine own PAD U700 8 9"
+ (condition "((A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '8' && A.NetName == 'PASSIVE_GATE') && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '9' && B.NetName == 'PASSIVE_SENSE_KELVIN')) || ((B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '8' && B.NetName == 'PASSIVE_GATE') && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '9' && A.NetName == 'PASSIVE_SENSE_KELVIN'))")
+ (constraint clearance (min 0.200000mm))
+)
+
+(rule "TPS70 genuine own PAD U700 9 10"
+ (condition "((A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '9' && A.NetName == 'PASSIVE_SENSE_KELVIN') && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '10' && B.NetName == 'PASSIVE_FILTER_KELVIN')) || ((B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '9' && B.NetName == 'PASSIVE_SENSE_KELVIN') && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '10' && A.NetName == 'PASSIVE_FILTER_KELVIN'))")
+ (constraint clearance (min 0.200000mm))
+)
+
+(rule "TPS70 genuine own PAD R720 1 3"
+ (condition "((A.Type == 'Pad' && A.memberOfFootprint('R720') && A.Pad_Number == '1' && A.NetName == 'PASSIVE_FILTER_P') && (B.Type == 'Pad' && B.memberOfFootprint('R720') && B.Pad_Number == '3' && B.NetName == 'PASSIVE_FILTER_KELVIN')) || ((B.Type == 'Pad' && B.memberOfFootprint('R720') && B.Pad_Number == '1' && B.NetName == 'PASSIVE_FILTER_P') && (A.Type == 'Pad' && A.memberOfFootprint('R720') && A.Pad_Number == '3' && A.NetName == 'PASSIVE_FILTER_KELVIN'))")
+ (constraint clearance (min 0.300000mm))
+)
+
+(rule "TPS70 genuine own PAD R720 2 4"
+ (condition "((A.Type == 'Pad' && A.memberOfFootprint('R720') && A.Pad_Number == '2' && A.NetName == 'PASSIVE_SENSE') && (B.Type == 'Pad' && B.memberOfFootprint('R720') && B.Pad_Number == '4' && B.NetName == 'PASSIVE_SENSE_KELVIN')) || ((B.Type == 'Pad' && B.memberOfFootprint('R720') && B.Pad_Number == '2' && B.NetName == 'PASSIVE_SENSE') && (A.Type == 'Pad' && A.memberOfFootprint('R720') && A.Pad_Number == '4' && A.NetName == 'PASSIVE_SENSE_KELVIN'))")
+ (constraint clearance (min 0.300000mm))
+)
+
+# MDI118 private proposal: exact saved74 data cohort, full guard and serial fan<=2mm required.
+(rule "MDI118 exact reviewed distributed arc aggregate 0"
+  (condition "(A.NetName == 'MDI0_P' || A.NetName == 'MDI0_N') && A.Layer == 'F.Cu' && (A.memberOfGroup('build_rev_a_MDI90_all_F_core') || A.memberOfGroup('carrier_hs_terminal_escapes_v1'))")
+  (constraint diff_pair_uncoupled (max 5.520000mm))
+)
+(rule "MDI118 exact reviewed distributed arc aggregate 1"
+  (condition "(A.NetName == 'MDI1_P' || A.NetName == 'MDI1_N') && A.Layer == 'F.Cu' && (A.memberOfGroup('build_rev_a_MDI90_all_F_core') || A.memberOfGroup('carrier_hs_terminal_escapes_v1'))")
+  (constraint diff_pair_uncoupled (max 4.470000mm))
+)
+(rule "MDI118 exact reviewed distributed arc aggregate 2"
+  (condition "(A.NetName == 'MDI2_P' || A.NetName == 'MDI2_N') && A.Layer == 'F.Cu' && (A.memberOfGroup('build_rev_a_MDI90_all_F_core') || A.memberOfGroup('carrier_hs_terminal_escapes_v1'))")
+  (constraint diff_pair_uncoupled (max 4.270000mm))
+)
+(rule "MDI118 exact reviewed distributed arc aggregate 3"
+  (condition "(A.NetName == 'MDI3_P' || A.NetName == 'MDI3_N') && A.Layer == 'F.Cu' && (A.memberOfGroup('build_rev_a_MDI90_all_F_core') || A.memberOfGroup('carrier_hs_terminal_escapes_v1'))")
+  (constraint diff_pair_uncoupled (max 4.270000mm))
+)
+# Exact three factory Track/Pad relationships; former Track/Via scope retired; full closed-state guard required.
+(rule "Kelvin76 literal local relationship 0"
+ (condition "((A.Type == 'Track' && A.NetName == 'PASSIVE_SENSE_KELVIN' && A.memberOfGroup('rev_a_Kelvin76_literal_cd579b4e') && B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '8' && B.NetName == 'PASSIVE_GATE') || (B.Type == 'Track' && B.NetName == 'PASSIVE_SENSE_KELVIN' && B.memberOfGroup('rev_a_Kelvin76_literal_cd579b4e') && A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '8' && A.NetName == 'PASSIVE_GATE'))")
+ (constraint clearance (min 0.25mm)))
+(rule "Kelvin76 literal local relationship 2"
+ (condition "((A.Type == 'Track' && A.NetName == 'PASSIVE_FILTER_KELVIN' && A.memberOfGroup('rev_a_Kelvin76_literal_d7fbdbad') && B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '9' && B.NetName == 'PASSIVE_SENSE_KELVIN') || (B.Type == 'Track' && B.NetName == 'PASSIVE_FILTER_KELVIN' && B.memberOfGroup('rev_a_Kelvin76_literal_d7fbdbad') && A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '9' && A.NetName == 'PASSIVE_SENSE_KELVIN'))")
+ (constraint clearance (min 0.25mm)))
+(rule "Kelvin76 literal local relationship 6"
+ (condition "((A.Type == 'Track' && A.NetName == 'PASSIVE_SENSE_KELVIN' && A.memberOfGroup('rev_a_Kelvin76_literal_cd579b4e') && B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '10' && B.NetName == 'PASSIVE_FILTER_KELVIN') || (B.Type == 'Track' && B.NetName == 'PASSIVE_SENSE_KELVIN' && B.memberOfGroup('rev_a_Kelvin76_literal_cd579b4e') && A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '10' && A.NetName == 'PASSIVE_FILTER_KELVIN'))")
+ (constraint clearance (min 0.25mm)))
+
+(rule "Frontend exact authentic PG to OUT own launch117"
+(condition "((A.Type == 'Track' && A.NetName == 'BUCK_UVLO' && A.Layer == 'F.Cu' && A.memberOfGroup('frontend101_exact_PGD_launch')) && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '7' && B.NetName == 'PASSIVE_HS_OUT')) || ((B.Type == 'Track' && B.NetName == 'BUCK_UVLO' && B.Layer == 'F.Cu' && B.memberOfGroup('frontend101_exact_PGD_launch')) && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '7' && A.NetName == 'PASSIVE_HS_OUT'))")
+(constraint clearance (min 0.25mm)))
+
+# PRIVATE110 literal manufacturer own-body request; not authoritative rule admission.
+(rule "Frontend110 exact Gate first versus genuine U700 OUT and SENSE pads"
+ (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_GATE' && A.memberOfGroup('frontend110_exact_U700_gate_first')) && (B.Type == 'Pad' && B.memberOfFootprint('U700') && ((B.Pad_Number == '7' && B.NetName == 'PASSIVE_HS_OUT') || (B.Pad_Number == '9' && B.NetName == 'PASSIVE_SENSE_KELVIN')))) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_GATE' && B.memberOfGroup('frontend110_exact_U700_gate_first')) && (A.Type == 'Pad' && A.memberOfFootprint('U700') && ((A.Pad_Number == '7' && A.NetName == 'PASSIVE_HS_OUT') || (A.Pad_Number == '9' && A.NetName == 'PASSIVE_SENSE_KELVIN'))))")
+ (constraint clearance (min 0.25mm)))
+(rule "Frontend110 exact two genuine U700 first factory fan tracks"
+ (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_GATE' && A.memberOfGroup('frontend110_exact_U700_gate_first')) && (B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_SENSE_KELVIN' && B.memberOfGroup('rev_a_Kelvin76_literal_cd579b4e'))) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_GATE' && B.memberOfGroup('frontend110_exact_U700_gate_first')) && (A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_SENSE_KELVIN' && A.memberOfGroup('rev_a_Kelvin76_literal_cd579b4e')))")
+ (constraint clearance (min 0.25mm)))
+
+(rule "Frontend131 exact authentic OUT to own PG launch"
+(condition "((A.Type == 'Track' && A.NetName == 'PASSIVE_HS_OUT' && A.Layer == 'F.Cu' && A.memberOfGroup('frontend131_exact_OUT_launch')) && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '6' && B.NetName == 'BUCK_UVLO')) || ((B.Type == 'Track' && B.NetName == 'PASSIVE_HS_OUT' && B.Layer == 'F.Cu' && B.memberOfGroup('frontend131_exact_OUT_launch')) && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '6' && A.NetName == 'BUCK_UVLO'))")
+(constraint clearance (min 0.25mm)))
+
+(rule "Frontend110131 literal two genuine factory launch tracks"
+(condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_GATE' && A.memberOfGroup('frontend110_exact_U700_gate_first')) && (B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('frontend131_exact_OUT_launch'))) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_GATE' && B.memberOfGroup('frontend110_exact_U700_gate_first')) && (A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('frontend131_exact_OUT_launch')))")
+(constraint clearance (min 0.25mm)))
+
+(rule "Frontend135 literal same-body Gatefirst OUT onward tracks" (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_GATE' && A.memberOfGroup('frontend110_exact_U700_gate_first')) && (B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('frontend132_exact_OUT_onward'))) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_GATE' && B.memberOfGroup('frontend110_exact_U700_gate_first')) && (A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('frontend132_exact_OUT_onward')))") (constraint clearance (min 0.25mm)))
+
+(rule "Frontend136 literal OUT-own-Gate8" (condition "((A.Type == 'Track' && A.NetName == 'PASSIVE_HS_OUT' && A.Layer == 'F.Cu' && A.memberOfGroup('frontend131_exact_OUT_launch')) && (B.Type == 'Pad' && B.memberOfFootprint('U700') && B.Pad_Number == '8' && B.NetName == 'PASSIVE_GATE')) || ((B.Type == 'Track' && B.NetName == 'PASSIVE_HS_OUT' && B.Layer == 'F.Cu' && B.memberOfGroup('frontend131_exact_OUT_launch')) && (A.Type == 'Pad' && A.memberOfFootprint('U700') && A.Pad_Number == '8' && A.NetName == 'PASSIVE_GATE'))") (constraint clearance (min 0.25mm)))
+
+(rule "Frontend136 literal Q702-GF-own-Source3" (condition "((A.Type == 'Track' && A.NetName == 'PASSIVE_GATE_FET' && A.Layer == 'F.Cu' && A.memberOfGroup('frontend135_exact_Q702_gate_first')) && (B.Type == 'Pad' && B.memberOfFootprint('Q702') && B.Pad_Number == '3' && B.NetName == 'PASSIVE_HS_OUT')) || ((B.Type == 'Track' && B.NetName == 'PASSIVE_GATE_FET' && B.Layer == 'F.Cu' && B.memberOfGroup('frontend135_exact_Q702_gate_first')) && (A.Type == 'Pad' && A.memberOfFootprint('Q702') && A.Pad_Number == '3' && A.NetName == 'PASSIVE_HS_OUT'))") (constraint clearance (min 0.35mm)))
+
+(rule "Frontend136 literal Q702-GF-own-Sourcecollector" (condition "((A.Type == 'Track' && A.NetName == 'PASSIVE_GATE_FET' && A.Layer == 'F.Cu' && A.memberOfGroup('frontend135_exact_Q702_gate_first')) && (B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('frontend136_exact_Q702_source_collector'))) || ((B.Type == 'Track' && B.NetName == 'PASSIVE_GATE_FET' && B.Layer == 'F.Cu' && B.memberOfGroup('frontend135_exact_Q702_gate_first')) && (A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('frontend136_exact_Q702_source_collector')))") (constraint clearance (min 0.35mm)))
+
+# PRIVATE206 stricter classification of two newly introduced high-potential nets.
+# No clamped-pair exception, no factory-pad exception, and no GND relaxation.
+(rule "Input206 new high potential foreign copper fail closed"
+ (condition "((A.NetName == 'PASSIVE_BUCK_IN' || A.NetName == 'PASSIVE_GATE_RAMP' || B.NetName == 'PASSIVE_BUCK_IN' || B.NetName == 'PASSIVE_GATE_RAMP') && A.NetName != B.NetName && !(A.Type == 'Pad' && A.Pad_Type == 'NPTH, mechanical') && !(B.Type == 'Pad' && B.Pad_Type == 'NPTH, mechanical'))")
+ (constraint clearance (min 0.600000mm)))
+
+# Input209 ONLY exact pre-existing MP4583 VIN/EN package-local relationships.
+(rule "Input209 retag MP31 authentic own terminals 0"
+  (condition "((A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '2' && A.NetName == 'BUCK_UVLO') && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '3' && B.NetName == 'PASSIVE_BUCK_IN')) || ((B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '2' && B.NetName == 'BUCK_UVLO') && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '3' && A.NetName == 'PASSIVE_BUCK_IN'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "Input209 retag MP31 exact own launch 0"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_BUCK_IN' && A.memberOfGroup('build_rev_a_mp4583_launch31_dcd352ee')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '2' && B.NetName == 'BUCK_UVLO')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_BUCK_IN' && B.memberOfGroup('build_rev_a_mp4583_launch31_dcd352ee')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '2' && A.NetName == 'BUCK_UVLO'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "Input209 retag MP31 exact own launch 1"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_BUCK_IN' && A.memberOfGroup('build_rev_a_mp4583_launch31_388e03e6')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '2' && B.NetName == 'BUCK_UVLO')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_BUCK_IN' && B.memberOfGroup('build_rev_a_mp4583_launch31_388e03e6')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '2' && A.NetName == 'BUCK_UVLO'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "Input209 retag MP46 exact local relationship 4"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_UVLO' && A.memberOfGroup('build_rev_a_mp46_exact_24d398dc')) && (B.Type == 'Pad' && B.memberOfFootprint('U1') && B.Pad_Number == '3' && B.NetName == 'PASSIVE_BUCK_IN')) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_UVLO' && B.memberOfGroup('build_rev_a_mp46_exact_24d398dc')) && (A.Type == 'Pad' && A.memberOfFootprint('U1') && A.Pad_Number == '3' && A.NetName == 'PASSIVE_BUCK_IN'))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "Input209 retag MP46 exact local relationship 14"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_UVLO' && A.memberOfGroup('build_rev_a_mp46_exact_24d398dc')) && (B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_BUCK_IN' && B.memberOfGroup('build_rev_a_mp46_exact_388e03e6'))) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_UVLO' && B.memberOfGroup('build_rev_a_mp46_exact_24d398dc')) && (A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_BUCK_IN' && A.memberOfGroup('build_rev_a_mp46_exact_388e03e6')))")
+  (constraint clearance (min 0.250000mm))
+)
+
+(rule "Input209 retag MP46 exact local relationship 15"
+  (condition "((A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'BUCK_UVLO' && A.memberOfGroup('build_rev_a_mp46_exact_24d398dc')) && (B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_BUCK_IN' && B.memberOfGroup('build_rev_a_mp46_exact_dcd352ee'))) || ((B.Type == 'Track' && B.Layer == 'F.Cu' && B.NetName == 'BUCK_UVLO' && B.memberOfGroup('build_rev_a_mp46_exact_24d398dc')) && (A.Type == 'Track' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_BUCK_IN' && A.memberOfGroup('build_rev_a_mp46_exact_dcd352ee')))")
+  (constraint clearance (min 0.250000mm))
+)
+
+# PRIVATE216 CONDITIONAL LOCAL DIFFERENTIAL TEST ONLY. All unrelated/GND higher rules remain.
+# PROPOSAL ONLY, NOT APPLIED. All11 literal actual F GF/HS relationships. Each typedgroup must haveexactlyone frozenobject. Allthirdnets/GNDkeep0.6mm.
+(rule "Input215 proposed literal clamped pair 0"
+  (condition "((A.Type == 'Pad' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_GATE_FET' && A.memberOfFootprint('Q702') && A.Pad_Number == '4') && (B.Type == 'Pad' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfFootprint('Q702') && B.Pad_Number == '3')) || ((B.Type == 'Pad' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_GATE_FET' && B.memberOfFootprint('Q702') && B.Pad_Number == '4') && (A.Type == 'Pad' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfFootprint('Q702') && A.Pad_Number == '3'))")
+  (constraint clearance (min 0.200000mm))
+)
+
+(rule "Input215 proposed literal clamped pair 1"
+  (condition "((A.Type == 'Pad' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_GATE_FET' && A.memberOfFootprint('D704') && A.Pad_Number == '4') && (B.Type == 'Pad' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfFootprint('D704') && B.Pad_Number == '7')) || ((B.Type == 'Pad' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_GATE_FET' && B.memberOfFootprint('D704') && B.Pad_Number == '4') && (A.Type == 'Pad' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfFootprint('D704') && A.Pad_Number == '7'))")
+  (constraint clearance (min 0.200000mm))
+)
+
+(rule "Input215 proposed literal clamped pair 2"
+  (condition "((A.Type == 'Pad' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_GATE_FET' && A.memberOfFootprint('D704') && A.Pad_Number == '5') && (B.Type == 'Pad' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfFootprint('D704') && B.Pad_Number == '7')) || ((B.Type == 'Pad' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_GATE_FET' && B.memberOfFootprint('D704') && B.Pad_Number == '5') && (A.Type == 'Pad' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfFootprint('D704') && A.Pad_Number == '7'))")
+  (constraint clearance (min 0.200000mm))
+)
+
+(rule "Input215 proposed literal clamped pair 3"
+  (condition "((A.Type == 'Pad' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_GATE_FET' && A.memberOfFootprint('D704') && A.Pad_Number == '5') && (B.Type == 'Via' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('Input215_local_c90aa01e'))) || ((B.Type == 'Pad' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_GATE_FET' && B.memberOfFootprint('D704') && B.Pad_Number == '5') && (A.Type == 'Via' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('Input215_local_c90aa01e')))")
+  (constraint clearance (min 0.200000mm))
+)
+
+(rule "Input215 proposed literal clamped pair 4"
+  (condition "((A.Type == 'Pad' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_GATE_FET' && A.memberOfFootprint('D704') && A.Pad_Number == '6') && (B.Type == 'Pad' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfFootprint('D704') && B.Pad_Number == '7')) || ((B.Type == 'Pad' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_GATE_FET' && B.memberOfFootprint('D704') && B.Pad_Number == '6') && (A.Type == 'Pad' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfFootprint('D704') && A.Pad_Number == '7'))")
+  (constraint clearance (min 0.200000mm))
+)
+
+(rule "Input215 proposed literal clamped pair 5"
+  (condition "((A.Type == 'Track' && A.NetName == 'PASSIVE_GATE_FET' && A.memberOfGroup('Input215_local_20ca4acc') && A.Layer == 'F.Cu') && (B.Type == 'Pad' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfFootprint('D704') && B.Pad_Number == '7')) || ((B.Type == 'Track' && B.NetName == 'PASSIVE_GATE_FET' && B.memberOfGroup('Input215_local_20ca4acc') && B.Layer == 'F.Cu') && (A.Type == 'Pad' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfFootprint('D704') && A.Pad_Number == '7'))")
+  (constraint clearance (min 0.200000mm))
+)
+
+(rule "Input215 proposed literal clamped pair 6"
+  (condition "((A.Type == 'Track' && A.NetName == 'PASSIVE_GATE_FET' && A.memberOfGroup('Input215_local_7cb56349') && A.Layer == 'F.Cu') && (B.Type == 'Pad' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfFootprint('Q702') && B.Pad_Number == '3')) || ((B.Type == 'Track' && B.NetName == 'PASSIVE_GATE_FET' && B.memberOfGroup('Input215_local_7cb56349') && B.Layer == 'F.Cu') && (A.Type == 'Pad' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfFootprint('Q702') && A.Pad_Number == '3'))")
+  (constraint clearance (min 0.200000mm))
+)
+
+(rule "Input215 proposed literal clamped pair 7"
+  (condition "((A.Type == 'Track' && A.NetName == 'PASSIVE_GATE_FET' && A.memberOfGroup('Input215_local_7cb56349') && A.Layer == 'F.Cu') && (B.Type == 'Pad' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfFootprint('D704') && B.Pad_Number == '7')) || ((B.Type == 'Track' && B.NetName == 'PASSIVE_GATE_FET' && B.memberOfGroup('Input215_local_7cb56349') && B.Layer == 'F.Cu') && (A.Type == 'Pad' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfFootprint('D704') && A.Pad_Number == '7'))")
+  (constraint clearance (min 0.200000mm))
+)
+
+(rule "Input215 proposed literal clamped pair 8"
+  (condition "((A.Type == 'Track' && A.NetName == 'PASSIVE_GATE_FET' && A.memberOfGroup('Input215_local_7cb56349') && A.Layer == 'F.Cu') && (B.Type == 'Track' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('Input215_local_e52df80d') && B.Layer == 'F.Cu')) || ((B.Type == 'Track' && B.NetName == 'PASSIVE_GATE_FET' && B.memberOfGroup('Input215_local_7cb56349') && B.Layer == 'F.Cu') && (A.Type == 'Track' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('Input215_local_e52df80d') && A.Layer == 'F.Cu'))")
+  (constraint clearance (min 0.200000mm))
+)
+
+(rule "Input215 proposed literal clamped pair 9"
+  (condition "((A.Type == 'Track' && A.NetName == 'PASSIVE_GATE_FET' && A.memberOfGroup('Input215_local_8a37aea8') && A.Layer == 'F.Cu') && (B.Type == 'Pad' && B.Layer == 'F.Cu' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfFootprint('Q702') && B.Pad_Number == '3')) || ((B.Type == 'Track' && B.NetName == 'PASSIVE_GATE_FET' && B.memberOfGroup('Input215_local_8a37aea8') && B.Layer == 'F.Cu') && (A.Type == 'Pad' && A.Layer == 'F.Cu' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfFootprint('Q702') && A.Pad_Number == '3'))")
+  (constraint clearance (min 0.200000mm))
+)
+
+(rule "Input215 proposed literal clamped pair 10"
+  (condition "((A.Type == 'Track' && A.NetName == 'PASSIVE_GATE_FET' && A.memberOfGroup('Input215_local_8a37aea8') && A.Layer == 'F.Cu') && (B.Type == 'Track' && B.NetName == 'PASSIVE_HS_OUT' && B.memberOfGroup('Input215_local_e52df80d') && B.Layer == 'F.Cu')) || ((B.Type == 'Track' && B.NetName == 'PASSIVE_GATE_FET' && B.memberOfGroup('Input215_local_8a37aea8') && B.Layer == 'F.Cu') && (A.Type == 'Track' && A.NetName == 'PASSIVE_HS_OUT' && A.memberOfGroup('Input215_local_e52df80d') && A.Layer == 'F.Cu'))")
+  (constraint clearance (min 0.200000mm))
+)
+
+(rule "PHY43 single Type7 own supply terminal adjacent42_44 literal0p10"
+  (condition "((A.Type == 'Via' && A.NetName == 'V3V3' && A.memberOfGroup('PHY43_386_single_Type7_pole')) && (B.Type == 'Pad' && B.Layer == 'F.Cu' && B.memberOfFootprint('U10') && ((B.Pad_Number == '42' && B.NetName == 'PCIE_TX_N') || (B.Pad_Number == '44' && B.NetName == 'PCIE_REFCLK_P')))) || ((B.Type == 'Via' && B.NetName == 'V3V3' && B.memberOfGroup('PHY43_386_single_Type7_pole')) && (A.Type == 'Pad' && A.Layer == 'F.Cu' && A.memberOfFootprint('U10') && ((A.Pad_Number == '42' && A.NetName == 'PCIE_TX_N') || (A.Pad_Number == '44' && A.NetName == 'PCIE_REFCLK_P'))))")
+  (constraint clearance (min 0.10mm))
+)
+
+(rule "PHY43 single Type7 literal nominal0p15 hole"
+  (condition "A.Type == 'Via' && A.NetName == 'V3V3' && A.memberOfGroup('PHY43_386_single_Type7_pole')")
+  (constraint hole_size (min 0.15mm) (max 0.15mm))
+)
+
+(rule "U986329 literal quiet pole to DVDT or ILM own terminals"
+  (condition "((A.Type == 'Via' && A.memberOfGroup('rev_a_modem329_quiet_return') && A.NetName == 'GND' && B.Type == 'Pad' && B.memberOfFootprint('U986') && ((B.Pad_Number == '7' && B.NetName == 'MODEM_EFUSE_DVDT') || (B.Pad_Number == '9' && B.NetName == 'MODEM_EFUSE_ILIM'))) || (B.Type == 'Via' && B.memberOfGroup('rev_a_modem329_quiet_return') && B.NetName == 'GND' && A.Type == 'Pad' && A.memberOfFootprint('U986') && ((A.Pad_Number == '7' && A.NetName == 'MODEM_EFUSE_DVDT') || (A.Pad_Number == '9' && A.NetName == 'MODEM_EFUSE_ILIM'))))")
+  (constraint clearance (min 0.106000mm))
+)
+
+(rule "U986329 three literal Type7 nominal0p15 holes" (condition "A.Type == 'Via' && ((A.NetName == 'GND' && A.memberOfGroup('rev_a_modem329_quiet_return')) || (A.NetName == 'MODEM_EFUSE_DVDT' && A.memberOfGroup('rev_a_modem329_DVDT_lower')) || (A.NetName == 'MODEM_EFUSE_ITIMER' && A.memberOfGroup('rev_a_modem329_ITIMER_source')) || (A.NetName == 'MODEM_EFUSE_DVDT' && A.memberOfGroup('rev_a_modem329_DVDT_upper')))") (constraint hole_size (min 0.15mm)))
+
+# PRIVATE433 exact U34 Type7 nominal drill contract
+(rule "U34 compact modem single ADC literal Type7 nominal150um hole"
+  (condition "A.Type == 'Via' && (A.NetName == 'OOB_ADC_MODEM_CURRENT' && A.memberOfGroup('rev_a_modem378_ADC_U34'))")
+  (constraint hole_size (min 0.15mm) (max 0.15mm))
+)
+
+# PRIVATE565 two original501 public80um finished-bore filled-flat-cap Type7 land repairs; no copper clearance exception
+(rule "rev_a_sensitive565_AGND_literal_Type7 nominal150um bore" (condition "A.Type == 'Via' && A.NetName == 'GND' && A.memberOfGroup('rev_a_sensitive565_AGND_literal_Type7')") (constraint hole_size (min 0.15mm) (max 0.15mm)))
+(rule "rev_a_sensitive565_FB_literal_Type7 nominal150um bore" (condition "A.Type == 'Via' && A.NetName == 'u3_FB' && A.memberOfGroup('rev_a_sensitive565_FB_literal_Type7')") (constraint hole_size (min 0.15mm) (max 0.15mm)))
+
+(rule "PGCT840 exact R111 R227 dual V3V3 flat pad Type7 nominal 150um"
+ (condition "A.Type == 'Via' && A.NetName == 'V3V3' && A.memberOfGroup('PGCT840_dual_supply_Type7')")
+ (constraint hole_size (min 0.150mm) (max 0.150mm))
+)
+
+(rule "ADC923 exact dual C766_2 U800_57 GND filledflat Type7 nominal150" (condition "A.Type == 'Via' && A.NetName == 'GND' && A.memberOfGroup('Type7_ROOT_ADC923_2_MASKED_550_200_PLUS_DUAL_GND_460_150')") (constraint hole_size (min 0.150mm) (max 0.150mm)))
+
+(rule "RTL890 exact ISEL U10 pin1 adjacent filled flat Type7 nominal150um"
+ (condition "A.Type == 'Via' && A.NetName == 'RTL_ISOLATE' && A.memberOfGroup('RTL890_ISEL_U10_1_adjacent_Type7')")
+ (constraint hole_size (min 0.150mm) (max 0.150mm))
+)
+
+(rule "rev_a_J5_629_R39_PAD1_literal150_Type7" (condition "A.Type == 'Via' && A.NetName == 'VBUS_C' && A.memberOfGroup('rev_a_J5_629_R39_PAD1_literal150_Type7')") (constraint hole_size (min 0.15mm) (max 0.15mm)))
+
+# OEM 9774025243R annular SMT land starts at its own3mm NPTH edge. Foreign copper/hole rules remain unchanged.
+(rule "H1 OEM steel spacer exact own annular SMT land to 3mm NPTH"
+ (condition "A.memberOfFootprint('H1') && B.memberOfFootprint('H1') && ((A.Pad_Number == '1' && A.Pad_Shape == 'Custom' && B.Pad_Type == 'NPTH, mechanical' && B.Hole_Size_X == 3mm && B.Hole_Size_Y == 3mm) || (B.Pad_Number == '1' && B.Pad_Shape == 'Custom' && A.Pad_Type == 'NPTH, mechanical' && A.Hole_Size_X == 3mm && A.Hole_Size_Y == 3mm))")
+ (constraint hole_clearance (min 0mm)))
+
+# I2C1446 exact twelve nominal150um public-finished bore jobs, one Type7 own-MCU sealed flat cap and eleven ordinary tented; no copper or clearance exception.
+(rule "I2C1446 twelve exact nominal150um bores"
+ (condition "A.Type == 'Via' && A.memberOfGroup('I2C1446_twelve_exact150um_bores') && (A.NetName == 'OOB_I2C_SDA' || A.NetName == 'OOB_I2C_SCL')")
+ (constraint hole_size (min 0.150mm) (max 0.150mm))
+ (constraint via_diameter (min 0.460mm) (max 0.460mm)))
+
+(rule "NCA9536DQJ primary intrapackage PAD3 PAD4 only"
+  (condition "A.Type == 'Pad' && B.Type == 'Pad' && A.memberOfFootprint('U840') && B.memberOfFootprint('U840') && ((A.Pad_Number == '3' && B.Pad_Number == '4') || (A.Pad_Number == '4' && B.Pad_Number == '3'))")
+  (constraint clearance (min 0.20mm)))
+
+(rule "OOB1523 eight exact nominal150um bores"
+ (condition "A.Type == 'Via' && A.memberOfGroup('OOB1523_eight_exact150um_bores')")
+ (constraint hole_size (min 0.150mm) (max 0.150mm))
+ (constraint via_diameter (min 0.460mm) (max 0.460mm)))
+
+(rule "U8031051_U803_OE_ADJACENT_MASK_CLOSED_FLAT_CAP_0 exact nominal150um bore and land"
+ (condition "A.Type == 'Via' && A.NetName == 'OOB_USB_MUX_DISABLE' && A.memberOfGroup('U8031051_U803_OE_ADJACENT_MASK_CLOSED_FLAT_CAP_0')")
+ (constraint hole_size (min 0.150mm) (max 0.150mm))
+ (constraint via_diameter (min 0.45mm) (max 0.45mm)))
+
+(rule "U8031051_C813_PAD1_OWN_PAD_FULL_CONTAINED_FLAT_CAP_1 exact nominal150um bore and land"
+ (condition "A.Type == 'Via' && A.NetName == 'AON_3V3' && A.memberOfGroup('U8031051_C813_PAD1_OWN_PAD_FULL_CONTAINED_FLAT_CAP_1')")
+ (constraint hole_size (min 0.150mm) (max 0.150mm))
+ (constraint via_diameter (min 0.46mm) (max 0.46mm)))
+
+(rule "rev_a_OE1081_ORDINARY_TENTED_REMOTE_0 nominal150um exact site" (condition "A.Type == 'Via' && A.NetName == 'OOB_USB_MUX_DISABLE' && A.memberOfGroup('rev_a_OE1081_ORDINARY_TENTED_REMOTE_0')") (constraint hole_size (min 0.15mm) (max 0.15mm)) (constraint via_diameter (min 0.46mm) (max 0.46mm)))
+
+(rule "rev_a_OE1081_ORDINARY_TENTED_REMOTE_1 nominal150um exact site" (condition "A.Type == 'Via' && A.NetName == 'OOB_USB_MUX_DISABLE' && A.memberOfGroup('rev_a_OE1081_ORDINARY_TENTED_REMOTE_1')") (constraint hole_size (min 0.15mm) (max 0.15mm)) (constraint via_diameter (min 0.46mm) (max 0.46mm)))
+
+(rule "rev_a_OE1081_ORDINARY_TENTED_REMOTE_2 nominal150um exact site" (condition "A.Type == 'Via' && A.NetName == 'OOB_USB_MUX_DISABLE' && A.memberOfGroup('rev_a_OE1081_ORDINARY_TENTED_REMOTE_2')") (constraint hole_size (min 0.15mm) (max 0.15mm)) (constraint via_diameter (min 0.46mm) (max 0.46mm)))
+
+(rule "rev_a_OE1081_OWN_U774_PAD3_FILLED_FLAT_CAP_3 nominal150um exact site" (condition "A.Type == 'Via' && A.NetName == 'GND' && A.memberOfGroup('rev_a_OE1081_OWN_U774_PAD3_FILLED_FLAT_CAP_3')") (constraint hole_size (min 0.15mm) (max 0.15mm)) (constraint via_diameter (min 0.46mm) (max 0.46mm)))
+
+(rule "rev_a_OE1081_OWN_U776_PAD3_FILLED_FLAT_CAP_4 nominal150um exact site" (condition "A.Type == 'Via' && A.NetName == 'GND' && A.memberOfGroup('rev_a_OE1081_OWN_U776_PAD3_FILLED_FLAT_CAP_4')") (constraint hole_size (min 0.15mm) (max 0.15mm)) (constraint via_diameter (min 0.46mm) (max 0.46mm)))
+
+(rule "LOCAL_DIVIDER1568 seventeen exact nominal150um bores"
+ (condition "A.Type == 'Via' && A.memberOfGroup('OOB_LOCALQUAL1568_17_exact150um_bores')")
+ (constraint hole_size (min 0.150mm) (max 0.150mm))
+ (constraint via_diameter (min 0.460mm) (max 0.460mm)))

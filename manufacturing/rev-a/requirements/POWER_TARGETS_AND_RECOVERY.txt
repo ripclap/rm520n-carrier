@@ -1,0 +1,24 @@
+RM520N-GL carrier Rev A — released engineering power conditions
+
+PCB SHA256: 1e1c08f8d13c7cdec4f65c9a95c2adc67a2a7758db29563f2e71c7588dd6bd23
+Source SHA256: e4b728322104e6462ae5abe8438f66be03cb9e16c0d8a482d3aa477e139598d5
+
+The following conditions govern the first-build engineering release. They are fabrication/commissioning requirements and do not claim supplier acceptance, measured operation or fault survival.
+
+1. Exact job-specific CAM and measured finished metal: outer>=30um; In2 and In3 each>=15.2um; In1GND>=12um; local finished via wall>=20um; full barrel span<=1.76mm. Every differentiated bore, all-six-layer annulus>=50um, filled/capped/ordinary cover/body/stencil interface and coupled U4 raw-web recipe must pass the fabrication schedule. Supplier acceptance has not occurred.
+
+2. Regulated48V+/-5% passive nonisolated SELV supply and documentedpinout, loaded FILTER>=41.562266501V/unloadedstart>=41.977840535V; or regulated12V+/-5% at actualJ2>=11.4V with rated3A wiring. Dry vented0..40C and altitude<=2000m. Conservative lower-input impedance/energy diagnostics do not lower these operational voltage floors or qualify39.11/39.63V installation.
+
+3. Continuous3A modem0..40C is an engineering target requiring measured main>=90%, modem>=88%, AON>=82%, BOTH cascaded Ethernet converters>=82%, actual main thermal path<=32C/W, Tj<=125C, component/windingcase<=70C, accepted metal/contact hot drops and normal inputRMS<=0.80A aggregate AND conservative eachinjectionleg. No equal-sharing credit or guaranteed efficiency/theta claim.
+
+4. Begin sustained4A dummy-load qualification at ambient<=20C. Higher ambient or sustained4A requires measured efficiency, theta/Tj and normal RMS qualification at that ambient; no assumed burst duty cycle. Current max4A normalRMS0.798384254A leaves only1.61575mA engineering margin, so instrumented actual waveform/load-burst/imbalance commissioning is mandatory.
+
+5. Keep Quectel absent until normal/startup/loadstep/fault/thermal/backfeed tests pass. Connector normal waveform including uncertainty must stay3.135..4.4V and ripple<100mVpp. RecoverableOVLO fault peak+uncertainty<4.7V and postthresholdrise<=100mV are mandatory; published response is typical only, and no duration/repetition/survival guarantee is claimed. Revise hardware if either gate fails.
+
+6. CurrentU3 startup5.23055A screen is separate from inputenergy. Healthy407ms input-bank qualification, faultCTmin20.9096ms and hardwarePG/FCPO>=180ms are distinct events. Energy-only3A/radioOFF8.494281ms is not a startup deadline; forced4A/allselectedcaps31.657406ms exceedsCTmin and is held. Qualify actual cold/hot loaded startup and subsequent4A steps after qualifiedPG.
+
+7. Healthy blank/resetMCU hardware AUTOSTART remains. Absent joint-EN hardwaredriver failsafeLOW, radioOFF and USBgrantOFF remain. Operational firmware/host recovery holds BOTH buck/eFuseEN low>=5s AND confirms actualOUT<100mV before restart, restartingdwell aftercontrollerreset; radioOFF>=350ms AND actualrail<100mV. HardwarePG qualification>=180ms and manualFCPO request>=1s are separate. Confirm BOTH permanent REG bleeds R221 and R779 are fitted as1kOhm from V3V7_REG toGND; observe REG decay with jointENlow and check protectedOUT discharge and released injection/backfeed limits.
+
+8. DirectREG shorts and protectedOUT shorts are distinct dummy-load tests. Characterize real hot peak/delay/energy/inductor/SOA/hiccup/latch/rearm/backfeed behavior; ILIM953||2260 plus1M monitor is a timed4.4518..5.5048A engineering screen, not a peak clamp or continuous rating. Preserve exact primary33pF feedback,57.6k/10k divider, all controls and independent AON recovery.
+
+9. 125C/localwall18um is an unadmitted sensitivity: normal4ARMS0.807155638A fails0.80A; brief4A/radiofault energy fails and auxiliary4A current exceeds conservativeF1 ceiling. The default100C/localwall20um remains separate. Initial carrier BOM, geometry and costs are unchanged by source158 Notes/metadata/model-path edits.

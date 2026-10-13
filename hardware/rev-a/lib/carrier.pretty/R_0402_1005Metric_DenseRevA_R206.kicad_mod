@@ -1,0 +1,206 @@
+(footprint "R_0402_1005Metric_DenseRevA_R206"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
+	(tags "resistor")
+	(property "Reference" "REF**"
+		(at 0 -1.17 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "4ba142c6-533f-446a-98a5-bc5989a1b837")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "R_0402_1005Metric_DenseRevA_R206"
+		(at 0 1.17 0)
+		(layer "F.Fab")
+		(uuid "f3d6e87a-70ff-4c42-af3d-3465082694b1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://yageogroup.com/component-documentation/download/specsheet/RT0402BRD0780K6L"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b2c28dfc-f9ab-458e-8573-621bc62b592d")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0b397b3d-607b-4e77-9cb1-117d9cf2a61b")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "71cc0e42-aaaf-44d4-a334-617d76036b5c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC" ""
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "32e06472-59aa-4ec7-b964-97e8583c2122")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Note" "12VPGTH upper. Fullrising10.605565..11.213724V/falling9.645579..10.234765V with asymmetric -0.1..+0.3uA PGTHleakage; highestreadythresholdbelow11.4Vnormalsource."
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "36a8ae7b-d1f9-481a-85c1-36b12d62cde3")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "YAGEO"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "d3a5f21c-e423-40fd-95cf-85475a9a58ec")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MPN" "RT0402BRD0780K6L"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "f2dd04ff-a161-4b0c-9bf0-b21b151c6be7")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(sheetname "/Passive cable-power connections and protected auxiliary DC")
+	(sheetfile "power-input.kicad_sch")
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.153641 -0.38)
+		(end 0.153641 -0.38)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4af76881-eb5c-4e29-8049-80918b2f5e8d")
+	)
+	(fp_line
+		(start -0.153641 0.38)
+		(end 0.153641 0.38)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "90a30d00-d955-4c48-8221-551e1121f247")
+	)
+	(fp_poly
+		(pts
+			(xy 0.28322 0.388929) (xy 0.333419 0.404571) (xy 0.36014 0.407) (xy 0.65986 0.407) (xy 0.686581 0.404571)
+			(xy 0.73678 0.388929) (xy 0.782917 0.361039) (xy 0.821039 0.322917) (xy 0.848929 0.27678) (xy 0.864571 0.226581)
+			(xy 0.867 0.19986) (xy 0.867 -0.19986) (xy 0.864571 -0.226581) (xy 0.848929 -0.27678) (xy 0.821039 -0.322917)
+			(xy 0.782917 -0.361039) (xy 0.73678 -0.388929) (xy 0.686581 -0.404571) (xy 0.65986 -0.407) (xy 0.36014 -0.407)
+			(xy 0.333419 -0.404571) (xy 0.28322 -0.388929) (xy 0.271757 -0.382) (xy -0.271757 -0.382) (xy -0.28322 -0.388929)
+			(xy -0.333419 -0.404571) (xy -0.36014 -0.407) (xy -0.65986 -0.407) (xy -0.686581 -0.404571) (xy -0.73678 -0.388929)
+			(xy -0.782917 -0.361039) (xy -0.821039 -0.322917) (xy -0.848929 -0.27678) (xy -0.864571 -0.226581)
+			(xy -0.867 -0.19986) (xy -0.867 0.19986) (xy -0.864571 0.226581) (xy -0.848929 0.27678) (xy -0.821039 0.322917)
+			(xy -0.782917 0.361039) (xy -0.73678 0.388929) (xy -0.686581 0.404571) (xy -0.65986 0.407) (xy -0.36014 0.407)
+			(xy -0.333419 0.404571) (xy -0.28322 0.388929) (xy -0.271757 0.382) (xy 0.271757 0.382)
+		)
+		(stroke
+			(width 0.025)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "e6528ff8-d07f-435b-998a-9522acca1469")
+	)
+	(fp_rect
+		(start -0.525 -0.27)
+		(end 0.525 0.27)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "2b0b5683-3a2d-434a-a533-9bc812411df5")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "96ebf1ab-c0db-436d-8103-e72894e8885d")
+		(effects
+			(font
+				(size 0.26 0.26)
+				(thickness 0.04)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -0.51 0)
+		(size 0.54 0.64)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "993a9441-a510-4d3a-8ad8-cf3e0c259a35")
+	)
+	(pad "2" smd roundrect
+		(at 0.51 0)
+		(size 0.54 0.64)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "3327c308-68ec-46f0-9210-14f184f9b2d4")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/stock-3dmodels/Resistor_SMD.3dshapes/R_0402_1005Metric.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

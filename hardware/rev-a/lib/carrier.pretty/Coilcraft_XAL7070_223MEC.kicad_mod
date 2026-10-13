@@ -1,0 +1,171 @@
+(footprint "Coilcraft_XAL7070_223MEC"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Official Coilcraft physical drawing:1.92x6.50mm lands,4.82mm center spacing,7.2+/-0.5x7.5+/-0.5x7.0max body. CAD1 right(short lead/highdvdt),CAD2 left; numbers are local aliases, not manufacturer pin numbers. DCbias/hot/assembly/current qualification pending.")
+	(property "Reference" "REF**"
+		(at 0 -5 0)
+		(layer "F.SilkS")
+		(uuid "40ae67d1-725f-46a0-95d2-beb59a057315")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "XAL7070-223MEC"
+		(at 0 5 0)
+		(layer "F.Fab")
+		(uuid "02f923ad-2d5c-4537-b811-d58b28f35cb7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "31fa3ae4-10ec-444b-9289-c4053ebd44a5")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ce4b1d84-7614-4414-8476-cea08fd23a65")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start 3.85 -3.9)
+		(end 3.85 3.9)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "00b495ee-9237-4efc-abdd-56d37db15b3d")
+	)
+	(fp_line
+		(start -4.1 -4.25)
+		(end 4.1 -4.25)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "ff70df96-5a41-400d-b5d0-1d574bfb33ec")
+	)
+	(fp_line
+		(start -4.1 4.25)
+		(end -4.1 -4.25)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "4abf88d8-5691-444b-a076-cc1f2bf380af")
+	)
+	(fp_line
+		(start 4.1 -4.25)
+		(end 4.1 4.25)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "021e2bfa-abec-4e38-850c-1b002300b366")
+	)
+	(fp_line
+		(start 4.1 4.25)
+		(end -4.1 4.25)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "aae3bee7-5b00-4a29-a85b-7e62af3cd57a")
+	)
+	(fp_line
+		(start -3.6 -3.75)
+		(end 3.6 -3.75)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "1c1c8912-35c8-4c7d-a511-57bc55b1c86e")
+	)
+	(fp_line
+		(start -3.6 3.75)
+		(end -3.6 -3.75)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "bd5a598e-6f99-429c-b8d4-8d165d6f3281")
+	)
+	(fp_line
+		(start 3.6 -3.75)
+		(end 3.6 3.75)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "4676905b-7901-427d-ab1c-ec9f2d28fcf4")
+	)
+	(fp_line
+		(start 3.6 3.75)
+		(end -3.6 3.75)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "f95a3bd8-36ad-4a41-bee2-931906965d33")
+	)
+	(pad "1" smd rect
+		(at 2.41 0)
+		(size 1.92 6.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.05)
+		(thermal_bridge_angle 45)
+		(uuid "a5144648-5aeb-49c3-9800-1f6266652d28")
+	)
+	(pad "2" smd rect
+		(at -2.41 0)
+		(size 1.92 6.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.05)
+		(thermal_bridge_angle 45)
+		(uuid "e3f98e92-84b2-41e4-b3fb-b35374f6ae28")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/models/Coilcraft_XAL7070_drawing_envelope.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

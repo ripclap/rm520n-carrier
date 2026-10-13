@@ -1,0 +1,10 @@
+U4 VIN two-via local recipe — engineering request, supplier not yet accepted
+
+Use exact saved board poses and all six-layer lands. Both sites remain TypeVII nonconductive filled and copper capped on both faces, flush/proud no more than10um. Preserve U4 VIN PAD6 terminal mask/paste only; no backside paste. Qualify actual cap solderseal, mask and component underside seating.
+
+0b2860c5-bf78-44cb-b484-aeb19c71f110:60.20,72.85mm,450um land,200um nominal drill; requested finished120..220um.
+1fd58c91-691e-4cd1-8f90-30b6df1de5e5:60.70,72.75mm,400um land,150um nominal drill; requested finished70..170um.
+
+A complete feasible coupled process witness: each drill position error <=30um per X/Y, raw before-plating maximum diameters250um first and200um second, minimum LOCAL plating wall20um. This implies achieved finished maximum210um/160um, within the requests. Worst relative center spacing441.815um minus raw radii225um leaves216.815um raw web, above206um. These are coupled quote/CAM/coupon controls; supplier acceptance is required. Generic75umXY/+130umrawdiameter radial diagnostics still overlap at the own pair and are not the accepted witness.
+
+Measured annulus on every one of six copper layers >=50um, no breakout. The loose requested finish caps with26um radialetch/35um registration diagnostic give54um rings; the tighter coupled witness gives59um. Neither arithmetic is a supplier guarantee of simultaneous errors. Do not replace this pair recipe with generic nominal+/-80um. All other holes retain their own exact recipe and acceptance controls.

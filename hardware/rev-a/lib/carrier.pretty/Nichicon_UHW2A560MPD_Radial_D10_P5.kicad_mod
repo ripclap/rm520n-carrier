@@ -1,0 +1,125 @@
+(footprint "Nichicon_UHW2A560MPD_Radial_D10_P5"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Documented Nichicon UHW2A560MPD 56uF100V. Nominal diameter10xH12.5; maximum diameter10.5xH14.0; lead pitch5+/-.5mm and nominal wire.6mm with no published wire tolerance. CAD1positiveleft/2negativeright. Finished.9mm drill,1.8mm land,11mm courtyard and2mm vent reserve are local assembly/planning proposals, not manufacturer land requirements.")
+	(property "Reference" "REF**"
+		(at 0 -6.3 0)
+		(layer "F.SilkS")
+		(uuid "ec12b5e7-1308-43db-9040-d165afb2776d")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Value" "UHW2A560MPD"
+		(at 0 6.3 0)
+		(layer "F.Fab")
+		(uuid "c282d9ee-a13a-4cfa-a24c-69f38d9284d1")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2b6041f4-dc29-4620-bf63-5d6ebc05b7ae")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7def3411-75c9-4bfb-8002-bbdfee756d4f")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -4.7 -0.6)
+		(end -3.5 -0.6)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "3be653c5-a7ef-4a41-bba2-65e0b19faab5")
+	)
+	(fp_line
+		(start -4.1 -1.2)
+		(end -4.1 0)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "3d4b87a2-799e-4002-aac6-29424d1c5d74")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 5.5 0)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "5307ec1f-aa25-4b15-b0c5-55d6b5626a36")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 5 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "39da0d23-f091-4787-8b5c-70b39924fb61")
+	)
+	(pad "1" thru_hole circle
+		(at -2.5 0)
+		(size 1.8 1.8)
+		(drill 0.9)
+		(layers "*.Cu")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.05)
+		(uuid "4495b402-8a28-46bc-b6bf-fcf1efa4dd18")
+	)
+	(pad "2" thru_hole circle
+		(at 2.5 0)
+		(size 1.8 1.8)
+		(drill 0.9)
+		(layers "*.Cu")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.05)
+		(uuid "27a83f59-fcad-4256-97af-31a231081030")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/models/Nichicon_UHW2A560MPD_max_drawing_envelope.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

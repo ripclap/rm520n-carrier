@@ -1,0 +1,260 @@
+(footprint "TI_RPW0010A_TPS25947"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "TI TPS25947 RPW0010A drawing4225183/A Aug2019 top-view land. Corner pads are single L-shaped copper polygons; pins5/6 are long IN/OUT electrodes, not GND EP.")
+	(property "Reference" "REF**"
+		(at 0 -2.45 0)
+		(layer "F.SilkS")
+		(uuid "74371399-ed99-4588-9b1c-51b56c3adf90")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Value" "TI_RPW0010A_TPS25947"
+		(at 0 2.45 0)
+		(layer "F.Fab")
+		(uuid "2260f788-de0f-4768-8ea6-80ad891dd5d4")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "435d9321-fd0f-4d6c-b770-8b0c5e85c2b8")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8039cabe-6e3c-4d74-a62f-9e362b0ddc8b")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.45 -1.45)
+		(end 1.45 -1.45)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "daf00431-58e8-4a8a-9167-291f7b13c482")
+	)
+	(fp_line
+		(start -1.45 1.45)
+		(end -1.45 -1.45)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "d7795840-55b7-4d71-bf1a-3d2e5a3a84ff")
+	)
+	(fp_line
+		(start 1.45 -1.45)
+		(end 1.45 1.45)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "03363002-3858-4db6-84b2-06860b584a0b")
+	)
+	(fp_line
+		(start 1.45 1.45)
+		(end -1.45 1.45)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "53ce6bd5-65e2-41a5-ac2e-e704590d0857")
+	)
+	(fp_line
+		(start -1 -1)
+		(end 1 -1)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "1c42c34f-4661-4c90-8270-a33e0c6f68d2")
+	)
+	(fp_line
+		(start -1 1)
+		(end -1 -1)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "d4d22c72-9f79-4cca-971a-42efc505488e")
+	)
+	(fp_line
+		(start 1 -1)
+		(end 1 1)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "3692e954-acc5-430b-bcf8-1fbb6265d315")
+	)
+	(fp_line
+		(start 1 1)
+		(end -1 1)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "35ec0f22-e7cb-4a69-971b-129d4a981e2d")
+	)
+	(pad "1" smd custom
+		(at -0.9 -0.7)
+		(size 0.15 0.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(options
+			(clearance outline)
+			(anchor rect)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy -0.299999 -0.15) (xy 0.05 -0.15) (xy 0.05 -0.5) (xy 0.3 -0.5) (xy 0.3 0.149999) (xy -0.299999 0.149999)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "a526c211-3dac-4413-a6ad-6792bb3e5bad")
+	)
+	(pad "2" smd roundrect
+		(at -0.9 -0.225)
+		(size 0.6 0.25)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.2)
+		(thermal_bridge_angle 45)
+		(uuid "b5bb503f-6091-441f-a70d-9b47be6b3f17")
+	)
+	(pad "3" smd roundrect
+		(at -0.9 0.225)
+		(size 0.6 0.25)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.2)
+		(thermal_bridge_angle 45)
+		(uuid "7cd78c07-9bdf-4706-b967-a888643411c8")
+	)
+	(pad "4" smd custom
+		(at -0.9 0.7)
+		(size 0.15 0.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(options
+			(clearance outline)
+			(anchor rect)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy -0.299999 0.15) (xy 0.05 0.15) (xy 0.05 0.5) (xy 0.3 0.5) (xy 0.3 -0.149999) (xy -0.299999 -0.149999)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "f643efc7-8fec-4a50-9fef-9bae6edf7b54")
+	)
+	(pad "5" smd roundrect
+		(at -0.25 0)
+		(size 0.3 2.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.1666666667)
+		(thermal_bridge_angle 45)
+		(uuid "8246795d-e11a-4d76-8e1d-e9f8ddb95ae6")
+	)
+	(pad "6" smd roundrect
+		(at 0.25 0)
+		(size 0.3 2.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.1666666667)
+		(thermal_bridge_angle 45)
+		(uuid "aebb6038-fc29-45d1-bca8-1f549abf5547")
+	)
+	(pad "7" smd custom
+		(at 0.9 0.7)
+		(size 0.15 0.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(options
+			(clearance outline)
+			(anchor rect)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy 0.299999 0.15) (xy -0.05 0.15) (xy -0.05 0.5) (xy -0.3 0.5) (xy -0.3 -0.149999) (xy 0.299999 -0.149999)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "c8449cef-cb86-4eee-b235-594dfb56b3b0")
+	)
+	(pad "8" smd roundrect
+		(at 0.9 0.225)
+		(size 0.6 0.25)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.2)
+		(thermal_bridge_angle 45)
+		(uuid "64445d6a-96fc-4246-8b23-613215e83f24")
+	)
+	(pad "9" smd roundrect
+		(at 0.9 -0.225)
+		(size 0.6 0.25)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.2)
+		(thermal_bridge_angle 45)
+		(uuid "dcf82b29-6b21-4783-8953-1e9d22601063")
+	)
+	(pad "10" smd custom
+		(at 0.9 -0.7)
+		(size 0.15 0.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(options
+			(clearance outline)
+			(anchor rect)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy 0.299999 -0.15) (xy -0.05 -0.15) (xy -0.05 -0.5) (xy -0.3 -0.5) (xy -0.3 0.149999) (xy 0.299999 0.149999)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "d8247612-9b2e-4aa0-bdb3-13664825e608")
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,158 @@
+(footprint "Murata_LQW15AN_0402_Manufacturer_DenseRevA_L800"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Murata LQW15AN official JELF243A_0050AE-01 page12 lands gap0.50/span1.20/width0.65mm; wirewound0402")
+	(tags "Murata LQW15AN 0402 24nH")
+	(property "Reference" "REF**"
+		(at 0 -1 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "ac607754-aaa2-4555-9322-e699750203d3")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Value" "Murata_LQW15AN_0402_Manufacturer_DenseRevA_L800"
+		(at 0 1 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d7e281da-141d-4e82-9559-138b2ed34014")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Datasheet" "https://pim.murata.com/asset/pim4/inductor/JELF243A-0050_PDF_INDUCTOR"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2727f70d-9349-43b0-ad9f-3fb50eb8d2f3")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "fb602e1f-871f-4407-8d12-31e1c838c96f")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+		(at 0 0 90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "a0d9dee3-3e74-47b5-b46d-6bd6e5db2c7d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(property "LCSC" ""
+		(at 0 0 90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "03b9ee22-9c71-4718-bdb1-5b2342f64762")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(property "Note" "Orderable Murata LQW15AN24NH00D24nH ±3% unshielded wirewound nonmagnetic0402 replaces unverified LQG15HS24NJ02D. Exact manufacturer JELF243A_0050AE-01 lists24nH H±3%,DCR≤0.52Ω,Q≥25 at250MHz,SRF≥3.5GHz,rated280mA,-55..125°C. At40MHz nominal reactance6.032Ω; clock tuning role, not a power-rail coil. Crystal ESR35Ω plus0.52ΩDCR does not prove startup margin. Preserve two logical nets/face; final primary land/body check and cold-start/drive/frequency correlation required. Manufacturer recommended land gap0.50/span1.20/width0.65mm; use explicit authentic host/reviewed measured pattern, not an assumed generic0402 identity. Distributor capturedActive differs from manufacturer lifecycle confirmation; no allocation guaranteed. Authentic project-local Murata manufacturerlands gap0.50/span1.20/width0.65 mm supersede genericIPC L0402; rebuild both actual touching stems."
+		(at 0 0 90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "86533bbc-45de-457f-ac1b-d72be5ae29f2")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(property "Manufacturer" "Murata"
+		(at 0 0 90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "bb494056-e92a-452c-a01f-c3dc1fcf8504")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(property "MPN" "LQW15AN24NH00D"
+		(at 0 0 90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "af8b2bab-a7bd-4370-a08d-1d500a63b830")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_poly
+		(pts
+			(xy -0.163 -0.412) (xy -0.163 -0.407) (xy 0.163 -0.407) (xy 0.163 -0.412) (xy 0.687 -0.412) (xy 0.687 0.412)
+			(xy 0.163 0.412) (xy 0.163 0.407) (xy -0.163 0.407) (xy -0.163 0.412) (xy -0.687 0.412) (xy -0.687 -0.412)
+		)
+		(stroke
+			(width 0.025)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "f1959323-0003-4e7c-9062-09e6c375251c")
+	)
+	(fp_rect
+		(start -0.5 -0.25)
+		(end 0.5 0.25)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "6d5b9592-5e31-477d-ab5d-4f26e9956893")
+	)
+	(pad "1" smd rect
+		(at -0.425 0)
+		(size 0.35 0.65)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "f25a1d6a-f0e4-4ada-abfb-63eebe2962b2")
+	)
+	(pad "2" smd rect
+		(at 0.425 0)
+		(size 0.35 0.65)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "2b609c3b-eaca-4a2c-b433-3ba26bee5450")
+	)
+	(embedded_fonts no)
+)

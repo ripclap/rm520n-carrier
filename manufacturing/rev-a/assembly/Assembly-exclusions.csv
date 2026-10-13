@@ -1,0 +1,26 @@
+Reference,Category,MPN,Manufacturer,Design value,Fitted quantity,Native footprint,Disposition
+H2,Mounting feature,,,M2.5,0,carrier:MountingHole_2p7_M2p5_GND_SingleBore,Native excluded from purchased BOM. No component procurement or SMT placement.
+H3,Mounting feature,,,M2.5,0,carrier:MountingHole_2p7_M2p5_GND_SingleBore,Native excluded from purchased BOM. No component procurement or SMT placement.
+H4,Mounting feature,,,M2.5,0,carrier:MountingHole_2p7_M2p5_GND_SingleBore,Native excluded from purchased BOM. No component procurement or SMT placement.
+H5,Mounting feature,,,M2.5,0,carrier:MountingHole_2p7_M2p5_GND_SingleBore,Native excluded from purchased BOM. No component procurement or SMT placement.
+J800,Service / test pads,PCB service pads,board,OOB recovery 7pads,0,carrier:OOB_SERVICE_7PAD,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP1,Service / test pads,,,V12,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP2,Service / test pads,,,V3V7,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP3,Service / test pads,,,V3V3,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP4,Service / test pads,,,V0V95,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP5,Service / test pads,,,GND,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP6,Service / test pads,,,VPOE_P,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP7,Service / test pads,,,UIM2_VDD,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP8,Service / test pads,,,ESIM_CLK,0,carrier:TestPoint_Pad_D1.0mm_DenseRevA_TP8,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP9,Service / test pads,,,ESIM_IO,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP10,Service / test pads,,,PCIE_PERST_N,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP101,Service / test pads,,,EE_VDD,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP102,Service / test pads,,,EE_CS,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP103,Service / test pads,,,EE_SK,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP104,Service / test pads,,,EE_DI,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP105,Service / test pads,,,EE_DO,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+TP106,Service / test pads,,,GND,0,TestPoint:TestPoint_Pad_D1.0mm,Native excluded from purchased BOM. No component procurement or SMT placement.
+C725,THT / manual or selective solder,UHW2A330MPD,Nichicon,33uF100V20%950mArms,1,carrier:Nichicon_UHW2A330MPD_Radial_D8_P3.5,Included in fitted BOM and component cost. Exclude from SMT pick-and-place; quote THT process separately.
+J1,THT / manual or selective solder,SS-7188S-A-NF,Stewart Connector / Cinch Connectivity Solutions,SS-7188S-A-NF shielded8P8C Cat5e,1,carrier:Stewart_SS_7188S_A_NF_ComponentSideCorrected,Included in fitted BOM and component cost. Exclude from SMT pick-and-place; quote THT process separately.
+J2,THT / manual or selective solder,B2B-XH-A(LF)(SN),JST,DC 12V +/-5% 3A,1,Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical,Included in fitted BOM and component cost. Exclude from SMT pick-and-place; quote THT process separately.
+R727,THT / manual or selective solder,AC01000004708JA100,Vishay,4.7ohm5%1Wpulsewirewound,1,carrier:Vishay_AC01_P17_8_PRIMARY,Included in fitted BOM and component cost. Exclude from SMT pick-and-place; quote THT process separately.

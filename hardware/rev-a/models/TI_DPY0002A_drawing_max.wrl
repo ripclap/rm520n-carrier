@@ -1,0 +1,5 @@
+#VRML V2.0 utf8
+# TI TPD1E05U06 RevO, DPY0002A drawing4224561/C07/2024 p34.
+# Max1.1x0.7x0.45mm body envelope ONLY; illustrative, no vendor STEP/lead/seating/tolerance qualification.
+# Source https://www.ti.com/lit/ds/symlink/tpd1e05u06.pdf
+Transform { translation 0 0 0.088582677165 children [ Shape { appearance Appearance { material Material { diffuseColor .055 .065 .078 } } geometry Box { size 0.433070866142 0.275590551181 0.177165354331 } } ] }

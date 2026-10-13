@@ -1,0 +1,228 @@
+(footprint "Nichicon_RHA_8x6.7_FPCAP"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Nichicon RHA0J471MCN1GS / FPCAP phi8, 470uF 6.3V. Can 8mm diameter, height 6.7+/-0.3mm; platform 8.3+/-0.2mm. Manufacturer recommended lands 4.2x1.9mm, 2.8mm gap. Generic nominal-envelope KiCad 3D model, not vendor exact STEP.")
+	(property "Reference" "C**"
+		(at 0 -5.2 0)
+		(layer "F.SilkS")
+		(uuid "3f63efa6-135d-4287-bf11-65e34b183f11")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Value" "RHA0J471MCN1GS"
+		(at 0 5.2 0)
+		(layer "F.Fab")
+		(uuid "6848918e-7afd-47f7-af7e-6ece9e40fbcb")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b05e69a3-7178-4b18-a28c-a9e336d05764")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "12851b2f-2260-466c-a969-86acbf6acfe3")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -5.2 -2.15)
+		(end -4.4 -2.15)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "9c897b01-fd8e-4c29-bb49-b8e99cc61b9d")
+	)
+	(fp_line
+		(start -4.8 -2.55)
+		(end -4.8 -1.75)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "5e8e218c-5f1f-4585-8686-030dbbc530c0")
+	)
+	(fp_line
+		(start -4.15 -4.32)
+		(end 4.15 -4.32)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "86f6bc71-fd9b-44d0-ab78-d6640b335fb4")
+	)
+	(fp_line
+		(start -4.15 4.32)
+		(end 4.15 4.32)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "9f96f016-2bef-4607-abd8-14f8fb0cd14d")
+	)
+	(fp_line
+		(start -5.85 -4.5)
+		(end 5.85 -4.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "ed81e76c-227c-41dc-bd77-7222703eaad1")
+	)
+	(fp_line
+		(start -5.85 4.5)
+		(end -5.85 -4.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "1a8905b1-92c6-4d10-bf59-031e336144a0")
+	)
+	(fp_line
+		(start 5.85 -4.5)
+		(end 5.85 4.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "3a413c87-6808-490a-8b9f-23562d118c09")
+	)
+	(fp_line
+		(start 5.85 4.5)
+		(end -5.85 4.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "fd3d3c6c-60af-4390-a8c9-c0b4eae1b01b")
+	)
+	(fp_line
+		(start -4.15 -3.4)
+		(end -3.4 -4.15)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "5b803456-aeac-4588-8d42-759dc9f05b2c")
+	)
+	(fp_line
+		(start -4.15 3.4)
+		(end -4.15 -3.4)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "b2a1c9e1-d424-4aec-84ce-4c5245d03b26")
+	)
+	(fp_line
+		(start -3.4 -4.15)
+		(end 4.15 -4.15)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "1ef0aa2e-f31e-4595-bd22-3c199d0325ca")
+	)
+	(fp_line
+		(start -3.4 4.15)
+		(end -4.15 3.4)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "c5e6caff-257a-44fc-97a3-96456548ca2d")
+	)
+	(fp_line
+		(start 4.15 -4.15)
+		(end 4.15 4.15)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "cefd610e-c3c2-4c44-a809-ede11287fd91")
+	)
+	(fp_line
+		(start 4.15 4.15)
+		(end -3.4 4.15)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "2eae9463-b49d-4a7f-abc3-e0e715614898")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 4 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "ba432b72-161f-434a-b145-b7b6626bbf47")
+	)
+	(pad "1" smd rect
+		(at -3.5 0)
+		(size 4.2 1.9)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "e88f5c46-cc22-4c03-95c5-935382a1ec54")
+	)
+	(pad "2" smd rect
+		(at 3.5 0)
+		(size 4.2 1.9)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "49fede9a-499f-4ca4-a9ea-1fb0f75302c6")
+	)
+	(embedded_fonts no)
+	(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/CP_Elec_8x6.7.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

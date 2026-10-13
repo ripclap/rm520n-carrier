@@ -1,0 +1,125 @@
+(footprint "Panasonic_EEUFS2A470_Radial_D10_P5"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Actual documented straight-bulk PanasonicEEUFS2A47047uF100V; nominalD10x12.5,maxD10.5x14mm,5+/-.5pitch,.60+/-.05wire. CAD1positiveleft2negativeright; .9finisheddrill/1.8land and11court are assembler proposals, no vendor host drawing claim. Primary metal-can planning envelope+2mmventheight.")
+	(property "Reference" "REF**"
+		(at 0 -6.3 0)
+		(layer "F.SilkS")
+		(uuid "975e0d6c-2a45-4124-bffd-b757fc75d878")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Value" "EEUFS2A470"
+		(at 0 6.3 0)
+		(layer "F.Fab")
+		(uuid "a8f7ec76-37ea-4656-a1e5-5bdac17ce99c")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a09d2aa3-9da0-40ca-95d6-bab29628d81f")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a52cf78b-6c28-478d-a98d-89f3ec7405a4")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -4.7 -0.6)
+		(end -3.5 -0.6)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "4e48d7da-dd95-44c4-88b3-0672aa110c95")
+	)
+	(fp_line
+		(start -4.1 -1.2)
+		(end -4.1 0)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "bf12da1e-5b22-43db-b0cf-c70ad3126566")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 5.5 0)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "2feef421-29e1-492c-bda1-59430b77045f")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 5 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "5db776a7-3fb0-4bcb-8c2b-cced455e7a00")
+	)
+	(pad "1" thru_hole circle
+		(at -2.5 0)
+		(size 1.8 1.8)
+		(drill 0.9)
+		(layers "*.Cu")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.05)
+		(uuid "8cf41e8e-d0b9-4e12-91f2-26e3fb5f0d6b")
+	)
+	(pad "2" thru_hole circle
+		(at 2.5 0)
+		(size 1.8 1.8)
+		(drill 0.9)
+		(layers "*.Cu")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.05)
+		(uuid "7a2cc62e-58dc-4d7b-ad62-8882784ed5db")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/models/Panasonic_EEUFS2A470_max_drawing_envelope.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

@@ -1,0 +1,3 @@
+Native KiCad placement: millimeters, default board datum, X equals native X, Y is negative native Y. Rotation is the exported native KiCad angle with an explicit top/bottom face; bottom X has not been negated. Preserve this datum across both faces. Verify the assembler's rotation/centroid convention and pin 1/polarity against the assembly drawings before loading machines.
+SMT-placement.csv includes the purchased H1 support. Manual-TH-placement.csv lists C725, J1, J2 and R727, retained in the full fitted BOM. Test/service and mechanical-only PCB features are excluded.
+U3 exact approved MPN is MP2329GG-P. Its historical library alias MPS_MP2386_QFN11_2x2 names the verified MP2329 primary package geometry; it does not authorize MP2386 or another part substitution.
